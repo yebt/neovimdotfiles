@@ -1,0 +1,447 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" PLUGIN 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin('/home/eb/.config/nvim/plugged/')
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'https://github.com/tpope/vim-surround'
+
+Plug 'nvim-lualine/lualine.nvim'
+
+
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'akinsho/bufferline.nvim'
+
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'https://github.com/tpope/vim-commentary'
+"Plug 'https://github.com/gioele/vim-autoswap'
+
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'moll/vim-bbye'
+"Plug 'neomake/neomake'
+Plug 'preservim/tagbar'
+
+Plug 'folke/which-key.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+
+Plug 'mangeshrex/uwu.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'bluz71/vim-moonfly-colors'
+"Plug 'shaunsingh/nord.nvim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'navarasu/onedark.nvim'
+Plug 'marko-cerovac/material.nvim'
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
+
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'folke/tokyonight.nvim'
+
+Plug 'rafamadriz/neon'
+
+"Plug 'sainnhe/edge'
+"Plug 'theniceboy/nvim-deus'
+"Plug 'preservim/vim-colors-pencil' "good light but not enought"
+
+"Plug 'https://git.sr.ht/~novakane/kosmikoa.nvim' "good purple theme"
+
+Plug 'ishan9299/nvim-solarized-lua' "Nice lighe in highg "
+Plug 'projekt0n/github-nvim-theme'
+
+
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" CONGIGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""APARENCE
+"numbers
+set number
+set relativenumber 
+"cmd
+set cmdheight	=2
+
+"set showtabline = 1
+set showtabline	=2
+
+set cursorline
+
+set title
+set signcolumn 	=auto:2
+
+set termguicolors
+
+set conceallevel=1
+set hidden
+set nobackup
+set mouse=a
+set autoread
+set nocompatible
+""set timeoutlen=500
+set shortmess       =filnxtToOFIc
+set updatetime      =300 
+
+set clipboard=unnamed
+
+set foldlevel =3
+
+set timeoutlen=300
+set autochdir
+
+""SEARCH
+set hlsearch   
+set ignorecase 
+set incsearch  
+set smartcase  
+
+
+
+
+""INDENT
+set autoindent      
+set expandtab       
+set shiftwidth      =4
+set smarttab       
+set tabstop         =4
+filetype plugin indent on
+filetype indent on 
+set autoindent  
+set smartindent
+
+set directory=/home/eb/.config/nvim/swap//
+
+""MISELANEOUS
+set completeopt     =menuone,noinsert,noselect
+set pumheight       =10
+
+
+""NETRW
+let g:netrw_keepdir     = 0
+let g:netrw_banner      = 0
+let g:netrw_localcopydircmd = 'cp -r'
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" PLUGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require'nvim-treesitter.configs'.setup{
+    ensure_installed = "all",
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true,
+    },
+    incremental_selection = {
+        enable = false,
+    },
+    indent = {
+        enable = false
+    },
+}
+EOF
+
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
+
+lua <<EOF
+
+require('gitsigns').setup()
+require("bufferline").setup{
+
+options = {
+    numbers = "none",
+--    diagnostics =  "coc",
+    diagnostics_update_in_insert = true,
+    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+    --        show_buffer_icons = false,
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    show_tab_indicators = false,
+
+    }
+}
+
+require('lualine').setup{
+options = {
+    theme = 'auto',
+    component_separators = { },
+    section_separators = { },
+
+
+    },
+}
+ require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+
+  }
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+require'nvim-tree'.setup ({
+
+    disable_netrw       = true,
+    hijack_netrw        = true,
+    open_on_setup       = false,
+    ignore_ft_on_setup  = {},
+    auto_close          = false,
+    open_on_tab         = false,
+    hijack_cursor       = false,
+    update_cwd          = false,
+    update_to_buf_dir   = {
+    enable = true,
+    auto_open = true,
+    },
+diagnostics = {
+enable = false,
+icons = {
+    hint = "",
+    info = "",
+    warning = "",
+    error = "",
+    }
+},
+  update_focused_file = {
+  enable      = true,
+  update_cwd  = true,
+  ignore_list = {}
+  },
+  system_open = {
+      cmd  = nil,
+      args = {}
+      },
+  filters = {
+      dotfiles = false,
+      custom = {}
+      },
+  view = {
+      width = 30,
+      height = 30,
+      hide_root_folder = false,
+      side = 'left',
+      auto_resize = false,
+      mappings = {
+          --custom_only = false,
+          custom_only = true,
+          list = {
+              { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+              { key = {"<2-RightMouse>", "<C-]>", "cd"},    cb = tree_cb("cd") },
+              { key = "<C-v>",                        cb = tree_cb("vsplit") },
+              { key = "<C-x>",                        cb = tree_cb("split") },
+              { key = "<C-t>",                        cb = tree_cb("tabnew") },
+              { key = "<",                            cb = tree_cb("prev_sibling") },
+              { key = ">",                            cb = tree_cb("next_sibling") },
+              { key = "P",                            cb = tree_cb("parent_node") },
+              { key = "<BS>",                         cb = tree_cb("close_node") },
+              { key = "<S-CR>",                       cb = tree_cb("close_node") },
+              { key = "<Tab>",                        cb = tree_cb("preview") },
+              { key = "K",                            cb = tree_cb("first_sibling") },
+              { key = "J",                            cb = tree_cb("last_sibling") },
+              { key = "I",                            cb = tree_cb("toggle_ignored") },
+              { key = "H",                            cb = tree_cb("toggle_dotfiles") },
+              { key = "R",                            cb = tree_cb("refresh") },
+              --{ key = "a",                            cb = tree_cb("create") },
+              { key = "ma",                            cb = tree_cb("create") },
+              --{ key = "d",                            cb = tree_cb("remove") },
+              { key = "md",                            cb = tree_cb("remove") },
+              --{ key = "r",                            cb = tree_cb("rename") },
+              { key = "mr",                            cb = tree_cb("rename") },
+              { key = "<C-r>",                        cb = tree_cb("full_rename") },
+              --{ key = "x",                            cb = tree_cb("cut") },
+              { key = "mx",                            cb = tree_cb("cut") },
+              --{ key = "c",                            cb = tree_cb("copy") },
+              { key = "mc",                            cb = tree_cb("copy") },
+              --{ key = "p",                            cb = tree_cb("paste") },
+              { key = "mp",                            cb = tree_cb("paste") },
+              { key = "y",                            cb = tree_cb("copy_name") },
+              { key = "Y",                            cb = tree_cb("copy_path") },
+              { key = "gy",                           cb = tree_cb("copy_absolute_path") },
+              { key = "[c",                           cb = tree_cb("prev_git_item") },
+              { key = "]c",                           cb = tree_cb("next_git_item") },
+              { key = { "-", ".."},                            cb = tree_cb("dir_up") },
+              { key = "s",                            cb = tree_cb("system_open") },
+              { key = "q",                            cb = tree_cb("close") },
+              { key = "g?",                           cb = tree_cb("toggle_help") },
+              }
+          }
+      }
+  })
+
+
+
+
+EOF
+
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" MAPS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let mapleader = ","
+
+nnoremap <M-w> :w<cr>
+nnoremap <M-q> :q<cr>
+vnoremap <C-c> "+y:echo "COPY"<cr>
+nnoremap <leader>w :set wrap!<cr>
+""inoremap <C-h> <C-o><C-w><CR>
+imap <C-h> <C-W>
+imap <C-h> <C-W>
+
+nmap <M-S-Right> :bn<cr>
+nmap <M-S-Left> :bp<cr>
+"nmap <M-c> :bd<cr>
+nmap <M-c> :Bdelete<cr>
+
+nmap <M-s>v :vertical split<cr>
+nmap <M-s>h :split<cr>
+
+
+"nmap <M-i> gg0vG$=``
+"nmap <M-i> gg0vG$=<C-o>
+nmap <M-i> =G
+
+nmap <C-a> gg0vG$
+
+nmap <A-b> :NvimTreeToggle<CR>
+
+"let g:AutoPairsShortcutBackInsert = '<M-S-b>'
+
+"colorscheme uwu
+"colorscheme ayu
+
+source /home/eb/.config/nvim/funcs.vim
+
+" Example config in Vim-Script
+"let g:nord_contrast = v:true
+"let g:nord_borders = v:true
+"let g:nord_disable_background = v:true
+"let g:nord_italic = v:true
+"
+"colorscheme nord
+
+let g:onedark_italic_comment = v:true        " don't use 0 or 1
+"let g:onedark_style = 'darker'
+colorscheme onedark
+
+"let g:material_style = 'deep ocean'
+"let g:material_style = 'lighter'
+"colorscheme material
+
+"let g:aquarium_style="light"
+"colorscheme aquarium
+
+"set background=light
+"set background="light"
+"let g:tokyonight_style="day"
+"let g:tokyonight_italic_variables=v:true
+"colorscheme tokyonight
+"
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
+
+"let neon_style='light'
+"colorscheme neon
+
+"colorscheme github_light_default
+"let g:dark_float=v:true
+"let g:function_style="bold"
+
+"colorscheme uwu
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""AU
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+
