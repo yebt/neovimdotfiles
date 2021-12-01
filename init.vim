@@ -24,7 +24,8 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'moll/vim-bbye'
 Plug 'preservim/tagbar'
-
+Plug 'romainl/vim-cool'
+Plug 'jeetsukumaran/vim-buffergator'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
@@ -33,12 +34,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 
+Plug 'mhinz/vim-startify'
 
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'akinsho/bufferline.nvim'
 
 Plug 'kqito/vim-easy-replace'
+" Plug 'vim-startify-renderer-nerdfont'
 
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -54,9 +58,9 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'matbme/JABS.nvim'
 "Plug 'Pocco81/AbbrevMan.nvim'
 
-Plug 'Shatur/neovim-session-manager'
+" Plug 'Shatur/neovim-session-manager'
 " Plug '/home/eb/.config/nvim/pluggins/RltvNmbr.vba'
-Plug 'mhinz/vim-startify'
+
 
 Plug 'navarasu/onedark.nvim'
 Plug 'olimorris/onedarkpro.nvim'
@@ -69,6 +73,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'mangeshrex/uwu.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 
 call plug#end()
@@ -420,13 +425,13 @@ require 'jabs'.setup {
 --
 --})
 
-local Path = require('plenary.path')
-require('session_manager').setup({
-    sessions_dir = "/home/eb/.config/nvim/sessions/",
-    autoload_mode = require('session_manager.config').AutoloadMode.Disabled, 
-})
+--local Path = require('plenary.path')
+--require('session_manager').setup({
+--    sessions_dir = "/home/eb/.config/nvim/sessions/",
+--    autoload_mode = require('session_manager.config').AutoloadMode.Disabled, 
+--})
 
-require('telescope').load_extension('sessions')
+-- require('telescope').load_extension('sessions')
 
 require("indent_blankline").setup {
     -- for example, context is off by default, use this to turn it on
@@ -442,11 +447,10 @@ let g:indent_blankline_char = '▏'
 
 let g:indent_blankline_use_treesitter= v:true
 
-" let g:indent_blankline_bufname_exclude = ['NvimTree','coc-explorer','tagbar']
-let g:indent_blankline_filetype_exclude =['help', 'NvimTree', 'coc-explorer', 'tagbar', 'toggleterm', 'startify']
+ let g:indent_blankline_bufname_exclude = ['NvimTree','coc-explorer','tagbar']
+ let g:indent_blankline_filetype_exclude =['help', 'NvimTree', 'coc-explorer', 'tagbar', 'toggleterm', 'startify']
+let g:indent_blankline_enabled = v:false
 
-let g:nvim_tree_quit_on_open = 1
-let g:nvim_tree_disable_window_picker = 1
 
 " set
 " let g:toggleterm_terminal_mapping = '<C-t>'
@@ -525,18 +529,22 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
 
 
 let g:startify_custom_header = [
-            \"\t     ___    _    __    __      __          _",
-            \"\t|    \\  |  | |  |  |  | (_    _) |        | ",
-            \"\t|  |\\ \\ |  | |  |  |  |   |  |   |  |\\/|  | ",
-            \"\t|  | \\ \\|  | |  |  |  |   |  |   |  |  |  | ",
-            \"\t|  |  \\    |  \\  \\/  /   _|  |_  |  |  |  | ",
-            \"\t|  |___\\   |___\\    /___(      )_|  |__|  |_",
+            \"\t ",
+            \"\t ",
+            \"\t███╗   ██╗██╗   ██╗██╗███╗   ███╗ ██████╗ ██████╗ ██████╗ ███████╗",
+            \"\t████╗  ██║██║   ██║██║████╗ ████║██╔════╝██╔═══██╗██╔══██╗██╔════╝",
+            \"\t██╔██╗ ██║██║   ██║██║██╔████╔██║██║     ██║   ██║██║  ██║█████╗  ",
+            \"\t██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║██║     ██║   ██║██║  ██║██╔══╝  ",
+            \"\t██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║╚██████╗╚██████╔╝██████╔╝███████╗",
+            \"\t╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝",
+            \"\t ",
+            \"\t ",
             \]
-let g:startify_custom_footer = [
-            \"\t╔═╗╔═╗╔╦╗┬ ┬",
-            \"\t║  ║ ║ ║║└┬┘",
-            \"\t╚═╝╚═╝═╩╝ ┴ ",
-            \]
+" let g:startify_custom_footer = [
+"             \"\t╔═╗╔═╗╔╦╗┬ ┬",
+"             \"\t║  ║ ║ ║║└┬┘",
+"             \"\t╚═╝╚═╝═╩╝ ┴ ",
+"             \]
 let g:startify_session_dir = "/home/eb/.config/nvim/sessions/"
 let g:startify_lists = [
             \ { 'type': 'files',     'header': ['   MRU']            },
@@ -551,17 +559,26 @@ let g:startify_bookmarks = [
             \{'c': '~/.vimrc'},
             \'~/.zshrc'
             \]
-let g:startify_commands = [
-        \ ':help reference',
-        \ ['Vim Reference', 'h ref'],
-        \ {'h': 'h ref'},
-        \ {'m': ['My magical function', 'call Magic()']},
-        \ ]
+" let g:startify_commands = [
+"         \ ':help reference',
+"         \ ['Vim Reference', 'h ref'],
+"         \ {'h': 'h ref'},
+"         \ {'m': ['My magical function', 'call Magic()']},
+"         \ ]
 let g:startify_files_number = 5
 let g:startify_update_oldfiles = 1
-let g:startify_session_autoload = 1
+
+let g:startify_session_autoload = 0
+let g:startify_session_dir = "/home/eb/.config/nvim/stsessions/"
 let g:startify_session_before_save = ['silent! tabdo NvimTreeClose',]
-let g:startify_session_persistence = 0
+let g:startify_session_persistence = 1
+let g:startify_session_delete_buffers = 1
+
+let g:startify_change_to_dir = 1
+let g:startify_padding_left = 4
+
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" MAPS
@@ -659,7 +676,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 " Symbol renaming.
@@ -698,7 +715,79 @@ source /home/eb/.config/nvim/funcs.vim
 "" set color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme onedark
+
+" colorscheme onedark
+
+set termguicolors
+hi LineNr ctermbg=NONE guibg=NONE
+colorscheme nvcode
+" Misc
+highlight TSError guifg=#F44747
+highlight TSPunctDelimiter guifg=#ABB2BF
+highlight TSPunctBracket guifg=#ABB2BF
+highlight TSPunctSpecial guifg=#ABB2BF
+
+" Constants
+highlight TSConstant guifg=#DCDCAA
+highlight TSConstBuiltin guifg=#569CD6
+" Not sure about this guy
+highlight TSConstMacro guifg=#4EC9B0
+highlight TSString guifg=#CE9178
+highlight TSStringRegex guifg=#CE9178
+highlight TSStringEscape guifg=#D7BA7D
+highlight TSCharacter guifg=#CE9178
+highlight TSNumber guifg=#B5CEA8
+highlight TSBoolean guifg=#569CD6
+highlight TSFloat guifg=#B5CEA8
+highlight TSAnnotation guifg=#DCDCAA
+highlight TSAttribute guifg=#FF00FF
+highlight TSNamespace guifg=#FF00FF
+
+
+" Functions
+" highlight TSFuncBuiltin guifg=#4EC9B0
+highlight TSFuncBuiltin guifg=#DCDCAA
+highlight TSFunction guifg=#DCDCAA
+highlight TSFuncMacro guifg=#DCDCAA
+highlight TSParameter guifg=#9CDCFE
+highlight TSParameterReference guifg=#9CDCFE
+highlight TSMethod guifg=#DCDCAA
+highlight TSField guifg=#9CDCFE
+highlight TSProperty guifg=#9CDCFE
+highlight TSConstructor guifg=#4EC9B0
+
+" Keywords
+highlight TSConditional guifg=#C586C0
+highlight TSRepeat guifg=#C586C0
+highlight TSLabel guifg=#FF00FF
+" Does not work for yield and return they should be diff then class and def
+highlight TSKeyword guifg=#569CD6
+highlight TSKeywordFunction guifg=#FF00FF
+highlight TSKeywordOperator guifg=#569CD6
+highlight TSOperator guifg=#ABB2BF
+highlight TSException guifg=#C586C0
+highlight TSType guifg=#4EC9B0
+highlight TSTypeBuiltin guifg=#FF00FF
+highlight TSStructure guifg=#FF00FF
+highlight TSInclude guifg=#C586C0
+
+" Variable
+highlight TSVariable guifg=#9CDCFE
+highlight TSVariableBuiltin guifg=#9CDCFE
+
+" Text
+highlight TSText guifg=#FF00FF
+highlight TSStrong guifg=#FF00FF
+highlight TSEmphasis guifg=#FF00FF
+highlight TSUnderline guifg=#FF00FF
+highlight TSTitle guifg=#FF00FF
+highlight TSLiteral guifg=#FF00FF
+highlight TSURI guifg=#FF00FF
+
+" Tags
+highlight TSTag guifg=#569CD6
+highlight TSTagDelimiter guifg=#5C6370
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Treiggers
@@ -706,3 +795,9 @@ colorscheme onedark
 
 autocmd BufNewFile,BufRead *.blade.php nnoremap <leader>bf <CMD>CocCommand blade.bladeFormatter.run<CR>:echo "BLADE FORMATER"<CR>
 " autocmd BufNewFile,BufRead *.blade.php set filetype=blade
+
+" augroup my-glyph-palette
+"   autocmd! *
+"   autocmd FileType fern call glyph_palette#apply()
+"   autocmd FileType nerdtree,startify call glyph_palette#apply()
+" augroup END
