@@ -32,7 +32,8 @@ let g:startify_lists = [
             \ ]
 "" BOCKMARKS
 let g:startify_bookmarks = [ 
-            \{'c': '~/.vimrc'},
+            \{'c': '~/.config/nvim/init.vim'},
+            \{'i': '~/.config/i3/config'},
             \'~/.zshrc'
             \]
 let g:startify_files_number = 5

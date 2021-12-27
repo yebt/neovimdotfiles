@@ -10,7 +10,8 @@ set updatetime=300
 
 set number
 set numberwidth=4
-set signcolumn=yes
+"set signcolumn=yes
+set signcolumn=auto:2
 set cursorline 
  
 set nowrap 

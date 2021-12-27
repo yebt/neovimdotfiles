@@ -19,20 +19,20 @@ require("bufferline").setup{
         numbers = "none",
         diagnostics_update_in_insert = true,
         offsets = { {filetype = "coc-explorer", text = "COC F.Explorer"},
-        {
-            filetype = "NvimTree",
-            text = function()
-                return vim.api.nvim_exec([[ echo "▼ " .  split(getcwd(),"/")[-1] . "/.." ]],true)
-            end,
-            highlight = "NVimTreeRootFolder",
-            text_align = "left"
+            {
+                filetype = "NvimTree",
+                text = function()
+                    return vim.api.nvim_exec([[ echo "▼ " .  split(getcwd(),"/")[-1] . "/.." ]],true)
+                end,
+                highlight = "NVimTreeRootFolder",
+                text_align = "left"
+            },
         },
-    },
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    show_tab_indicators = false,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        show_tab_indicators = false,
 
-}
+    }
 }
 
 require('lualine').setup{
@@ -142,3 +142,16 @@ require("indent_blankline").setup {
 
 require('spectre').setup({})
 
+-- require('onedark').setup()
+
+-- LSP CONFIG
+require'lspconfig'.intelephense.setup{
+    cmd = { "intelephense", "--stdio" },
+    filetypes = { "php" },
+    root_dir = function()
+      return vim.fn.getcwd()
+    end
+}
+
+-- autoparis nvim
+require('nvim-autopairs').setup{}

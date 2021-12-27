@@ -27,15 +27,19 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Autocomplete
 Plug 'windwp/nvim-autopairs'
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 
+" lsp
+Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
 
 " Git 
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 
 
 " behaviour
@@ -65,5 +69,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'rktjmp/lush.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'navarasu/onedark.nvim'
+Plug 'marko-cerovac/material.nvim'
+Plug 'rebelot/kanagawa.nvim'
 
 call plug#end()

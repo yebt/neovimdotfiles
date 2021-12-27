@@ -55,3 +55,9 @@ nmap <A-b> :NvimTreeToggle<CR>
 
 " indentline toggle
 nnoremap <silent><leader>l :IndentBlanklineToggle <cr>
+
+
+
+
+"" coc explorer
+nmap <M-e> <Cmd>CocCommand explorer<CR>
