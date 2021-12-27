@@ -56,8 +56,20 @@ nmap <A-b> :NvimTreeToggle<CR>
 " indentline toggle
 nnoremap <silent><leader>l :IndentBlanklineToggle <cr>
 
-
+" try use Ctrl+Backspace to delete word
+nmap <silent><C-H> vbd
+imap <silent><C-H> <C-w>
+" 
 
 
 "" coc explorer
 nmap <M-e> <Cmd>CocCommand explorer<CR>
+
+" usegull info
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<CR>
+"" try include the use of code acction
+nnoremap <silent> :CocAction<CR>
+"" show diagnostics
+noremap <silent> <leader>cd :CocDiagnostics<CR>
+"" highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')
