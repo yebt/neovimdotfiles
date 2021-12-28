@@ -73,3 +73,14 @@ nnoremap <silent> :CocAction<CR>
 noremap <silent> <leader>cd :CocDiagnostics<CR>
 "" highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"" better indetntatoin
+vmap <silent>> >gv
+vmap <silent>< <gv
+
+"" implement auto surround brackets adn auto close items
+vmap <silent>( <esc>gvS)
+vmap <silent>[ <esc>gvS]
+vmap <silent>{ <esc>gvS}
+vmap <silent>" <esc>gvS"
+vmap <silent>' <esc>gvS'
