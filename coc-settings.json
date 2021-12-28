@@ -68,7 +68,7 @@
     },
 
     "phpls.path": "/usr/bin/intelephense",
-    "intelephense.licenceKey": "000YOP3TTT7QMST",
+    "intelephense.licenceKey": "000YOP3TTT7QMSTY",
     
     "intelephense.progress.enable": true, 
 
