@@ -31,4 +31,5 @@ autocmd TermEnter term://*toggleterm#*
             \ tnoremap <silent><A-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 
+autocmd FileType php let b:surround_45 = "<?php \r ?>"
 
