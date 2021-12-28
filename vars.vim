@@ -45,3 +45,23 @@ let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
 let g:startify_change_to_dir = 0
 let g:startify_padding_left = 4
+
+
+"" COC NVIM Extensions
+let g:coc_global_extensions = [
+            \'coc-blade',
+            \'coc-css',
+            \'coc-emmet',
+            \'coc-explorer',
+            \'coc-git',
+            \'coc-highlight',
+            \'coc-html',
+            \'coc-html-css-support',
+            \'coc-json',
+            \'coc-markdownlint',
+            \'coc-phpls',
+            \'coc-pyright',
+            \'coc-snippets',
+            \'coc-tabnine',
+            \'coc-tsserver'
+            \]
