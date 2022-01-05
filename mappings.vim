@@ -72,7 +72,7 @@ nnoremap <silent> :CocAction<CR>
 "" show diagnostics
 noremap <silent> <leader>cd :CocDiagnostics<CR>
 "" highlight
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "" better indetntatoin
 vmap <silent>> >gv
@@ -82,5 +82,5 @@ vmap <silent>< <gv
 vmap <silent>( <esc>gvS)
 vmap <silent>[ <esc>gvS]
 vmap <silent>{ <esc>gvS}
-vmap <silent>" <esc>gvS"
-vmap <silent>' <esc>gvS'
+" vmap <silent>" <esc>gvS"
+" vmap <silent>' <esc>gvS'
