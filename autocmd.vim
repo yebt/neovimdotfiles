@@ -31,3 +31,17 @@ autocmd TermEnter term://*toggleterm#*
             \ tnoremap <silent><A-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 
+
+" try use php initp
+function! PHPinitCharacter()
+    if line('.') == 1
+        echo "asdf"
+        call append(line('.')-1,"<?php")
+    endif
+endfunction
+augroup phpinitcharacter
+    autocmd!
+    autocmd BufNewFile,BufRead *.php inoremap <silent>< <C-o>:call PHPinitCharacter()<cr>
+augroup END
+
+

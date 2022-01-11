@@ -63,3 +63,14 @@ function! BreakHabitsWindow() abort
 endfunction
 
 command! NewFloatWindow call BreakHabitsWindow()
+
+
+" try work the home key
+function! HomeVSC()
+    let lastcurp = col('.')
+    execute "normal ^"
+    if lastcurp == col('.')
+        execute "normal 0"
+    endif
+endfunction
+

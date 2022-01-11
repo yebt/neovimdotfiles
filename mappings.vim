@@ -84,3 +84,8 @@ vmap <silent>[ <esc>gvS]
 vmap <silent>{ <esc>gvS}
 " vmap <silent>" <esc>gvS"
 " vmap <silent>' <esc>gvS'
+
+"" Home usage
+imap <silent><Home> <C-o>:call HomeVSC()<cr>
+nmap <silent><Home> :call HomeVSC()<cr>
+
