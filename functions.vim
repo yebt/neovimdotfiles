@@ -74,3 +74,17 @@ function! HomeVSC()
     endif
 endfunction
 
+
+" PHP code sniffer
+function! PHPCSFBEY()
+    if filereadable("./vendor/bin/phpcbf")
+        execute '! ./vendor/bin/phpcbf --standard=PSR12  '. expand('%') 
+    elseif filereadable("phpcbf")
+        execute '! phpcbf --standard=PSR12  '. expand('%') 
+    else
+        echo "No PhpCodeSniffer available"
+    endif
+endfunction
+
+command! PHPCSFBEY call PHPCSFBEY()
+
