@@ -65,6 +65,10 @@ Plug 'akinsho/bufferline.nvim'
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
+" UI
+Plug 'MunifTanjim/nui.nvim'
+Plug 'rcarriga/nvim-notify'
+
 " color
 Plug 'rktjmp/lush.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
