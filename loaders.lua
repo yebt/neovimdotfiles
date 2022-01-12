@@ -155,3 +155,6 @@ require'lspconfig'.intelephense.setup{
 
 -- autoparis nvim
 require('nvim-autopairs').setup{}
+
+-- notify
+require("notify").setup({})
