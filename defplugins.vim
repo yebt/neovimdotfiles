@@ -49,6 +49,8 @@ Plug 'romainl/vim-cool'
 Plug 'folke/which-key.nvim'
 Plug 'tpope/vim-commentary'
 
+" Live Preview html
+Plug 'turbio/bracey.vim',{'do': 'npm install --prefix server'}
 
 " Tree
 Plug 'kyazdani42/nvim-tree.lua'
