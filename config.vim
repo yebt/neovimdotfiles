@@ -2,7 +2,7 @@
 
 set nocompatible
 syntax on
- 
+
 set nomodeline
 set hidden
 set timeoutlen=300
@@ -13,14 +13,23 @@ set numberwidth=4
 "set signcolumn=yes
 set signcolumn=auto:2
 set cursorline 
- 
+
 set nowrap 
 
 set title
 set titlestring ="%<%F%=%l/%L - nvim"
 
-set foldmethod=marker
-set foldlevel=2
+" set foldmethod=marker
+set foldmethod=manual
+set foldlevel=99
+set foldcolumn=1
+
+set foldtext=MyFoldText()
+function MyFoldText()
+    let line = getline(v:foldstart)
+    let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    return v:folddashes . sub
+endfunction
 
 set noshowmode
 set showcmd

@@ -1,10 +1,11 @@
 "=== AUTOCOMMANDS ===
 "
 augroup reload_config
-	autocmd!
-	"autocmd BufWritePost init.vim source <afile> 
-	autocmd BufWritePost ~/.config/nvim/*.vim source init.vim 
-"    :echo "PILLE"
+    autocmd!
+    "autocmd BufWritePost init.vim source <afile> 
+    " autocmd BufWritePost ~/.config/nvim/*.vim source init.vim 
+    autocmd BufWritePost ~/.config/nvim/*.vim source %
+    "    :echo "PILLE"
 augroup end
 
 
@@ -44,4 +45,17 @@ augroup phpinitcharacter
     autocmd BufNewFile,BufRead *.php inoremap <silent>< <C-o>:call PHPinitCharacter()<cr>
 augroup END
 
-
+" TRY config fold
+function! SetAtFold()
+    let tempfiletype=&filetype
+    if (tempfiletype == 'vim')
+        set foldmethod=marker
+        set foldlevel=0
+    else
+        set foldmethod=expr
+        set foldlevel=99
+        " call CocAction('fold')
+        " call CocAction('fold')
+    endif
+endfunction
+autocmd BufNewFile,BufEnter *.* call SetAtFold()

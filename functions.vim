@@ -80,7 +80,7 @@ function! PHPCSFBEY()
     if filereadable("./vendor/bin/phpcbf")
         execute '! ./vendor/bin/phpcbf --standard=PSR12  '. expand('%') 
     elseif filereadable("phpcbf")
-        execute '! phpcbf --standard=PSR12  '. expand('%') 
+       execute '! phpcbf --standard=PSR12  '. expand('%') 
     else
         echo "No PhpCodeSniffer available"
     endif
@@ -88,3 +88,26 @@ endfunction
 
 command! PHPCSFBEY call PHPCSFBEY()
 
+" Try use trigger to fold
+" function! ToggleFod()
+"     let foldM=&foldmethod
+"     if (foldM == 'manual')
+"         echo "Is Manual"
+"         set foldmethod=expr
+"         set foldexpr=nvim_treesitter#foldexpr()
+"     elseif (foldM == 'expr' )
+        
+"     else 
+"         echo "No manual"
+"     endif
+"     echo foldM
+" endfunction
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
