@@ -67,4 +67,9 @@ let g:coc_global_extensions = [
             \]
 
 
+"Any fold vim
+" no use function minial on the any fold
+hi Folded term=underline
+let g:anyfold_fold_display=0
+
 
