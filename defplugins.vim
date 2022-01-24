@@ -52,9 +52,14 @@ Plug 'tpope/vim-commentary'
 " Live Preview html
 Plug 'turbio/bracey.vim',{'do': 'npm install --prefix server'}
 
+" match tag
+Plug 'leafOfTree/vim-matchtag'
+
 " Tree
 Plug 'kyazdani42/nvim-tree.lua'
 
+" Fold 
+Plug 'pseewald/vim-anyfold'
 
 " Term
 Plug 'akinsho/toggleterm.nvim'

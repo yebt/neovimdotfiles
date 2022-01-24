@@ -8,15 +8,15 @@ set background=dark
 lua << EOF 
  require('kanagawa').setup({
 --     undercurl = true,           -- enable undercurls
---     commentStyle = "italic",
+     commentStyle = "italic",
 --     -- functionStyle = "NONE",
---     functionStyle = "bold",
---     keywordStyle = "italic",
+     functionStyle = "bold",
+     keywordStyle = "italic",
 --     statementStyle = "bold",
 --     typeStyle = "NONE",
 --     variablebuiltinStyle = "italic",
---     specialReturn = true,       -- special highlight for the return keyword
---     specialException = true,    -- special highlight for exception handling keywords 
+     specialReturn = true,       -- special highlight for the return keyword
+     specialException = true,    -- special highlight for exception handling keywords 
      transparent = false,        -- do not set background color
 --     colors = {},
 --     overrides = {},
@@ -79,3 +79,11 @@ hi! link SignColumn Normal
 " hi User3  ctermfg=lightblue  guifg=lightblue
 " hi User4  ctermfg=lightgreen  guifg=lightgreen
 " hi User5  ctermfg=magenta  guifg=magenta
+
+
+"" Match Tgh
+highlight link matchTag Search
+highlight link matchTag MatchParen
+highlight matchTag gui=reverse
+
+highlight link matchTagError Todo

@@ -24,6 +24,7 @@ set foldmethod=manual
 set foldlevel=99
 set foldcolumn=1
 
+
 set foldtext=MyFoldText()
 function MyFoldText()
     let line = getline(v:foldstart)

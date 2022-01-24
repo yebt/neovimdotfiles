@@ -1,16 +1,16 @@
 require'nvim-treesitter.configs'.setup ({
     ensure_installed = "all",
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting= {'vim'}
-    },
-    indent = {
-        enable = true
-    },
-    autotag = {
-        enable = true,
-        filetypes  = {   'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue' , "blade", "php", }
-    }
+    -- highlight = {
+    --     enable = true,
+    -- --     additional_vim_regex_highlighting= {'vim'}
+    -- },
+    -- indent = {
+    --     enable = true
+    -- },
+    -- autotag = {
+    --     enable = true,
+    --     filetypes  = {   'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue' , "blade", "php", }
+    -- }
 })
 
 require('gitsigns').setup()
@@ -137,7 +137,9 @@ require("toggleterm").setup({})
 require("indent_blankline").setup {
     -- for example, context is off by default, use this to turn it on
     --show_current_context = true,
-    --show_current_context_start = true,
+    -- show_current_context_start = true,
+    show_current_context = true,
+    show_current_context_start = true,
 }
 
 require('spectre').setup({})

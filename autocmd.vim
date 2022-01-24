@@ -36,7 +36,7 @@ autocmd TermEnter term://*toggleterm#*
 " try use php initp
 function! PHPinitCharacter()
     if line('.') == 1
-        echo "asdf"
+        " echo "asdf"
         call append(line('.')-1,"<?php")
     endif
 endfunction
@@ -44,6 +44,7 @@ augroup phpinitcharacter
     autocmd!
     autocmd BufNewFile,BufRead *.php inoremap <silent>< <C-o>:call PHPinitCharacter()<cr>
 augroup END
+
 
 " TRY config fold
 function! SetAtFold()
@@ -54,6 +55,7 @@ function! SetAtFold()
     else
         set foldmethod=expr
         set foldlevel=99
+        AnyFoldActivate
         " call CocAction('fold')
         " call CocAction('fold')
     endif

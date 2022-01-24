@@ -89,3 +89,6 @@ vmap <silent>{ <esc>gvS}
 imap <silent><Home> <C-o>:call HomeVSC()<cr>
 nmap <silent><Home> :call HomeVSC()<cr>
 
+"" Format document with coc
+nnoremap <silent><leader>f :Format<cr>
+nnoremap <silent><leader>z :Fold<cr>
