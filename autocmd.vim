@@ -49,9 +49,13 @@ augroup END
 " TRY config fold
 function! SetAtFold()
     let tempfiletype=&filetype
-    if (tempfiletype == 'vim')
+    if (tempfiletype == 'vim'  )
+    " if (tempfiletype == 'vim' || tempfiletype == 'conf' )
         set foldmethod=marker
         set foldlevel=0
+    elseif (tempfiletype == 'conf')
+        set foldmethod=manual
+        set foldlevel=2
     else
         set foldmethod=expr
         set foldlevel=99

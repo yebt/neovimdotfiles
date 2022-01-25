@@ -72,4 +72,6 @@ let g:coc_global_extensions = [
 hi Folded term=underline
 let g:anyfold_fold_display=0
 
-
+"BRACERY
+let g:bracey_refresh_on_save=1
+let g:bracey_server_allow_remote_connections=1
