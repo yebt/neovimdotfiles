@@ -47,13 +47,13 @@
             "filetypes": ["php"],
             "initializationOptions": {
                 /* Insert the correct path */
-                "storagePath": "/tmp/intelephense"
+                /*"storagePath": "/tmp/intelephense"*/
+                "storagePath": "/home/b/.npm-global/bin/intelephense"
             }
         }
     },
 
-    "intelephense.licenceKey": "000YOP3TTT7QMST"
+    "intelephense.licenceKey": "000YOP3TTT7QMST",
 
-    /*"intelephense.progress.enable" = false*/
-
+    "intelephense.progress.enable": false
 }
