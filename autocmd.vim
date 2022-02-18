@@ -17,6 +17,8 @@ augroup end
 
 autocmd BufNewFile,BufRead *.blade.php nnoremap <leader>bf <CMD>CocCommand blade.bladeFormatter.run<CR>:echo "BLADE FORMATER"<CR>
 
+" Coc nvim jsnc highlight
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 augroup GetGitBranch
     autocmd!

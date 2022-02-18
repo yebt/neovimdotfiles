@@ -1,4 +1,7 @@
 {
+
+    "suggest.noselect": false,
+
     "diagnostic.infoSign": "",
     "diagnostic.warningSign": "⚠",
     "diagnostic.errorSign": "✘",
@@ -37,7 +40,20 @@
             "filetypes": [
                 "scheme"
             ]
+        },
+        "intelephense": {
+            "command": "intelephense",
+            "args": ["--stdio"],
+            "filetypes": ["php"],
+            "initializationOptions": {
+                /* Insert the correct path */
+                "storagePath": "/tmp/intelephense"
+            }
         }
-    }
+    },
+
+    "intelephense.licenceKey": "000YOP3TTT7QMST"
+
+    /*"intelephense.progress.enable" = false*/
 
 }

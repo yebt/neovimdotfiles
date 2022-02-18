@@ -72,7 +72,7 @@ nnoremap <silent> :CocAction<CR>
 "" show diagnostics
 noremap <silent> <leader>cd :CocDiagnostics<CR>
 "" highlight
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "" better indetntatoin
 vmap <silent>> >gv
@@ -92,3 +92,16 @@ nmap <silent><Home> :call HomeVSC()<cr>
 "" Format document with coc
 nnoremap <silent><leader>f :Format<cr>
 nnoremap <silent><leader>z :Fold<cr>
+
+"" TRy mapping the scape selection
+function! COCCA()
+    call coc#_hide()
+    return ''
+endfunction
+inoremap <silent><nowait><expr> <ESC> pumvisible() ?  COCCA() : "\<ESC>"
+
+"inoremap <silent><nowait><expr> <ESC> coc#float#has_float() ? coc#float#close_all([1]) : "\<ESC>"
+"inoremap <silent><expr> <ESC> coc#float#has_float() ? "\<CMD>" echo "ss" "\<CR>" : "\<CMD>" echo "ss" "\<CR>"
+"inoremap <silent><nowait><expr> <C-f> coc#float#has_float() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+
+

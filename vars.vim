@@ -66,6 +66,8 @@ let g:coc_global_extensions = [
             \'coc-tsserver'
             \]
 
+" On case of use the other intelephense
+call add(g:coc_global_extensions, '@yaegassy/coc-intelephense')
 
 "Any fold vim
 " no use function minial on the any fold
