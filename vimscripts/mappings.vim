@@ -16,7 +16,7 @@ nnoremap <silent><M-up> <C-w>k
 
 " INDENT 
 vnoremap <silent>> >gv
-vnoremap <silent>< >gv
+vnoremap <silent>< <gv
 
 " COPY
 vnoremap <silent><C-c> "+y:echo "Copy "<CR>
