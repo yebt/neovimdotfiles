@@ -65,6 +65,9 @@ Plug 'folke/which-key.nvim'
 " FUGITIVE 
 Plug 'tpope/vim-fugitive'
 
+" VIM BRANCH
+Plug 'itchyny/vim-gitbranch'
+
 " GIT 
 Plug 'lewis6991/gitsigns.nvim'
 

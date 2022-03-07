@@ -47,9 +47,35 @@ let g:startify_custom_header = [
             \"   └────────────────────────────────┘",
             \]
 
-let g:startify_files_number = 2
+let g:startify_files_number = 4
 
+let g:startify_commands = [
+            \ {'h': ['History','Telescope oldfiles']},
+            \ {'sf': ['Search File','Telescope fd']},
+            \ {'fw': ['Find word','Telescope live_grep']},
+            \ {'gs': ['Git Status','Telescope git_status']},
+            \ ]
 
+let g:startify_lists = [
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ ]
+
+let g:startify_session_before_save = ['silent! tabdo NERDTreeClose', 'silent! TagbarClose']
+let g:startify_session_persistence = 1
+
+function! GetUniqueSessionName()
+  let path = fnamemodify(getcwd(), ':~:t')
+  let path = empty(path) ? 'no-project' : path
+  let branch = gitbranch#name()
+  let branch = empty(branch) ? '' : '-' . branch
+  return substitute(path . branch, '/', '-', 'g')
+endfunction
+
+autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
+autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
 
 
 " INDENTLINE
