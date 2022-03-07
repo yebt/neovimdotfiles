@@ -25,7 +25,7 @@ augroup end
 
 " AUTO HIGHLIGHT 
 "autocmd CursorHold * silent call HoldCursor()
-autocmd CursorHold * call HighlightCursorWord()
+" autocmd CursorHold * call HighlightCursorWord()
 
 " TOGGLE REMAP
 autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>

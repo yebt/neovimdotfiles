@@ -96,9 +96,6 @@ function! MyFoldText()
     return v:folddashes . sub
 endfunction
 
-" autosave delay, cursorhold trigger, default: 4000ms
-setl updatetime=300
-
 " highlight the word under cursor (CursorMoved is inperformant)
 highlight WordUnderCursor cterm=underline gui=underline
 
