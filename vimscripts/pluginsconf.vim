@@ -3,32 +3,32 @@
 let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.tpl'
 
 " DASHBOARD
-let g:dashboard_default_executive ='telescope'
-let g:dashboard_custom_shortcut={
-            \ 'last_session'       : 'SPC s l',
-            \ 'find_history'       : 'SPC f h',
-            \ 'find_file'          : 'SPC f f',
-            \ 'new_file'           : 'SPC c n',
-            \ 'change_colorscheme' : 'SPC t c',
-            \ 'find_word'          : 'SPC f a',
-            \ 'book_marks'         : 'SPC f b',
-            \ }
+" let g:dashboard_default_executive ='telescope'
+" let g:dashboard_custom_shortcut={
+"             \ 'last_session'       : 'SPC s l',
+"             \ 'find_history'       : 'SPC f h',
+"             \ 'find_file'          : 'SPC f f',
+"             \ 'new_file'           : 'SPC c n',
+"             \ 'change_colorscheme' : 'SPC t c',
+"             \ 'find_word'          : 'SPC f a',
+"             \ 'book_marks'         : 'SPC f b',
+"             \ }
 
-let g:dashboard_custom_header = [
-            \" ┌────────────────────────────────┐",
-            \" │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣶⣶⡿⠟⠻⢿⣶⣶⣶⣤⣄⡀⠀⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠀⢀⣴⡿⠛⠉⠉⠀⠀⢸⣿⡁⠀⠀⠈⠉⠉⠉⠉⠻⣿⡄⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀⠀⠀⠀⠀⠻⣷⣤⡄⠀⠀⠀⠘⠃⠀⣿⣷⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⣀⣀⣀⣀⣀⣀⣿⣿⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣿⡿⠿⠿⠿⠿⣿⣿⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠘⢿⣿⠀⠀⣄⣀⠀⠀⠀⣀⣀⠀⠀⣿⡇⠀⣀⡀⠀⣿⣿⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⣿⡿⠿⠿⠿⢿⣿⠀⠀⣿⡇⠀⢻⣷⣤⣿⠏⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠉⠉⠁⠀⠀⠀  ⠀│",
-            \" │⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│",
-            \" │         --- by bey ---         │",
-            \" └────────────────────────────────┘",
-            \]
+" let g:dashboard_custom_header = [
+"             \" ┌────────────────────────────────┐",
+"             \" │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣶⣶⡿⠟⠻⢿⣶⣶⣶⣤⣄⡀⠀⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠀⢀⣴⡿⠛⠉⠉⠀⠀⢸⣿⡁⠀⠀⠈⠉⠉⠉⠉⠻⣿⡄⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀⠀⠀⠀⠀⠻⣷⣤⡄⠀⠀⠀⠘⠃⠀⣿⣷⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⣀⣀⣀⣀⣀⣀⣿⣿⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣿⡿⠿⠿⠿⠿⣿⣿⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠘⢿⣿⠀⠀⣄⣀⠀⠀⠀⣀⣀⠀⠀⣿⡇⠀⣀⡀⠀⣿⣿⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⣿⡿⠿⠿⠿⢿⣿⠀⠀⣿⡇⠀⢻⣷⣤⣿⠏⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠉⠉⠁⠀⠀⠀  ⠀│",
+"             \" │⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│",
+"             \" │         --- by bey ---         │",
+"             \" └────────────────────────────────┘",
+"             \]
 
 " STARTIFY
 let g:startify_custom_header = [
@@ -54,6 +54,8 @@ let g:startify_commands = [
             \ {'sf': ['Search File','Telescope fd']},
             \ {'fw': ['Find word','Telescope live_grep']},
             \ {'gs': ['Git Status','Telescope git_status']},
+            \ {'css': ['Clear all sessions', '!rm -rf ~/.local/share/nvim/session/*']},
+            \ {'cswp': ['Clear all swap files', '!rm -rf ~/.local/share/nvim/swap/*']},
             \ ]
 
 let g:startify_lists = [
@@ -61,6 +63,11 @@ let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'files',     'header': ['   MRU']            },
+          \ ]
+
+let g:startify_lists = [
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ ]
 
 let g:startify_session_before_save = ['silent! tabdo NERDTreeClose', 'silent! TagbarClose']

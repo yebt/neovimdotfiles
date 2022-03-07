@@ -5,7 +5,7 @@
 --require("cmp_nvim_ultinips").setup{}
 
 -- luasnip setup
-local luasnip = require 'luasnip'
+-- local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -70,7 +70,7 @@ local cmp_kinds = {
 cmp.setup {
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
+            -- luasnip.lsp_expand(args.body)
             vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
@@ -90,8 +90,8 @@ cmp.setup {
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            -- elseif luasnip.expand_or_jumpable() then
+                -- luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -99,8 +99,8 @@ cmp.setup {
         ['<S-Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            -- elseif luasnip.jumpable(-1) then
+                -- luasnip.jump(-1)
             else
                 fallback()
             end
@@ -133,7 +133,7 @@ cmp.setup {
             vim_item.menu = ({
                 buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
-                luasnip = "[Luasnip]",
+                -- luasnip = "[Luasnip]",
                 nvim_lua = "[Lua]",
                 latex_symbols = "[LaTeX]",
                 cmp_tabnine = "[TN]",
@@ -145,11 +145,11 @@ cmp.setup {
 
 }
 
-cmp.setup.cmdline('/', {
-    view = {
-        entries = {name = 'wildmenu', separator = '|'}
-    }
-})
+-- cmp.setup.cmdline('/', {
+--     view = {
+--         entries = {name = 'wildmenu', separator = '|'}
+--     }
+-- })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(':', {

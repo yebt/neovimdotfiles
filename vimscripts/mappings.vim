@@ -70,10 +70,12 @@ vnoremap <silent>[ <ESC>gvS]
 nnoremap <silent><HOME> <CMD>call HomeVSC()<CR>
 inoremap <silent><HOME> <C-o>:call HomeVSC()<CR>
 
-nnoremap <silent><S-ScrollWheelDown> zl
-nnoremap <silent><S-ScrollWheelUp> zh
-nnoremap <silent><zl> 5zl
-nnoremap <silent><zh> 5zh 
+" map <C-ScrollWheelUp> 10zh
+" map <C-ScrollWheelDown> 10zl
+" nnoremap <silent><zl> 10zl
+" nnoremap <silent><zh> 5zh 
+nnoremap <silent><C-h> 10zh
+nnoremap <silent><C-l> 10zl
 
 " TELESCOPE BUFFERS
 "nnoremap <silent><leader>b <CMD>Telescope buffers theme=ivy<CR>

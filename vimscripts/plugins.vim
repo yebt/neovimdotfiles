@@ -25,8 +25,12 @@ Plug 'nvim-lua/plenary.nvim'
 " TELESCOPE
 Plug 'nvim-telescope/telescope.nvim'
 
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " SPECTRE
-Plug 'nvim-pack/nvim-spectre'
+"Plug 'nvim-pack/nvim-spectre'
 
 " Toggle term
 Plug 'akinsho/toggleterm.nvim'
@@ -45,13 +49,13 @@ Plug 'terrortylor/nvim-comment'
 Plug 'leafOfTree/vim-matchtag'
 
 " EMMET 
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 
 " Bbye
 "Plug 'moll/vim-bbye'
 
 " COOL
-Plug 'romainl/vim-cool'
+"Plug 'romainl/vim-cool'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
@@ -60,10 +64,10 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'ms-jpq/chadtree'
 
 " nvim tree
-Plug 'kyazdani42/nvim-tree.lua'
+"Plug 'kyazdani42/nvim-tree.lua'
 
 " CATAG 
-Plug 'preservim/tagbar'
+"Plug 'preservim/tagbar'
 
 " WICH KEY
 Plug 'folke/which-key.nvim'
@@ -74,14 +78,14 @@ Plug 'folke/which-key.nvim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 " Plug 'romgrk/barbar.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'akinsho/bufferline.nvim'
+"Plug 'nvim-lualine/lualine.nvim'
+"Plug 'akinsho/bufferline.nvim'
 
 " FUGITIVE 
 Plug 'tpope/vim-fugitive'
 
 " LOG
-Plug 'rbong/vim-flog'
+"Plug 'rbong/vim-flog'
 
 " VIM BRANCH
 Plug 'itchyny/vim-gitbranch'
@@ -101,16 +105,16 @@ Plug 'mhinz/vim-startify'
 
 " COLOR KANAGAWA
 Plug 'rebelot/kanagawa.nvim'
-Plug 'mcchrish/zenbones.nvim'
-Plug 'rktjmp/lush.nvim'
-Plug 'frenzyexists/aquarium-vim'
+"Plug 'mcchrish/zenbones.nvim'
+"Plug 'rktjmp/lush.nvim'
+"Plug 'frenzyexists/aquarium-vim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
 " SNIP
-Plug 'L3MON4D3/LuaSnip'
+"Plug 'L3MON4D3/LuaSnip'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
@@ -125,8 +129,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-emoji'
+"Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/cmp-emoji'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
@@ -146,13 +150,13 @@ lua require  'setup/treesitter'
 lua require  'setup/nvim-ts-autotag'
 lua require  'setup/nvim-autopairs'
 lua require  'setup/nvim-comment'
-lua require  'setup/nvim-spectre'
+"lua require  'setup/nvim-spectre'
 "lua require  'setup/barbar'
-lua require  'setup/bufferline'
-lua require  'setup/lualine'
+"lua require  'setup/bufferline'
+"lua require  'setup/lualine'
 lua require  'setup/which-key'
 lua require  'setup/indent'
-lua require  'setup/nvimtree'
+" lua require  'setup/nvimtree'
 lua require  'setup/nvim-lspconfig'
 lua require  'setup/nvim-installer'
 lua require  'setup/cmp'
