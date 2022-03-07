@@ -85,3 +85,5 @@ nnoremap <silent><leader>th <CMD>Telescope oldfiles theme=ivy<CR>
 nnoremap <silent><leader>tff <CMD>Telescope oldfiles theme=ivy<CR>
 nnoremap <silent><leader>tfw <CMD>Telescope oldfiles theme=ivy<CR>
 
+nnoremap <silent><leader>h :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+

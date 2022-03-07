@@ -24,7 +24,7 @@ augroup restore_cursor
 augroup end
 
 " AUTO HIGHLIGHT 
-autocmd CursorHold * silent call HoldCursor()
+"autocmd CursorHold * silent call HoldCursor()
 autocmd CursorHold * call HighlightCursorWord()
 
 " TOGGLE REMAP
