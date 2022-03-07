@@ -58,4 +58,6 @@ set conceallevel=2
 
 set termguicolors
 
+"set completeopt=menu,menuone,noselect,preview
+
 colorscheme kanagawa

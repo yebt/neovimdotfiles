@@ -1,6 +1,9 @@
 --  lua tipe
 -- local lspkind = require 'lspkind'
 
+-- ultisnps integration
+--require("cmp_nvim_ultinips").setup{}
+
 -- luasnip setup
 local luasnip = require 'luasnip'
 
@@ -68,6 +71,7 @@ cmp.setup {
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
+            vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
 
@@ -81,7 +85,7 @@ cmp.setup {
         ['<ESC>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
         },
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
@@ -104,12 +108,21 @@ cmp.setup {
     },
 
     sources = {
+        { name = "ultisnips" },
         { name = 'nvim_lsp' },
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'path' },
+        { name = 'nvim_lua' },
+        -- { name = 'luasnip' },
+        -- { name = 'emoji' },
+        {
+            name = 'path',
+            option = {
+                trailing_slash = true
+            },
+        },
         { name = 'buffer' },
         { name = 'cmp_tabnine' },
+        { name = 'nvim_lsp_signature_help' }
+
 
     },
     formatting = {
@@ -124,14 +137,12 @@ cmp.setup {
                 nvim_lua = "[Lua]",
                 latex_symbols = "[LaTeX]",
                 cmp_tabnine = "[TN]",
+                ultisnips = "[UltiSnips]"
             })[entry.source.name]
             return vim_item
         end
     },
 
-    --view = {
-    --    entries = "custom" -- can be "custom", "wildmenu" or "native"
-    --},
 }
 
 cmp.setup.cmdline('/', {
@@ -139,3 +150,13 @@ cmp.setup.cmdline('/', {
         entries = {name = 'wildmenu', separator = '|'}
     }
 })
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline(':', {
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--         { name = 'cmdline' }
+--     })
+-- })
+

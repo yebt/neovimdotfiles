@@ -2,11 +2,13 @@
 let mapleader =","
 
 " BUFFER ACTIONS
-nnoremap <silent><M-w> :w<CR>
-nnoremap <silent><M-q> :q<CR>
-nnoremap <silent><M-c> :bd<CR>
-nnoremap <silent><M-S-Right> :bn<CR>
-nnoremap <silent><M-S-Left> :bp<CR>
+nnoremap <silent><M-w> <CMD>w<CR>
+nnoremap <silent><M-q> <CMD>q<CR>
+"nnoremap <silent><M-c> <CMD>bd<CR>
+nnoremap <expr><silent><M-c> exists(":Bdelete")? "<CMD>Bdelete<CR>"  : "<CMD>bd<CR>"
+
+nnoremap <silent><M-S-Right> <CMD>bn<CR>
+nnoremap <silent><M-S-Left> <CMD>bp<CR>
 
 " PANEL NAVIGATION
 nnoremap <silent><M-Left> <C-w>h
@@ -26,14 +28,16 @@ nnoremap <silent><C-a> gg0vG$
 noremap <silent><M-i> gg=G<C-o>
 
 " SPLIT
-nnoremap <silent><M-s>v :vertical split<CR>
-nnoremap <silent><M-s>h :split<CR>
-nnoremap <silent><M-s> :split<CR>
+nnoremap <silent><M-s>v <CMD>vertical split<CR>
+nnoremap <silent><M-s>h <CMD>split<CR>
+nnoremap <silent><M-s> <CMD>split<CR>
 
 " TOGGLE WRAP
-nnoremap <silent><leader>w :set wrap!<CR>
-nnoremap <silent><leader>n :set number!<CR>
-nnoremap <silent><leader>r :set relativenumber!<CR>
+nnoremap <silent><leader>w <CMD>set wrap!<CR>
+nnoremap <silent><leader>n <CMD>set number!<CR>
+nnoremap <silent><leader>r <CMD>set relativenumber!<CR>
+
+nnoremap <silent><leader>i <CMD>IndentBlanklineToggle<CR>
 
 " SPECTRE 
 nnoremap <silent><leader>sw <cmd>lua require('spectre').open_visual({select_word=true})<CR>
@@ -63,11 +67,21 @@ vnoremap <silent>{ <ESC>gvS}
 vnoremap <silent>[ <ESC>gvS]
 
 " OVERWRITE HOME
-nnoremap <silent><HOME> :call HomeVSC()<CR>
+nnoremap <silent><HOME> <CMD>call HomeVSC()<CR>
 inoremap <silent><HOME> <C-o>:call HomeVSC()<CR>
 
 nnoremap <silent><S-ScrollWheelDown> zl
 nnoremap <silent><S-ScrollWheelUp> zh
 nnoremap <silent><zl> 5zl
 nnoremap <silent><zh> 5zh 
+
+" TELESCOPE BUFFERS
+"nnoremap <silent><leader>b <CMD>Telescope buffers theme=ivy<CR>
+"nnoremap <silent><leader>b <CMD>Telescope buffers theme=dropdown <CR>
+"nnoremap <silent><leader>b <CMD>Telescope buffers theme=cursor <CR>
+nnoremap <silent><leader>b <CMD>Telescope buffers theme=dropdown<CR>
+nnoremap <silent><leader>d <CMD>Telescope diagnostics theme=cursor<CR>
+nnoremap <silent><leader>th <CMD>Telescope oldfiles theme=ivy<CR>
+nnoremap <silent><leader>tff <CMD>Telescope oldfiles theme=ivy<CR>
+nnoremap <silent><leader>tfw <CMD>Telescope oldfiles theme=ivy<CR>
 

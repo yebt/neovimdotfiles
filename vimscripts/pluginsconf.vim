@@ -86,3 +86,31 @@ let g:nvim_tree_indent_markers = 1
 let g:indent_blankline_filetype_exclude = ['help', 'startify', 'checkhealth', 'lspinfo', 'lsp-installer', 'CHADTree', 'NvimTree', 'tagbar']
 
 
+" airline 
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline_theme='seoul256'
+" let g:airline_theme='zenburn'
+"let g:airline_theme='transparent'
+" distinguished
+" hybridline
+" luna
+" minimalist
+" onedark
+" seoul256
+" supernova
+" trasnparent
+" zenburn
+
+" BARBAR
+" let bufferline = get(g:, 'bufferline', {})
+" let bufferline.add_in_buffer_number_order = v:false
+" let bufferline.animation = v:false
+" let bufferline.auto_hide = v:false
+" let bufferline.tabpages = v:true
+" let bufferline.closable = v:false
+" let bufferline.clickable = v:true
+" let bufferline.icon_pinned = ''
+
+

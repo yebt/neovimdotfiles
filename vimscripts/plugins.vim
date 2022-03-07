@@ -47,6 +47,12 @@ Plug 'leafOfTree/vim-matchtag'
 " EMMET 
 Plug 'mattn/emmet-vim'
 
+" Bbye
+"Plug 'moll/vim-bbye'
+
+" COOL
+Plug 'romainl/vim-cool'
+
 " Icons
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 
@@ -62,11 +68,26 @@ Plug 'preservim/tagbar'
 " WICH KEY
 Plug 'folke/which-key.nvim'
 
+" VIM BUFTABLINE
+"Plug 'ap/vim-buftabline'
+"Plug 'pacha/vem-tabline'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+" Plug 'romgrk/barbar.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim'
+
 " FUGITIVE 
 Plug 'tpope/vim-fugitive'
 
+" LOG
+Plug 'rbong/vim-flog'
+
 " VIM BRANCH
 Plug 'itchyny/vim-gitbranch'
+
+" VIM-MUNDO
+"Plug 'simnalamburt/vim-mundo'
 
 " GIT 
 Plug 'lewis6991/gitsigns.nvim'
@@ -90,17 +111,23 @@ Plug 'williamboman/nvim-lsp-installer'
 
 " SNIP
 Plug 'L3MON4D3/LuaSnip'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
 "CMP
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 Plug 'onsails/lspkind-nvim'
 
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-
+Plug 'hrsh7th/cmp-emoji'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 call plug#end()
@@ -112,6 +139,10 @@ lua require  'setup/treesitter'
 lua require  'setup/nvim-ts-autotag'
 lua require  'setup/nvim-autopairs'
 lua require  'setup/nvim-comment'
+lua require  'setup/nvim-spectre'
+"lua require  'setup/barbar'
+lua require  'setup/bufferline'
+lua require  'setup/lualine'
 lua require  'setup/which-key'
 lua require  'setup/indent'
 lua require  'setup/nvimtree'
