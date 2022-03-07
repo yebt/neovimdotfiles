@@ -49,11 +49,17 @@ Plug 'mattn/emmet-vim'
 " CHADtree
 Plug 'ms-jpq/chadtree'
 
+" nvim tree
+Plug 'kyazdani42/nvim-tree.lua'
+
 " WICH KEY
 Plug 'folke/which-key.nvim'
 
 " GIT 
 Plug 'lewis6991/gitsigns.nvim'
+
+" LINE
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " DASHBOARD
 "Plug 'glepnir/dashboard-nvim'
@@ -145,6 +151,8 @@ lua require  'setup/nvim-ts-autotag'
 lua require  'setup/nvim-autopairs'
 lua require  'setup/nvim-comment'
 lua require  'setup/which-key'
+lua require  'setup/indent'
+lua require  'setup/nvimtree'
 lua require  'setup/nvim-lspconfig'
 lua require  'setup/nvim-installer'
 lua require  'setup/cmp'
