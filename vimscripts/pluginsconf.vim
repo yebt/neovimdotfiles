@@ -74,8 +74,11 @@ function! GetUniqueSessionName()
   return substitute(path . branch, '/', '-', 'g')
 endfunction
 
-autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
+"autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
 autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
+
+" TELESCOPE
+autocmd User TelescopePreviewerLoaded setlocal wrap
 
 
 " INDENTLINE
