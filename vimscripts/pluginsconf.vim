@@ -51,11 +51,11 @@ let g:startify_files_number = 4
 
 let g:startify_commands = [
             \ {'h': ['History','Telescope oldfiles']},
-            \ {'sf': ['Search File','Telescope fd']},
+            \ {'ff': ['Search File','Telescope fd']},
             \ {'fw': ['Find word','Telescope live_grep']},
             \ {'gs': ['Git Status','Telescope git_status']},
-            \ {'css': ['Clear all sessions', '!rm -rf ~/.local/share/nvim/session/*']},
-            \ {'cswp': ['Clear all swap files', '!rm -rf ~/.local/share/nvim/swap/*']},
+            \ {'cs': ['Clear all sessions', '!rm -rf ~/.local/share/nvim/session/*']},
+            \ {'cw': ['Clear all swap files', '!rm -rf ~/.local/share/nvim/swap/*']},
             \ ]
 
 let g:startify_lists = [
