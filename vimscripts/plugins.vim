@@ -82,6 +82,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+
 call plug#end()
 
 "" SOME VARS
@@ -137,6 +139,7 @@ let g:startify_files_number = 10
 
 "" LOAD CONFIGS
 "source ~/.config/nvim/vimscripts/setup/plugin.vim
+lua require  'setup/gitsigns'
 lua require  'setup/treesitter'
 lua require  'setup/nvim-ts-autotag'
 lua require  'setup/nvim-autopairs'
@@ -145,15 +148,9 @@ lua require  'setup/which-key'
 lua require  'setup/nvim-lspconfig'
 lua require  'setup/nvim-installer'
 lua require  'setup/cmp'
+lua require  'setup/cmp_tabnine'
 
-"luafile ~/.config/nvim/vimscripts/setup/treesitter.lua
-"luafile ~/.config/nvim/vimscripts/setup/nvim-ts-autotag.lua
-"luafile ~/.config/nvim/vimscripts/setup/nvim-autopairs.lua
-"luafile ~/.config/nvim/vimscripts/setup/nvim-comment.lua
-"luafile ~/.config/nvim/vimscripts/setup/which-key.lua
-"luafile ~/.config/nvim/vimscripts/setup/nvim-lspconfig.lua
-"luafile ~/.config/nvim/vimscripts/setup/nvim-installer.lua
-"luafile ~/.config/nvim/vimscripts/setup/cmp.lua
+
 
 ""luafile ~/.config/nvim/vimscripts/setup/treesitter-context.lua
 ""luafile ~/.config/nvim/vimscripts/setup/treesitter-ts-rainbow.lua

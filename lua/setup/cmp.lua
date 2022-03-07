@@ -61,6 +61,7 @@ local cmp_kinds = {
     Event = '  ',
     Operator = '  ',
     TypeParameter = '  ',
+
 }
 
 cmp.setup {
@@ -107,6 +108,8 @@ cmp.setup {
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'buffer' },
+        { name = 'cmp_tabnine' },
+
     },
     formatting = {
         format = function(entry, vim_item)
@@ -114,11 +117,12 @@ cmp.setup {
             vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             -- Source
             vim_item.menu = ({
-                buffer = "[Buffer]",
+                buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
-                luasnip = "[LuaSnip]",
+                luasnip = "[Luasnip]",
                 nvim_lua = "[Lua]",
                 latex_symbols = "[LaTeX]",
+                cmp_tabnine = "[TN]",
             })[entry.source.name]
             return vim_item
         end
