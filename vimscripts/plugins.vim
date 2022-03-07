@@ -130,7 +130,14 @@ Plug 'hrsh7th/cmp-emoji'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
+
+" IMPATIENT
+Plug 'lewis6991/impatient.nvim'
+
 call plug#end()
+
+lua require('impatient')
+lua require'impatient'.enable_profile()
 
 "" LOAD CONFIGS
 source ~/.config/nvim/vimscripts/pluginsconf.vim
