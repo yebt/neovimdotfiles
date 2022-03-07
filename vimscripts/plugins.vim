@@ -1,3 +1,4 @@
+" PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
 " UI
@@ -46,11 +47,17 @@ Plug 'leafOfTree/vim-matchtag'
 " EMMET 
 Plug 'mattn/emmet-vim'
 
+" Icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+
 " CHADtree
 Plug 'ms-jpq/chadtree'
 
 " nvim tree
 Plug 'kyazdani42/nvim-tree.lua'
+
+" CATAG 
+Plug 'preservim/tagbar'
 
 " WICH KEY
 Plug 'folke/which-key.nvim'
@@ -142,6 +149,8 @@ let g:startify_custom_header = [
 
 let g:startify_files_number = 10
 
+let g:nvim_tree_indent_markers = 1
+let g:indent_blankline_filetype_exclude = ['help', 'startify', 'checkhealth', 'lspinfo', 'lsp-installer', 'CHADTree', 'NvimTree', 'tagbar']
 
 "" LOAD CONFIGS
 "source ~/.config/nvim/vimscripts/setup/plugin.vim

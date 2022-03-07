@@ -16,6 +16,7 @@ require'treesitter-context'.setup{
             'if',
             'switch',
             'case',
+            '*'
         },
         -- Example for a specific filetype.
         -- If a pattern is missing, *open a PR* so everyone can benefit.
