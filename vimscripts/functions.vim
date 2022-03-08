@@ -48,9 +48,10 @@ command! PHPCSFBEY call PHPCSFBEY()
 "" PHP 
 " try use php initp
 function! PHPinitCharacter()
-    if line('.') == 2
-        " echo "asdf"
-        call append(line('.')0,"<?php")
+    if line('.') == 1 
+        call append(line('.') -1,"<?php")
+    else
+        return "<"
     endif
 endfunction
 

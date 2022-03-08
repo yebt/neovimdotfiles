@@ -7,6 +7,7 @@ nnoremap <silent><M-q> <CMD>q<CR>
 "nnoremap <silent><M-c> <CMD>bd<CR>
 nnoremap <expr><silent><M-c> exists(":Bdelete")? "<CMD>Bdelete<CR>"  : "<CMD>bd<CR>"
 
+
 nnoremap <silent><M-S-Right> <CMD>bn<CR>
 nnoremap <silent><M-S-Left> <CMD>bp<CR>
 

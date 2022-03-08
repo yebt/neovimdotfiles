@@ -46,7 +46,8 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " PHP INIT CHARACTER
 augroup phpinitcharacter
     autocmd!
-    autocmd BufNewFile,BufRead *.php inoremap <silent>< <C-o>:call PHPinitCharacter()<cr>
+    " autocmd BufNewFile,BufRead *.php inoremap <silent>< <C-o>:call PHPinitCharacter()<cr>
+    autocmd BufNewFile,BufRead *.php inoremap <expr><silent>< line('.')==1? "\<?php<CR><CR>"  : "<"
 augroup END
 
 
