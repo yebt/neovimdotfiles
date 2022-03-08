@@ -1,28 +1,43 @@
+" ┌────────────────────────────────┐
+" │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣶⣶⡿⠟⠻⢿⣶⣶⣶⣤⣄⡀⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢀⣴⡿⠛⠉⠉⠀⠀⢸⣿⡁⠀⠀⠈⠉⠉⠉⠉⠻⣿⡄⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀⠀⠀⠀⠀⠻⣷⣤⡄⠀⠀⠀⠘⠃⠀⣿⣷⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⣀⣀⣀⣀⣀⣀⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣿⡿⠿⠿⠿⠿⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠘⢿⣿⠀⠀⣄⣀⠀⠀⠀⣀⣀⠀⠀⣿⡇⠀⣀⡀⠀⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⣿⡿⠿⠿⠿⢿⣿⠀⠀⣿⡇⠀⢻⣷⣤⣿⠏⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠉⠉⠁⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│
+" │    --- by bey: MAPPINGS ---    │
+" └────────────────────────────────┘
+"
 " LEADER MAP
 let mapleader =","
 
 " BUFFER ACTIONS
-nnoremap <silent><M-w> <CMD>w<CR>
+nnoremap <silent><M-w> <CMD>w<CR><CMD>echo ""<CR>
+inoremap <silent><M-w> <ESC><CMD>w<CR><CMD>echo ""<CR>
 nnoremap <silent><M-q> <CMD>q<CR>
-"nnoremap <silent><M-c> <CMD>bd<CR>
+inoremap <silent><M-q> <ESC><CMD>q<CR>
+
 nnoremap <expr><silent><M-c> exists(":Bdelete")? "<CMD>Bdelete<CR>"  : "<CMD>bd<CR>"
 
-
-nnoremap <silent><M-S-Right> <CMD>bn<CR>
-nnoremap <silent><M-S-Left> <CMD>bp<CR>
+nnoremap <silent><M-S-Right> <CMD>bn<CR><CMD>echo "ﲖ"   <CR>
+nnoremap <silent><M-S-Left> <CMD>bp<CR><CMD>echo "ﲕ"  <CR>
 
 " PANEL NAVIGATION
-nnoremap <silent><M-Left> <C-w>h
-nnoremap <silent><M-Right> <C-w>l
-nnoremap <silent><M-Down> <C-w>j
-nnoremap <silent><M-up> <C-w>k
+nnoremap <silent><M-Left> <C-w>h<CMD>echo "" <CR>
+nnoremap <silent><M-Right> <C-w>l<CMD>echo "" <CR>
+nnoremap <silent><M-Down> <C-w>j<CMD>echo "" <CR>
+nnoremap <silent><M-up> <C-w>k<CMD>echo "" <CR>
 
 " INDENT 
 vnoremap <silent>> >gv
 vnoremap <silent>< <gv
 
 " COPY
-vnoremap <silent><C-c> "+y:echo "Copy "<CR>
+vnoremap <silent><C-c> "+y:echo "📎"<CR>
 " SELECT ALL
 nnoremap <silent><C-a> gg0vG$
 " FORMAT AUTOINDENT
@@ -34,9 +49,9 @@ nnoremap <silent><M-s>h <CMD>split<CR>
 nnoremap <silent><M-s> <CMD>split<CR>
 
 " TOGGLE WRAP
-nnoremap <silent><leader>w <CMD>set wrap!<CR>
-nnoremap <silent><leader>n <CMD>set number!<CR>
-nnoremap <silent><leader>r <CMD>set relativenumber!<CR>
+nnoremap <silent><leader>w <CMD>set wrap!<CR><CMD>echo "蝹"<CR>
+nnoremap <silent><leader>n <CMD>set number!<CR><CMD> echo "" <CR>
+nnoremap <silent><leader>r <CMD>set relativenumber!<CR><CMD>echo ""<CR>
 
 nnoremap <silent><leader>i <CMD>IndentBlanklineToggle<CR>
 

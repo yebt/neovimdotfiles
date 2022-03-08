@@ -1,3 +1,18 @@
+" ┌────────────────────────────────┐
+" │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣶⣶⡿⠟⠻⢿⣶⣶⣶⣤⣄⡀⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢀⣴⡿⠛⠉⠉⠀⠀⢸⣿⡁⠀⠀⠈⠉⠉⠉⠉⠻⣿⡄⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀⠀⠀⠀⠀⠻⣷⣤⡄⠀⠀⠀⠘⠃⠀⣿⣷⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⣀⣀⣀⣀⣀⣀⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣿⡿⠿⠿⠿⠿⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠘⢿⣿⠀⠀⣄⣀⠀⠀⠀⣀⣀⠀⠀⣿⡇⠀⣀⡀⠀⣿⣿⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⣿⡿⠿⠿⠿⢿⣿⠀⠀⣿⡇⠀⢻⣷⣤⣿⠏⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠀⢸⣿⣤⣤⣿⡇⠀⠀⠉⠉⠁⠀⠀⠀  ⠀│
+" │⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀  ⠀│
+" │    --- by bey: FUCNITONS ---   │
+" └────────────────────────────────┘
+"
+
 " try work the home key
 function! HomeVSC()
     let lastcurp = col('.')
@@ -9,7 +24,7 @@ endfunction
 
 
 " PHP code sniffer
-function! PHPCSFBEY()
+function! PHPCBF()
     if filereadable("./vendor/bin/phpcbf")
         execute '! ./vendor/bin/phpcbf --standard=PSR13  '. expand('%') 
     elseif filereadable("phpcbf")
@@ -19,76 +34,7 @@ function! PHPCSFBEY()
     endif
 endfunction
 
-command! PHPCSFBEY call PHPCSFBEY()
-
-" Try use trigger to fold
-" function! ToggleFod()
-"     let foldM=&foldmethod
-"     if (foldM == 'manual')
-"         echo "Is Manual"
-"         set foldmethod=expr
-"         set foldexpr=nvim_treesitter#foldexpr()
-"     elseif (foldM == 'expr' )
-
-"     else 
-"         echo "No manual"
-"     endif
-"     echo foldM
-" endfunction
-
-" Add `:Format` command to format current buffer.
-" command! -nargs=1 Format call CocActionAsync('format') 
-
-" Add `:Fold` command to fold current buffer.
-" command! -nargs=? Fold  call CocAction('fold', <f-args>) 
-
-" Add `:OR` command for organize imports of the current buffer.
-" command! -nargs=1 OR   :try call CocActionAsync('runCommand', 'editor.action.organizeImport') catch /.*/ echo "No coc organize imppss" endtry
-
-"" PHP 
-" try use php initp
-function! PHPinitCharacter()
-    if line('.') == 1 
-        call append(line('.') -1,"<?php")
-    else
-        return "<"
-    endif
-endfunction
-
-"FOLD
-" trye overwrite the fold
-" TRY config fold
-" function! SetAtFold()
-"     try 
-"         let tempfiletype=&filetype
-"         if (tempfiletype == 'vim'  )
-"         " if (tempfiletype == 'vim' || tempfiletype == 'conf' )
-"             set foldmethod=marker
-"             set foldlevel=2
-"         elseif (tempfiletype == 'conf')
-"             set foldmethod=manual
-"             set foldlevel=3
-"         else
-"             set foldmethod=expr
-"             set foldlevel=100
-"             "AnyFoldActivate
-"             " call CocAction('fold')
-"             " call CocAction('fold')
-"         endif
-"     catch /.*/
-"         echo "FOLD AT SET ERROR"
-"     endtry
-" endfunction
-
-
-"" CURSOR HOLD
-" function! HoldCursor()
-"     try 
-"         call CocActionAsync('highlight')
-"     catch /.*/
-"     endtry
-" endfunction
-
+command! PHPCBF call PHPCBF()
 
 " FOLD
 function! MyFoldText()
@@ -97,29 +43,9 @@ function! MyFoldText()
     return v:folddashes . sub
 endfunction
 
-" highlight the word under cursor (CursorMoved is inperformant)
+" CURSOR WORD
+
 highlight WordUnderCursor cterm=underline gui=underline
-
-
-
-function! AutoHighlightToggle()
-    let @/ = ''
-    if exists('#auto_highlight')
-        au! auto_highlight
-        augroup! auto_highlight
-        setl updatetime=4000
-        echo 'Highlight current word: off'
-        return 0
-    else
-        augroup auto_highlight
-            au!
-            au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-        augroup end
-        setl updatetime=500
-        echo 'Highlight current word: ON'
-        return 1
-    endif
-endfunction
 
 function! HighlightCursorWord()
     " if hlsearch is active, don't overwrite it!
@@ -128,4 +54,15 @@ function! HighlightCursorWord()
     if match(cword, search) == -1
         exe printf('match WordUnderCursor /\V\<%s\>/', escape(cword, '/\'))
     endif
+endfunction
+
+" STAUS LINE
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
