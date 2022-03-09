@@ -39,7 +39,7 @@ command! PHPCBF call PHPCBF()
 " FOLD
 function! MyFoldText()
     let line = getline(v:foldstart)
-    let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g') 
     return v:folddashes . sub
 endfunction
 
@@ -59,10 +59,16 @@ endfunction
 " STAUS LINE
 
 function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
 function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
+
+" function! GetICon()
+"     return luaeval("require'nvim-web-devicons'.get_icon('" . expand('%'). "')")
+" endfunction
+
+

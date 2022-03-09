@@ -53,7 +53,7 @@ nnoremap <silent><leader>w <CMD>set wrap!<CR><CMD>echo "蝹"<CR>
 nnoremap <silent><leader>n <CMD>set number!<CR><CMD> echo "" <CR>
 nnoremap <silent><leader>r <CMD>set relativenumber!<CR><CMD>echo ""<CR>
 
-nnoremap <silent><leader>i <CMD>IndentBlanklineToggle<CR>
+"nnoremap <silent><leader>i <CMD>IndentBlanklineToggle<CR>
 
 " SPECTRE 
 nnoremap <silent><leader>sw <cmd>lua require('spectre').open_visual({select_word=true})<CR>
@@ -67,12 +67,13 @@ nnoremap <silent><A-t> <cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><A-t> <ESC><cmd>exe v:count1 . "ToggleTerm"<CR>
 
 " CHADTREE
-nnoremap <silent><A-b> <CMD>CHADopen<CR> 
+" nnoremap <silent><A-b> <CMD>CHADopen<CR> 
 
 " NVIM TREE
-nnoremap <silent><A-n><A-n> <cmd>NvimTreeToggle<CR>
-nnoremap <silent><A-n>r <cmd>NvimTreeRefresh<CR>
-nnoremap <silent><A-n>f <cmd>NvimTreeFindFile<CR>
+nnoremap <silent><A-b> <cmd>NvimTreeToggle<CR>
+" nnoremap <silent><A-n><A-n> <cmd>NvimTreeToggle<CR>
+" nnoremap <silent><A-n>r <cmd>NvimTreeRefresh<CR>
+" nnoremap <silent><A-n>f <cmd>NvimTreeFindFile<CR>
 
 " TRY USE C-BACKSPACE
 inoremap <silent><C-H> <C-w>

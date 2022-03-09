@@ -53,7 +53,7 @@ autocmd TermEnter term://*toggleterm#* tnoremap <silent><A-t> <Cmd>exe v:count1 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " underlien word
-autocmd CursorHold * silent call HighlightCursorWord()
+"autocmd CursorHold * silent call HighlightCursorWord()
 
 " lua try open modules
 

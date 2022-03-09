@@ -21,12 +21,13 @@ set modeline
 set hidden
 
 set timeoutlen=1000
-"set updatetime=500
-set updatetime=100
+set updatetime=500
 
 set number
-set numberwidth=5
+"set numberwidth=5
+set numberwidth=1
 set signcolumn=auto:2
+"set signcolumn=yes:2
 
 set cursorline
 
