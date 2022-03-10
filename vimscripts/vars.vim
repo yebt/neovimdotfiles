@@ -72,5 +72,7 @@ function! GetUniqueSessionName()
   return substitute(path . branch, '/', '-', 'g')
 endfunction
 
-autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
-autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
+"autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
+"autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
+command! SSG silent execute 'SSave! ' . GetUniqueSessionName()
+
