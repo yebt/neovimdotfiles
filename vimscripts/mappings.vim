@@ -53,6 +53,11 @@ nnoremap <silent><leader>w <CMD>set wrap!<CR><CMD>echo "蝹"<CR>
 nnoremap <silent><leader>n <CMD>set number!<CR><CMD> echo "" <CR>
 nnoremap <silent><leader>r <CMD>set relativenumber!<CR><CMD>echo ""<CR>
 
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
+let hlstate=0
+nnoremap <c-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
+
 "nnoremap <silent><leader>i <CMD>IndentBlanklineToggle<CR>
 
 " SPECTRE 
@@ -104,5 +109,5 @@ nnoremap <silent><leader>th <CMD>Telescope oldfiles theme=ivy<CR>
 nnoremap <silent><leader>tff <CMD>Telescope oldfiles theme=ivy<CR>
 nnoremap <silent><leader>tfw <CMD>Telescope oldfiles theme=ivy<CR>
 
-nnoremap <silent><leader>h :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+"nnoremap <silent><leader>h :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 

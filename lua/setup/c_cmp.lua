@@ -2,6 +2,18 @@
 
 local cmp = require 'cmp'
 
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	};
+})
 
 local kind_icons = {
     Class = "ﴯ",
@@ -106,30 +118,31 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = { "documentation", "detail", "additionalTextEdits" },
 }
 
-local sumneko_root_path = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server"
-local sumneko_binary = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server/bin/macOS/lua-language-server"
+-- local sumneko_root_path = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server"
+-- local sumneko_binary = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server/bin/macOS/lua-language-server"
 
-local lua_cfg = {
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
-    settings = {
-        Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            diagnostics = { enable = true },
-        },
-    },
-    capabilities = capabilities,
-}
+-- local lua_cfg = {
+--     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+--     settings = {
+--         Lua = {
+--             runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+--             diagnostics = { enable = true },
+--         },
+--     },
+--     capabilities = capabilities,
+-- }
 
-local signature_config = {
-    log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
-    debug = true,
-    hint_enable = false,
-    handler_opts = { border = "single" },
-    max_width = 80,
-}
+-- local signature_config = {
+--     log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
+--     debug = true,
+--     hint_enable = false,
+--     handler_opts = { border = "double" },
+--     max_width = 20,
+--     max_lines = 4,
+--     max_height = 6,
+-- }
+--
+-- require("lsp_signature").setup(signature_config)
 
-require("lsp_signature").setup(signature_config)
-
-require("lspconfig").sumneko_lua.setup(lua_cfg)
 require("lspconfig").gopls.setup({ capabilities = capabilities })
 require("lspconfig").clangd.setup({ capabilities = capabilities })

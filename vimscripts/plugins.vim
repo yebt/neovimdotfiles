@@ -65,7 +65,7 @@ Plug 'andymass/vim-matchup'
 " BBYE
 Plug 'moll/vim-bbye'
 " WICH KEY
-"Plug 'folke/which-key.nvim'
+Plug 'folke/which-key.nvim'
 " VIM BLADE
 Plug 'jwalton512/vim-blade'
 " NEOFORMAT
@@ -118,6 +118,7 @@ lua require('setup/c_lualine')
 lua require('setup/c_nvimtree')
 lua require('setup/c_gitsigns')
 lua require('setup/c_indent-blankline')
+lua require('setup/c_wichkey')
 lua require('setup/c_nvim-autopairs')
 lua require('setup/c_treesitter')
 lua require('setup/c_lspconfig')
