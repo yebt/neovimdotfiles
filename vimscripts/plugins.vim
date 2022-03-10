@@ -44,6 +44,8 @@ Plug 'preservim/tagbar'
 Plug 'kyazdani42/nvim-tree.lua'
 " WEB DEV ICONS
 Plug 'kyazdani42/nvim-web-devicons'
+" VIM GITBRACK
+Plug 'itchyny/vim-gitbranch'
 " GITSIGNS
 Plug 'lewis6991/gitsigns.nvim'
 " GIT SIGNIFY
@@ -113,7 +115,7 @@ lua require('setup/c_kanagawa')
 lua require('setup/c_neoscroll')
 lua require('setup/c_colorized')
 lua require('setup/c_bufferline')
-"lua require('setup/c_galaxyline')
+lua require('setup/c_galaxyline')
 lua require('setup/c_lualine')
 lua require('setup/c_nvimtree')
 lua require('setup/c_gitsigns')

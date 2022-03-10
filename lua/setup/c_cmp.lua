@@ -90,7 +90,7 @@ cmp.setup({
             vim_item.menu = ({
                 buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
-                -- luasnip = "[Luasnip]",
+                luasnip = "[Luasnip]",
                 nvim_lua = "[Lua]",
                 latex_symbols = "[LaTeX]",
                 cmp_tabnine = "[TN]",
@@ -117,32 +117,5 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = { "documentation", "detail", "additionalTextEdits" },
 }
-
--- local sumneko_root_path = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server"
--- local sumneko_binary = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server/bin/macOS/lua-language-server"
-
--- local lua_cfg = {
---     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
---     settings = {
---         Lua = {
---             runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
---             diagnostics = { enable = true },
---         },
---     },
---     capabilities = capabilities,
--- }
-
--- local signature_config = {
---     log_path = vim.fn.expand("$HOME") .. "/tmp/sig.log",
---     debug = true,
---     hint_enable = false,
---     handler_opts = { border = "double" },
---     max_width = 20,
---     max_lines = 4,
---     max_height = 6,
--- }
---
--- require("lsp_signature").setup(signature_config)
-
 require("lspconfig").gopls.setup({ capabilities = capabilities })
 require("lspconfig").clangd.setup({ capabilities = capabilities })
