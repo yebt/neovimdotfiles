@@ -70,6 +70,8 @@ Plug 'moll/vim-bbye'
 Plug 'folke/which-key.nvim'
 " VIM BLADE
 Plug 'jwalton512/vim-blade'
+" VIM SMARTY
+Plug 'blueyed/smarty.vim'
 " NEOFORMAT
 Plug 'sbdchd/neoformat'
 " TREESITTER
@@ -115,9 +117,10 @@ lua require('setup/c_kanagawa')
 lua require('setup/c_neoscroll')
 lua require('setup/c_colorized')
 lua require('setup/c_bufferline')
-lua require('setup/c_galaxyline')
+"lua require('setup/c_galaxyline')
 lua require('setup/c_lualine')
 lua require('setup/c_nvimtree')
+lua require('setup/c_webicons')
 lua require('setup/c_gitsigns')
 lua require('setup/c_indent-blankline')
 lua require('setup/c_wichkey')

@@ -47,6 +47,7 @@ let g:startify_commands = [
 let g:startify_lists = [
             \ { 'type': 'commands',  'header': ['   Commands']       },
             \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
             \ ]
 
 " NVIM TREE
@@ -64,15 +65,13 @@ let g:nvim_tree_show_icons = {
 " INDENT BLANK LINE
 let g:indent_blankline_filetype_exclude = ['help', 'startify', 'checkhealth', 'lspinfo', 'lsp-installer', 'CHADTree', 'NvimTree', 'tagbar', 'term']
 
-function! GetUniqueSessionName()
-  let path = fnamemodify(getcwd(), ':~:t')
-  let path = empty(path) ? 'no-project' : path
-  let branch = gitbranch#name()
-  let branch = empty(branch) ? '' : '-' . branch
-  return substitute(path . branch, '/', '-', 'g')
-endfunction
 
-"autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()
-"autocmd VimLeavePre *             silent execute 'SSave! ' . GetUniqueSessionName()
-command! SSG silent execute 'SSave! ' . GetUniqueSessionName()
+let g:startify_session_before_save = [ 
+            \'silent! tabdo NvimTreeClose',
+            \'silent! tabdo TagbarClose' 
+            \]
 
+let g:startify_bookmarks = [
+            \ { 'c': '~/.vim/vimrc' },
+            \ '~/golfing',
+            \ ]
