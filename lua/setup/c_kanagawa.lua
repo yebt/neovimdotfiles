@@ -4,7 +4,8 @@ require('kanagawa').setup({
     functionStyle = "italic,bold",
     keywordStyle = "italic",
     statementStyle = "bold",
-    typeStyle = "underline",
+    -- typeStyle = "NONE",
+    typeStyle = "italic",
     variablebuiltinStyle = "italic",
     specialReturn = true,       -- special highlight for the return keyword
     specialException = true,    -- special highlight for exception handling keywords 

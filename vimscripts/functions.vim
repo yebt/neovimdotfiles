@@ -70,5 +70,3 @@ endfunction
 " function! GetICon()
 "     return luaeval("require'nvim-web-devicons'.get_icon('" . expand('%'). "')")
 " endfunction
-
-

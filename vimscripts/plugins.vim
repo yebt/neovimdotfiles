@@ -15,6 +15,9 @@
 call plug#begin('~/.config/nvim/plugged')
 " KAGANWA COLOR
 Plug 'rebelot/kanagawa.nvim'
+"Plug 'mcchrish/zenbones.nvim'
+"Plug 'rktjmp/lush.nvim'
+"Plug 'frenzyexists/aquarium-vim'
 " NEOSCROLL
 Plug 'karb94/neoscroll.nvim'
 " COLORIZED
@@ -62,7 +65,7 @@ Plug 'andymass/vim-matchup'
 " BBYE
 Plug 'moll/vim-bbye'
 " WICH KEY
-Plug 'folke/which-key.nvim'
+"Plug 'folke/which-key.nvim'
 " VIM BLADE
 Plug 'jwalton512/vim-blade'
 " NEOFORMAT
@@ -71,7 +74,7 @@ Plug 'sbdchd/neoformat'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " TS TAINBOW
 Plug 'p00f/nvim-ts-rainbow'
-" TS AUTOPAIRS
+" TS PAIRS
 Plug 'theHamsta/nvim-treesitter-pairs'
 " TS AUTOTAGS
 Plug 'windwp/nvim-ts-autotag'
@@ -85,6 +88,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'honza/vim-snippets'
 " NVIM ULTISNIPS
 Plug 'SirVer/ultisnips'
+" Lua Snip
+Plug 'L3MON4D3/LuaSnip'
 " LSPKIND
 Plug 'onsails/lspkind-nvim'
 " CMP
@@ -112,6 +117,14 @@ lua require('setup/c_bufferline')
 lua require('setup/c_lualine')
 lua require('setup/c_nvimtree')
 lua require('setup/c_gitsigns')
+lua require('setup/c_indent-blankline')
+lua require('setup/c_nvim-autopairs')
+lua require('setup/c_treesitter')
+lua require('setup/c_lspconfig')
+lua require('setup/c_lsp-install')
+
+lua require('setup/c_cmp')
+
 " Config lĺugins
 "lua require('c_treesitter')
 "luafile ~/.config/nvim/lua/c_impatient.lua

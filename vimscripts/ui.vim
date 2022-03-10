@@ -29,4 +29,4 @@ hi! BufferCurrentSign guibg=#363646
 hi! BufferInactive guifg=#888888 guibg=#1f1f28 
 hi! BufferInactiveMod guifg=#888888 guibg=#1f1f28 gui=italic
 
-
+hi! IndentBlanklineIndent1 guifg=#2C2C3A gui=nocombine 
