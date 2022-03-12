@@ -30,7 +30,7 @@ local servers = {
     "pylsp",
     "pyright",
     "quick_lint_js",
-    "remark_ls",
+    -- "remark_ls",
     "sqlls",
     "sumneko_lua",
     "tailwindcss",

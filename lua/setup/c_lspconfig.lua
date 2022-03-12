@@ -106,3 +106,12 @@
 --     }
 --   }
 -- end
+
+require'lspconfig'.remark_ls.setup({
+    cmd = { "/home/b/.npm-global/bin/remark-language-server", "--stdio" },
+    filetypes = { "markdown" },
+    single_file_support = true
+
+})
+
+

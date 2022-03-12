@@ -4,15 +4,15 @@ local cmp = require 'cmp'
 
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
-	max_lines = 1000;
-	max_num_results = 20;
-	sort = true;
-	run_on_every_keystroke = true;
-	snippet_placeholder = '..';
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	};
+    max_lines = 1000;
+    max_num_results = 20;
+    sort = true;
+    run_on_every_keystroke = true;
+    snippet_placeholder = '..';
+    ignored_file_types = { -- default is not to ignore
+        -- uncomment to ignore in lua:
+        -- lua = true
+    };
 })
 
 local kind_icons = {
@@ -49,9 +49,12 @@ cmp.setup({
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        -- ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<C-e>'] = cmp.mapping.close(),
         ['<ESC>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm {
@@ -70,6 +73,7 @@ cmp.setup({
         { name = "ultisnips" },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
+        { name = 'path' },
             -- { name = 'luasnip' },
             -- { name = 'emoji' },
         {
@@ -81,7 +85,7 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'cmp_tabnine' },
         { name = 'nvim_lsp_signature_help' }
-    },
+        },
     formatting = {
         format = function(entry, vim_item)
             -- Kind icons
@@ -99,7 +103,7 @@ cmp.setup({
             return vim_item
         end
     },
-    completion = { completeopt = "menu,menuone,noinsert" },
+    completion = { completeopt = "menu,menuone,noinsert,noselect" },
     experimental = { ghost_text = true },
 })
 

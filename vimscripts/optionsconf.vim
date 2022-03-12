@@ -72,7 +72,7 @@ set hlsearch
 set conceallevel=2
 set concealcursor="nc" --let use conceal on specific files like markdown
 
-set completeopt=menu,menuone,preview
+set completeopt=menu,menuone,preview,noselect
 
 set laststatus=2
 set showtabline=2
