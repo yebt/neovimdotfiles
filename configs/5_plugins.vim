@@ -3,15 +3,27 @@ call plug#begin('~/.config/nvim/plugged')
 "Plug 'cocopon/iceberg.vim'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'ayu-theme/ayu-vim'
-Plug 'Shatur/neovim-ayu'
 "Plug 'junegunn/seoul256.vim'
 Plug 'ulwlu/elly.vim'
 
+Plug 'Shatur/neovim-ayu'
+" Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 "Plug 'RRethy/nvim-base16'
 Plug 'marko-cerovac/material.nvim'
 "Plug 'shaunsingh/nord.nvim'
 "Plug 'shaunsingh/solarized.nvim'
 Plug 'rebelot/kanagawa.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
+Plug 'rafamadriz/neon'
+" Plug 'bluz71/vim-moonfly-colors'
+Plug 'navarasu/onedark.nvim'
+Plug 'projekt0n/github-nvim-theme'
+" Plug 'Everblush/everblush.vim'
+" Plug 'phanviet/vim-monokai-pro'
+Plug 'tanvirtin/monokai.nvim'
+
+Plug 'rktjmp/lush.nvim'
+" Plug 'metalelf0/jellybeans-nvim'
 
 Plug 'norcalli/nvim-colorizer.lua'
 

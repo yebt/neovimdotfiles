@@ -191,4 +191,4 @@ require("kanagawa").setup(
         overrides = {}
     }
 )
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme kanagawa")

@@ -5,18 +5,23 @@ set background=dark
 "colorscheme nord
 "colorscheme ayu
 "colorscheme PaperColor
-"colorscheme material
+" colorscheme material
 "colorscheme elly
 "colorscheme solarized
-" colorscheme kanagawa
-
+colorscheme kanagawa
+" colorscheme github_dark_colorblind
+" colorscheme github_dark_default
+"colorscheme everblush
+" colorscheme monokai_pro
 
 " Put this on lua
 " ayu-> #171F26
 " material ocean deep-> #161927
-highlight IndentBlanklineIndent1 guifg=#1D2234 gui=nocombine
-highlight FoldColumn ctermfg=14 ctermbg=242 guifg=#424A76
+" highlight IndentBlanklineIndent1 guifg=#1D2234 gui=nocombine
+" highlight FoldColumn ctermfg=14 ctermbg=242 guifg=#424A76
 "highlight IndentBlanklineContextChar cterm=nocombine guifg=#33395B
+highlight IndentBlanklineIndent1 guifg=#292936  gui=nocombine
+
 
 
 set statusline= 

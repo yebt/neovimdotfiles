@@ -6,6 +6,15 @@ let g:seoul256_light_background = 252
 
 let g:material_style = "deep ocean"
 
+let g:gruvbox_contrast_dark="hard"
+
+let g:neon_style="dark"
+let g:neon_bold=v:true
+
+let g:onedark_config = {
+            \ 'style': 'warmer',
+            \}
+
 " let g:indentLine_char = '▏'
 " "¦, ┆, │, ⎸, or ▏ t
 " "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
