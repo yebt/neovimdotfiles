@@ -1,12 +1,14 @@
 set background=dark
 
+"colorscheme [desert, ]
+
 "colorscheme nord
 "colorscheme ayu
 "colorscheme PaperColor
 "colorscheme material
 "colorscheme elly
 "colorscheme solarized
-"colorscheme kanagawa
+" colorscheme kanagawa
 
 
 " Put this on lua

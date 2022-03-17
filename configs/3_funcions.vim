@@ -34,7 +34,8 @@ endfunction
 function! GetUniqueSessionName()
     let path = fnamemodify(getcwd(), ':~:t')
     let path = empty(path) ? 'no-project' : path
-    let branch = gitbranch#name()
+    " let branch = gitbranch#name()
+    let branch = GitBranch()
     let branch = empty(branch) ? '' : '-' . branch
     return substitute(path . branch, '/', '-', 'g')
 endfunction
@@ -62,3 +63,6 @@ function! Check_back_space() abort
 endfunction
 
 
+command! RGR silent execute 'ToggleTerm cmd="ranger && exit" direction=float hidden=true'
+command! RGRS silent execute 'TermExec dir=~/.local/share/nvim/session cmd="ranger && exit" direction=float  hidden=true'
+command! RGRW silent execute 'TermExec dir=~/.local/share/nvim/swap cmd="ranger && exit" direction=float  hidden=true'

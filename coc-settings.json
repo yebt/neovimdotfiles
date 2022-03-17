@@ -3,24 +3,42 @@
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-1.11",
-            "path": "/path/to/jdk-11",
+            "path": "/path/to/jdk-11"
         },
         {
             "name": "JavaSE-11",
-            "path": "/path/to/jdk-11",
+            "path": "/path/to/jdk-11"
         },
         {
             "name": "JavaSE-14",
             "path": "/path/to/jdk-14",
             "default": true
-        },
+        }
     ],
     "markdownlint.config": {
-         "line_length": false
+        "line_length": false
     },
-    
+
     "diagnostic.errorSign": "x",
     "diagnostic.infoSign": "!",
     "diagnostic.warningSign": "⚠",
-    "diagnostic.hintSign": "?"
+    "diagnostic.hintSign": "¿",
+
+    //"coc.preferences.snippetHighlight": true,
+    //"coc.preferences.snippetStatusText": "SNIP",
+    //"coc.preferences.enableFloatHighlight": true,
+    //"suggest.floatConfig": {
+    //    //"shadow": true,
+    //    "borderhighlight": "CocFloating",
+    //    "border": true,
+    //},
+    
+    "suggest.noselect": false,
+
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "nvim-web-devicons",
+    "explorer.file.showHiddenFiles": true,
+    "explorer.file.column.indent.indentLine": true,
+    "explorer.enableFloatinput": true
+
 }

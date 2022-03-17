@@ -41,30 +41,114 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.ts,*.tsx,*.vue,*.svelte,*.jsp,*.php,*.erb,*.tpl'
 
 " coc-marketplace
-let g:coc_global_extensions = [
-            \'coc-json', 
-            \'coc-tsserver', 
-            \'coc-json', 
-            \'coc-html', 
-            \'coc-css',
-            \'coc-tailwindcss',
-            \'coc-pyright', 
-            \'coc-phpls',
-            \'coc-phpactor',
-            \'@yaegassy/coc-intelephense',
-            \'coc-php-cs-fixer',
-            \'coc-prettier',
-            \'coc-vimlsp',
-            \'coc-angular',
-            \'coc-blade',
-            \'coc-cssmodules',
-            \'coc-emmet',
-            \'coc-explorer',
-            \'coc-flutter',
-            \'coc-html-css-support',
-            \'coc-java',
-            \'coc-markdownlint',
-            \'coc-sql',
-            \'coc-tabnine',
-            \'coc-snippets',
+" let g:coc_global_extensions = [
+"             \'coc-json', 
+"             \'coc-tsserver', 
+"             \'coc-json', 
+"             \'coc-html', 
+"             \'coc-css',
+"             \'coc-tailwindcss',
+"             \'coc-pyright', 
+"             \'coc-phpls',
+"             \'coc-phpactor',
+"             \'@yaegassy/coc-intelephense',
+"             \'coc-php-cs-fixer',
+"             \'coc-prettier',
+"             \'coc-vimlsp',
+"             \'coc-angular',
+"             \'coc-blade',
+"             \'coc-cssmodules',
+"             \'coc-emmet',
+"             \'coc-explorer',
+"             \'coc-flutter',
+"             \'coc-html-css-support',
+"             \'coc-java',
+"             \'coc-markdownlint',
+"             \'coc-sql',
+"             \'coc-tabnine',
+"             \'coc-snippets',
+"             \]
+
+let g:indent_blankline_filetype_exclude = ['help','startify','term','toggleterm','NvimTree','coc-explorer']
+let g:indent_blankline_bufname_exclude = ['term']
+
+" ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠠⡀⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀
+" ⠀⠀⣴⣶⣤⡴⢦⣤⣤⠔⠀⠀⠀⠀⢀⣭⣭⣿⣷⣿⣦⣷⣄⠀⠀⠀⠀⠀⠀⠀
+" ⠀⠀⠀⠈⠙⢿⡿⠿⢿⣷⣖⡀⢀⠔⣿⣿⣿⠋⠉⠉⠻⣿⣏⣳⡀⠀⠀⠀⠀⠀
+" ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⡢⠀⣿⣿⣿⡄⠀⠀⢀⠛⠿⠿⣷⣦⠀⠀⠀⠀
+" ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠇⠀⢏⠻⣿⣿⣦⣤⣈⣢⣤⣀⣈⠛⠀⠀⠀⠀
+" ⠀⠀⠠⡀⢀⡠⠄⠀⢀⣿⣿⢻⠀⠀⠀⢂⣭⣿⣿⣿⣿⠿⣿⣷⣽⣶⣦⣄⠀⠀
+" ⠀⠀⣰⣷⣿⣿⣶⡠⢸⣿⣿⠀⠀⢀⢴⣿⣿⠟⠉⢿⣿⣧⠈⠛⠉⠉⡉⠋⠀⠀
+" ⠀⢸⣽⣿⠀⢹⣿⣯⠚⣿⣿⡀⠀⠀⣾⣿⣿⡀⠀⢸⣿⣿⢀⢤⣾⣶⣷⡀⠀⠀
+" ⠰⡿⠋⠀⠀⣼⣿⣿⠃⠹⣿⣿⣄⡀⢻⢻⣿⣷⣄⣿⣿⡿⣰⣿⡏⠉⢿⣯⣆⠀
+" ⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠈⠻⣿⣿⣷⣦⣿⣿⣿⣿⣿⡇⢸⢿⣷⡄⠀⠈⠻⠁
+" ⠀⠀⠀⠀⠀⠘⣿⣿⣶⣦⣤⣤⣸⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⣸⣿⠇⠀⠀⠀⠀
+" ⠀⠀⠀⠀⣀⣀⠈⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣿⢿⡋⠀⠀⠀⠀⠀
+" ⣄⣀⣤⣬⣽⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣷⣦⣤⣛⡵
+"
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣝⣻⡇⢀⣹⡆⣾⣟⢳⣴⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣄⠀⠸⠟⣩⣭⡀⢿⣯⠀⠨⢿⢃⣤⣄⣰⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣘⠒⣶⣸⣿⠛⢟⣤⢱⣿⠿⣷⣘⣷⡍⣩⠶⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠿⣹⣥⣝⠛⢋⣠⣿⢣⡶⢮⡶⢙⣛⣋⢾⠟⠚⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢶⣤⡿⣩⡹⢇⣿⠋⣥⢄⢽⢀⢤⠍⣭⡽⢇⣾⢿⣇⣶⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠹⣷⣿⠟⠀⠀⠁⠀⡈⠁⠀⠹⢷⣾⠿⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⢀⢿⠀⠀⠀⠀⣤⣊⠀⠀⠀⠀⡗⠢⡀⠀⠀⠀⡇⠀⡇⠀⠀⠀⢴⠁⠀⠀⠀⢠⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠀⠋⠈⠆⠀⠀⠀⠈⠢⠀⠀⠀⠀⠗⠉⠀⠀⠀⠀⠱⠴⠁⠀⠀⠀⠔⠁⠀⠀⠀⠎⠀⠣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+let g:startify_custom_header = [
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣝⣻⡇⢀⣹⡆⣾⣟⢳⣴⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣄⠀⠸⠟⣩⣭⡀⢿⣯⠀⠨⢿⢃⣤⣄⣰⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣘⠒⣶⣸⣿⠛⢟⣤⢱⣿⠿⣷⣘⣷⡍⣩⠶⣦⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠿⣹⣥⣝⠛⢋⣠⣿⢣⡶⢮⡶⢙⣛⣋⢾⠟⠚⠋⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢶⣤⡿⣩⡹⢇⣿⠋⣥⢄⢽⢀⢤⠍⣭⡽⢇⣾⢿⣇⣶⠒⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠹⣷⣿⠟⠀⠀⠁⠀⡈⠁⠀⠹⢷⣾⠿⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀',
+            \'⠀⠀⠀⠀⠀⡷⢀⢿⠀⠀⠀⠀⣤⣊⠀⠀⠀⠀⡗⠢⡀⠀⠀⠀⡇⠀⡇⠀⠀⠀⢴⠁⠀⠀⠀⢠⢳⠀⠀',
+            \'⠀⠀⠀⠀⠰⠀⠋⠈⠆⠀⠀⠀⠈⠢⠀⠀⠀⠀⠗⠉⠀⠀⠀⠀⠱⠴⠁⠀⠀⠀⠔⠁⠀⠀⠀⠎⠀⠣⠀',
             \]
+
+let g:startify_bookmarks = [ 
+            \{'c': '~/.vimrc'}, 
+            \'~/.zshrc' 
+            \]
+
+let g:startify_commands = [
+            \{'h': ['Old files','Telescope oldfiles']},
+            \{'tfd': ['Find file fd','Telescope fd']},
+            \{'tlg': ['Find word','Telescope live_grep']},
+            \{'dsw': ['Delete swap fiels', '!rm -rf ~/.local/share/nvim/swap/*']},
+            \{'dss': ['Delete sessions fiels', '!rm -rf ~/.local/share/nvim/session/*']},
+            \]
+
+let g:startify_lists = [
+            \ { 'type': 'commands',  'header': ['   Commands']       },
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ ]
+
+let g:startify_files_number = 4
+
+let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose', 'silent! tabdo NvimTreeClose', 'silent! tabdo TagBarClose' ]
+
+
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
+let g:neoformat_run_all_formatters = 1
+let g:neoformat_try_node_exe = 1
+
+" let g:neoformat_try_node_exe="~/.npm-global/bin/"
+let g:neoformat_lua_luafmt = {
+            \ 'exe': '/home/b/.npm-global/bin/luafmt',
+            \ 'args': ['--stdin'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_enabled_lua = ['luafmt']
+
