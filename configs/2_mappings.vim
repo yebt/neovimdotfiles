@@ -125,7 +125,7 @@ nmap <leader>cl  <Plug>(coc-codelens-action)
 " "  Hover
 nnoremap <silent> <leader>d :call CocActionAsync('doHover')<cr>
 " " Coc Explorer
-nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle --sources=buffer-,file+<CR>
+nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle<CR>
 
 imap <C-l> <Plug>(coc-snippets-expand)
 

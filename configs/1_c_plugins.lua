@@ -8,9 +8,11 @@ require "nvim-treesitter.configs".setup(
             -- additional_vim_regex_highlighting ={'vim','php'},
             additional_vim_regex_highlighting = {"vim"}
         },
+
         indent = {
             enable = true
         },
+
         incremental_selection = {
             enable = true,
             keymaps = {
@@ -20,6 +22,7 @@ require "nvim-treesitter.configs".setup(
                 node_decremental = "gnd"
             }
         },
+
         refactor = {
             highlight_definitions = {
                 enable = true,
@@ -28,6 +31,7 @@ require "nvim-treesitter.configs".setup(
             },
             highlight_current_scope = {enable = false}
         },
+
         playground = {
             enable = true,
             disable = {},
@@ -46,11 +50,13 @@ require "nvim-treesitter.configs".setup(
                 show_help = "?"
             }
         },
+
         query_linter = {
             enable = true,
             use_virtual_text = true,
             lint_events = {"BufWrite", "CursorHold"}
         },
+
         pairs = {
             enable = true,
             disable = {},
@@ -69,6 +75,7 @@ require "nvim-treesitter.configs".setup(
                 -- E.g. whether to delete the angle bracket or whole tag in  <pair> </pair>
             }
         }
+
     }
 )
 
