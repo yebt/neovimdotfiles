@@ -20,6 +20,8 @@ augroup phpinitcharacter
     autocmd BufNewFile,BufRead *.php inoremap <expr><silent>< line('.')==1? "\<?php<CR><CR>"  : "<"
 augroup end
 
+autocmd BufNewFile,BufRead *.php nnoremap <silent><M-r> :TermExec cmd="php %:p" direction=float  hidden=true<cr> 
+
 augroup restore_cursor
     autocmd!
     autocmd BufReadPost * call setpos(".", getpos("'\""))
@@ -36,3 +38,4 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 command! -nargs=0 Format :call CocActionAsync('format')
 
 autocmd BufNewFile,BufRead *.md set conceallevel=2
+

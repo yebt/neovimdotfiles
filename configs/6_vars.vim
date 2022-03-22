@@ -76,6 +76,8 @@ let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.ts,*.tsx,*.vue,*.svelte,*.
 "             \'coc-sql',
 "             \'coc-tabnine',
 "             \'coc-snippets',
+"             \'coc-floatinput',
+"             \'coc-prettier'
 "             \]
 
 let g:indent_blankline_filetype_exclude = ['help','startify','term','toggleterm','NvimTree','coc-explorer']
@@ -119,6 +121,20 @@ let g:startify_custom_header = [
             \'⠀⠀⠀⠀⠰⠀⠋⠈⠆⠀⠀⠀⠈⠢⠀⠀⠀⠀⠗⠉⠀⠀⠀⠀⠱⠴⠁⠀⠀⠀⠔⠁⠀⠀⠀⠎⠀⠣⠀',
             \]
 
+" ⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣾⣿⣷⢾⣿⣟⣿⣿⣿⡿⣛⣉⣛⢿⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿
+" ⣿⣿⣿⡿⣷⣾⣟⣿⣿⣛⣿⡿⣣⢠⡹⣿⣯⣽⡏⣼⣿⣿⣿⣧⢹⣯⣽⣿⣿⠛⣿⣿⣿⣿
+" ⣿⣿⣿⣿⡿⢿⣿⣿⣿⡿⣡⣾⣿⡇⣻⣶⣜⢿⣷⡹⠟⢿⡿⢏⣾⡿⢿⣟⣿⣿⣿⣿⣿⣿
+" ⣿⣿⣽⣿⣷⣿⢟⣵⣍⡰⣿⣿⣿⣷⡜⢛⠿⣦⣉⢴⣷⢰⣔⠿⢿⣷⣾⡿⣿⣏⣿⣿⣻⣿
+" ⣿⣿⠟⠘⣿⣵⣿⡟⢹⣿⣦⢻⣿⣿⣿⣾⣷⣬⢻⣆⢻⣮⡙⠟⣰⣦⣙⢿⣿⡿⢿⣿⣭⣿
+" ⣿⣿⢊⢈⢾⣿⣯⠆⠰⣽⣿⣧⣝⢿⣿⣿⣿⣿⣶⣍⡂⢻⣿⣷⠇⠘⣿⣷⡿⡁⢈⣻⣿⣿
+" ⣿⡷⡡⠠⡳⣿⡵⣊⢘⢮⣿⣿⣿⣿⡿⢛⣛⡛⠛⣿⣿⣷⣿⡷⡃⢘⢾⣿⣟⠄⠠⣻⣿⣿
+" ⣿⣟⠔⠐⣝⣿⢞⡥⢨⡳⣿⣿⡿⠿⠡⠿⠿⠣⠰⠘⠿⣿⣿⡟⡁⢨⡳⣿⣫⠆⠰⣝⣿⣿
+" ⣿⡯⢞⢘⢮⣿⣫⠄⠰⣝⣿⣶⢶⡿⣯⣿⣻⣻⣿⡿⡯⣶⣿⣋⠄⠠⣝⣿⡵⡃⢘⢮⣿⣿
+" ⣿⣶⣫⢨⣳⣚⣓⣶⣰⡾⠿⣽⠷⠾⠾⠷⠿⠿⠾⠷⠷⢯⣿⣥⠆⠐⢬⣻⢞⡁⢈⡳⣽⣿
+" ⣿⣿⣿⣼⣻⣽⣼⣿⣽⣹⣗⡮⢻⣯⣭⣭⣿⣿⣿⣭⡽⢟⣫⢵⣿⣸⣿⢷⣯⡄⣤⣽⣾⣿
+" ⣿⣿⣿⣷⣒⣒⣒⣲⣶⣒⣒⣚⣛⣒⣒⣛⣛⣿⣿⡇⠾⠽⠮⠼⠯⠷⠧⠯⠷⠿⣿⣿⣿⣿
+" ⣿⣿⣿⣿⣿⣭⣭⣭⣭⣭⣿⣭⣭⣿⣿⣿⣿⣿⣿⣿⣟⣛⣻⣿⣛⣛⣛⣛⣻⣿⣿⣿⣿⣿
+
 let g:startify_bookmarks = [ 
             \{'c': '~/.vimrc'}, 
             \'~/.zshrc' 
@@ -126,6 +142,7 @@ let g:startify_bookmarks = [
 
 let g:startify_commands = [
             \{'h': ['Old files','Telescope oldfiles']},
+            \{'p': ['Plugins','e ~/.config/nvim/configs/5_plugins.vim']},
             \{'tfd': ['Find file fd','Telescope fd']},
             \{'tlg': ['Find word','Telescope live_grep']},
             \{'dsw': ['Delete swap fiels', '!rm -rf ~/.local/share/nvim/swap/*']},
@@ -159,5 +176,30 @@ let g:neoformat_lua_luafmt = {
             \ 'stdin': 1,
             \ }
 
-let g:neoformat_enabled_lua = ['luafmt']
+let g:neoformat_html_prettier = {
+            \ 'exe': '/home/b/.npm-global/bin/prettier',
+            \ 'args': ['--stdin-filepath', '"%:p"'],
+            \ 'stdin': 1,
+            \ 'try_node_exe': 1,
+            \}
 
+let g:neoformat_php_phpcbf = {
+            \ 'exe': 'phpcbf',
+            \ 'stdin': 1,
+            \ 'args': ['--standard=PSR12'],
+            \ 'valid_exit_codes': [0,1],
+            \ }
+
+let g:neoformat_php_prettier = {
+            \ 'exe': '~/.npm-global/bin/prettier',
+            \ 'args': ['--stdin-filepath', '"%:p"'],
+            \ 'stdin': 1,
+            \ 'try_node_exe': 1,
+            \}
+
+
+let g:neoformat_enabled_lua = ['luafmt']
+let g:neoformat_enabled_html = ['prettier']
+let g:neoformat_enabled_php = ['phpcbf', 'prettier']
+
+let g:bracey_auto_start_browser=0;

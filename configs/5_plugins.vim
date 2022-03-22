@@ -21,8 +21,9 @@ Plug 'projekt0n/github-nvim-theme'
 " Plug 'Everblush/everblush.vim'
 " Plug 'phanviet/vim-monokai-pro'
 Plug 'tanvirtin/monokai.nvim'
+Plug 'Mofiqul/dracula.nvim'
 
-Plug 'rktjmp/lush.nvim'
+" Plug 'rktjmp/lush.nvim'
 " Plug 'metalelf0/jellybeans-nvim'
 
 Plug 'norcalli/nvim-colorizer.lua'
@@ -37,6 +38,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
@@ -49,6 +51,8 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'mhinz/vim-startify'
 
 Plug 'folke/which-key.nvim'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Plug 'noib3/nvim-cokeline'
 Plug 'akinsho/bufferline.nvim'
@@ -70,6 +74,8 @@ Plug 'theHamsta/nvim-treesitter-pairs'
 
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+Plug 'mattn/emmet-vim'
+
 Plug 'sbdchd/neoformat'
 
 " Track the engine.
@@ -78,5 +84,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call plug#end()

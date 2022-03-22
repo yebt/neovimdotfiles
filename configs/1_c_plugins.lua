@@ -191,4 +191,13 @@ require("kanagawa").setup(
         overrides = {}
     }
 )
--- vim.cmd("colorscheme kanagawa")
+
+vim.cmd("colorscheme kanagawa")
+
+-- require('lspconfig').jsonls.setup {
+--   settings = {
+--     json = {
+--       schemas = require('schemastore').json.schemas(),
+--     },
+--   },
+-- }

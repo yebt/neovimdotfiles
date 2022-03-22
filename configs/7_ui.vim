@@ -8,7 +8,7 @@ set background=dark
 " colorscheme material
 "colorscheme elly
 "colorscheme solarized
-colorscheme kanagawa
+"colorscheme kanagawa
 " colorscheme github_dark_colorblind
 " colorscheme github_dark_default
 "colorscheme everblush

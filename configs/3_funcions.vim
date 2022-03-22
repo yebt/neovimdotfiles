@@ -66,3 +66,7 @@ endfunction
 command! RGR silent execute 'ToggleTerm cmd="ranger && exit" direction=float hidden=true'
 command! RGRS silent execute 'TermExec dir=~/.local/share/nvim/session cmd="ranger && exit" direction=float  hidden=true'
 command! RGRW silent execute 'TermExec dir=~/.local/share/nvim/swap cmd="ranger && exit" direction=float  hidden=true'
+
+
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+

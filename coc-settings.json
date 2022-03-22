@@ -1,5 +1,6 @@
 {
     "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact", "php":"html", "blade":"html"},
+
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-1.11",
@@ -23,22 +24,29 @@
     "diagnostic.infoSign": "!",
     "diagnostic.warningSign": "⚠",
     "diagnostic.hintSign": "¿",
-
-    //"coc.preferences.snippetHighlight": true,
-    //"coc.preferences.snippetStatusText": "SNIP",
-    //"coc.preferences.enableFloatHighlight": true,
-    //"suggest.floatConfig": {
-    //    //"shadow": true,
-    //    "borderhighlight": "CocFloating",
-    //    "border": true,
-    //},
+   
     
-    "suggest.noselect": false,
+    // "suggest.noselect": false,
+    // "suggest.floatEnable": false,
 
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "nvim-web-devicons",
     "explorer.file.showHiddenFiles": true,
     "explorer.file.column.indent.indentLine": true,
-    "explorer.enableFloatinput": true
+    "explorer.enableFloatinput": true,
 
+    "snippets.extends": {
+        "php": ["php", "html"],
+        "tpl": ["html"]
+    },
+ 
+    "coc.source.emoji.enable": true,
+    "coc.source.emoji.filetypes": [
+        "markdown",
+        "javascript"
+    ],
+    "coc.source.emoji.shortcut": "T",
+    "coc.source.emoji.triggerCharacters": [
+        ":"
+    ]
 }

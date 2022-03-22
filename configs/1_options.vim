@@ -20,7 +20,13 @@ set number
 "set numberwidth=5
 set numberwidth=1
 "set signcolumn=auto:2
-set signcolumn=yes
+" set signcolumn=yes
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 "set signcolumn=yes:2
 
 set cursorline
