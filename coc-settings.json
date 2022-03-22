@@ -34,6 +34,26 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.file.column.indent.indentLine": true,
     "explorer.enableFloatinput": true,
+    "explorer.focus": true,
+    "explorer.quitOnOpen": true,
+    // "explorer.file.git.showUntrackedFiles":false,
+    "explorer.sources": [
+        {
+            "name": "bookmark",
+            "expand": false
+        },
+        {
+            "name": "buffer",
+            "expand": true
+        },
+        {
+            "name": "file",
+            "expand": true
+        }
+    ],
+    "explorer.keyMappings.global":  {
+
+    },
 
     "snippets.extends": {
         "php": ["php", "html"],
