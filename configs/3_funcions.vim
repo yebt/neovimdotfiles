@@ -70,3 +70,7 @@ command! RGRW silent execute 'TermExec dir=~/.local/share/nvim/swap cmd="ranger 
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+

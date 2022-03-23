@@ -2,8 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 "  "Plug 'arcticicestudio/nord-vim'
 "  "Plug 'cocopon/iceberg.vim'
-"Plug 'NLKNguyen/papercolor-theme'
-"  "Plug 'ayu-theme/ayu-vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/seoul256.vim'
 "  Plug 'ulwlu/elly.vim'
 "  
@@ -47,8 +47,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
 Plug 'akinsho/toggleterm.nvim'
 "  
-"Plug 'vim-airline/vim-airline'
-"  "Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "  
 Plug 'mhinz/vim-startify'
 "  

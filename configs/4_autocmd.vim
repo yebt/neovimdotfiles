@@ -35,7 +35,5 @@ autocmd TermEnter term://*toggleterm#* tnoremap <silent><A-t> <Cmd>exe v:count1 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 "autocmd CursorHold * silent call HighlightCursorWord()
 
-command! -nargs=0 Format :call CocActionAsync('format')
-
 autocmd BufNewFile,BufRead *.md set conceallevel=2
 

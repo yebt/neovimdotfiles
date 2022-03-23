@@ -4,7 +4,8 @@ set background=dark
 
 "colorscheme nord
 "colorscheme ayu
-"colorscheme PaperColor
+" colorscheme dracula
+colorscheme PaperColor
 " colorscheme material
 "colorscheme elly
 "colorscheme solarized
@@ -13,7 +14,7 @@ set background=dark
 " colorscheme github_dark_default
 " colorscheme everblush
 " colorscheme monokai_pro
-colorscheme monokai_soda
+"colorscheme monokai_soda
 
 " Put this on lua
 " ayu-> #171F26

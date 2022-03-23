@@ -13,9 +13,11 @@
 
 "function! GetBuff()
 "    let l:blist = getbufinfo()
+"    let l:buff_exeptions=['startify']
+"    let l:buff_dash=[]
 "    " let l:result  = []
-"    let l:result  = ''
-"    let l:result .= '%#TabLine#'
+"    " let l:result  = ''
+"    let l:result .= '%#TabLineFill#'
 "    for l:item in l:blist
 "        "skip unnamed buffers; also skip hidden buffers?
 "        " if empty(l:item.name) || l:item.hidden
@@ -30,7 +32,8 @@
 "            let l:result .= '%#TabLineFill#'
 "        endif
 
-"        let l:result .= l:item.variables.sy.info.file
+"        " let l:result .= l:item.variables.sy.info.file
+"        let l:result .= l:item.name
 "        " let l:result .= l:item.hidden . '->' . l:item.variables.sy.info.file . '  '
 "    endfor
 "    let l:result .= '%#TabLine#'
