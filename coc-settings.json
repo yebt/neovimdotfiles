@@ -26,8 +26,8 @@
     "diagnostic.hintSign": "¿",
    
     
-    // "suggest.noselect": false,
-    // "suggest.floatEnable": false,
+    "suggest.noselect": false,
+    "suggest.floatEnable": true,
 
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "nvim-web-devicons",
@@ -51,9 +51,9 @@
             "expand": true
         }
     ],
-    "explorer.keyMappings.global":  {
+    // "explorer.keyMappings.global":  {
 
-    },
+    // },
 
     "snippets.extends": {
         "php": ["php", "html"],
