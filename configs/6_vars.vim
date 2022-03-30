@@ -80,7 +80,7 @@ let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.ts,*.tsx,*.vue,*.svelte,*.
 "             \'coc-prettier'
 "             \]
 
-let g:indent_blankline_filetype_exclude = ['help','startify','term','toggleterm','NvimTree','coc-explorer']
+let g:indent_blankline_filetype_exclude = ['help','startify','term','toggleterm','NvimTree','coc-explorer','markdown', 'text']
 let g:indent_blankline_bufname_exclude = ['term']
 
 " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠠⡀⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -184,7 +184,11 @@ let g:startify_custom_header = [
 
 let g:startify_bookmarks = [ 
             \{'c': '~/.vimrc'}, 
-            \'~/.zshrc' 
+            \'~/.zshrc',
+            \'/etc/hosts',
+            \'/opt/lampp/etc/httpd.conf',
+            \'/opt/lampp/etc/extra/httpd-vhosts.conf',
+            \'/etc/profile'
             \]
 
 let g:startify_commands = [
