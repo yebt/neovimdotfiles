@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "  "Plug 'arcticicestudio/nord-vim'
 "  "Plug 'cocopon/iceberg.vim'
+"  Plug 'safv12/andromeda.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/seoul256.vim'

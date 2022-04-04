@@ -20,7 +20,9 @@ augroup phpinitcharacter
     autocmd BufNewFile,BufRead *.php inoremap <expr><silent>< line('.')==1? "\<?php<CR><CR>"  : "<"
 augroup end
 
-autocmd BufNewFile,BufRead *.php nnoremap <silent><M-r> :TermExec cmd="php %:p" direction=float  hidden=true<cr> 
+autocmd BufNewFile,BufRead *.php nnoremap <silent><M-r> :TermExec cmd="php %:p && exit" direction=float  hidden=true<cr> 
+autocmd BufNewFile,BufRead *.php command! PHPCBF :!phpcbf --standard=PSR12 --tab-width=4 %
+
 
 augroup restore_cursor
     autocmd!
@@ -35,5 +37,8 @@ autocmd TermEnter term://*toggleterm#* tnoremap <silent><A-t> <Cmd>exe v:count1 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 "autocmd CursorHold * silent call HighlightCursorWord()
 
-autocmd BufNewFile,BufRead *.md set conceallevel=2
+command! -nargs=0 Format :call CocActionAsync('format')
+
+autocmd BufNewFile,BufRead *.md set conceallevel=1
+
 

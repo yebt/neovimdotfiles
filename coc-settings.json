@@ -24,10 +24,20 @@
     "diagnostic.infoSign": "!",
     "diagnostic.warningSign": "⚠",
     "diagnostic.hintSign": "¿",
-   
-    
-    "suggest.noselect": false,
+
+
+    //"suggest.noselect": false,
     "suggest.floatEnable": true,
+    "suggest.acceptSuggestionOnCommitCharacter": false,
+    "suggest.enablePreview": true,
+    "suggest.snippetIndicator": "~",
+    "suggest.echodocSupport": true,
+    "suggest.floatConfig": {
+        "winblend": 2,
+        "border": true,
+        "focusable": true,
+        "shadow": true
+    },
 
     "explorer.icon.enableNerdfont": true,
     "explorer.icon.source": "nvim-web-devicons",
@@ -59,7 +69,7 @@
         "php": ["php", "html"],
         "tpl": ["html"]
     },
- 
+
     "coc.source.emoji.enable": true,
     "coc.source.emoji.filetypes": [
         "markdown",
@@ -68,5 +78,18 @@
     "coc.source.emoji.shortcut": "T",
     "coc.source.emoji.triggerCharacters": [
         ":"
-    ]
+    ],
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
 }
