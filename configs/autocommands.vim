@@ -36,4 +36,5 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-
+"autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2| setlocal set softtabstop=2
+autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2 

@@ -27,7 +27,14 @@ let g:rbpt_colorpairs = [
 let g:indentLine_char = '▏'
 let g:indentLine_first_char= '▏'
 let g:indentLine_showFirstIndentLevel=1
-let g:indentLine_fileTypeExclude=['text', 'sh']
+let g:indentLine_fileTypeExclude=['text', 'sh', 'startify']
 let g:indentLine_bufTypeExclude=['help', 'terminal', 'startify']
 let g:indentLine_faster=1
 
+
+let g:nvim_tree_show_icons = {
+            \ 'git': 0,
+            \ 'folders': 1,
+            \ 'files': 1,
+            \ 'folder_arrows': 1,
+            \ }

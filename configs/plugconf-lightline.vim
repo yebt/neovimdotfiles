@@ -4,7 +4,7 @@
 "colorscheme': 'plastic
 
 let g:lightline = {
-            \'colorscheme': 'elly',
+            \'colorscheme': 'gruvbox',
             \'component_function': {'filetype': 'MyFiletype','fileformat': 'MyFileformat',},
             \'enable': {'tabline': 0},
             \ 'mode_map': {

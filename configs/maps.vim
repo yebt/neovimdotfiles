@@ -86,3 +86,7 @@ vnoremap <silent> ' c'<C-r><C-o>"'<ESC>bvi'
 vnoremap <silent> " c"<C-r><C-o>""<ESC>bvi"
 
 
+""""""""""""
+" NVIM TREE"
+""""""""""""
+nnoremap <silent><A-b> :NvimTreeToggle<CR>

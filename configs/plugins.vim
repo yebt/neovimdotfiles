@@ -13,7 +13,7 @@ Plug 'honza/vim-snippets'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-sleuth'
+"Plug 'tpope/vim-sleuth'
 
 " Fold
 Plug 'pseewald/vim-anyfold'
@@ -60,13 +60,14 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Tree
 "Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
+
 
 " Bufferline tab
 "Plug 'bagrat/vim-buffet'
-"Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
-Plug 'pacha/vem-tabline' "3
-"Plug 'zefei/vim-wintabs' "2
-"Plug 'zefei/vim-wintabs'
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+"Plug 'pacha/vem-tabline' "3
+"Plug 'bling/vim-bufferline'
 
 " Status line
 Plug 'itchyny/lightline.vim'

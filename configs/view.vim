@@ -1,2 +1,2 @@
-"colorscheme gruvbox
-colorscheme elly
+colorscheme gruvbox
+"colorscheme elly
