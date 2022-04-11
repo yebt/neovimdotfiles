@@ -1,10 +1,14 @@
 call plug#begin("~/.config/nvim/plugged")
 
+" Live Servers
+"Plug 'turbio/bracey.vim'
+"Plug 'jaxbot/browserlink.vim'
+
 " COMPLETETION 
 
 " COC
 "Plug 'neoclide/coc.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Snippets
 Plug 'Shougo/neosnippet.vim'
@@ -14,6 +18,14 @@ Plug 'honza/vim-snippets'
 " Syntax
 Plug 'sheerun/vim-polyglot'
 "Plug 'tpope/vim-sleuth'
+"Plug 'posva/vim-vue'
+"Plug 'leafOfTree/vim-vue-plugin'
+
+"  Auto close tag
+"Plug 'alvan/vim-closetag'
+
+"Match Tag 
+"Plug 'leafOfTree/vim-matchtag'
 
 " Fold
 Plug 'pseewald/vim-anyfold'
@@ -24,7 +36,7 @@ Plug 'tpope/vim-commentary'
 
 " Autopairs
 "Plug 'windwp/nvim-autopairs'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -50,7 +62,7 @@ Plug 'dstein64/vim-startuptime'
 
 
 " Rainbow parentheses
-Plug 'kien/rainbow_parentheses.vim'
+"Plug 'kien/rainbow_parentheses.vim'
 
 
 " Icons
@@ -95,3 +107,6 @@ Plug 'flrnprz/plastic.vim'
 Plug 'jsit/toast.vim' "Nice
 
 call plug#end()
+
+" coc
+"CocInstall coc-flutter
