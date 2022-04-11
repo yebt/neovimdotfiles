@@ -1,0 +1,84 @@
+
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.017  000.017: --- NVIM STARTING ---
+000.776  000.759: locale set
+001.445  000.670: inits 1
+001.474  000.029: window checked
+007.206  005.732: parsing arguments
+007.393  000.187: expanding arguments
+007.433  000.040: inits 2
+007.878  000.445: init highlight
+007.883  000.005: waiting for UI
+008.707  000.824: done waiting for UI
+008.721  000.014: init screen for UI
+008.741  000.020: init default mappings
+008.811  000.070: init default autocommands
+008.868  000.015  000.015: sourcing /usr/share/nvim/archlinux.vim
+008.872  000.038  000.023: sourcing /etc/xdg/nvim/sysinit.vim
+009.348  000.054  000.054: sourcing /home/btye/.config/nvim/configs/autocommands.vim
+009.379  000.018  000.018: sourcing /home/btye/.config/nvim/configs/funcitons.vim
+009.528  000.137  000.137: sourcing /home/btye/.config/nvim/configs/maps.vim
+009.706  000.071  000.071: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+014.794  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.926  005.191  005.173: sourcing /usr/share/nvim/runtime/filetype.vim
+015.826  000.470  000.470: sourcing /usr/share/nvim/runtime/scripts.vim
+015.882  006.293  000.562: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+015.967  000.012  000.012: sourcing /usr/share/nvim/runtime/filetype.vim
+016.007  000.011  000.011: sourcing /usr/share/nvim/runtime/filetype.vim
+016.073  000.040  000.040: sourcing /usr/share/nvim/runtime/ftplugin.vim
+016.123  000.012  000.012: sourcing /usr/share/nvim/runtime/filetype.vim
+016.175  000.026  000.026: sourcing /usr/share/nvim/runtime/indent.vim
+016.232  006.691  000.297: sourcing /home/btye/.config/nvim/configs/options.vim
+017.481  001.207  001.207: sourcing /home/btye/.local/share/nvim/site/autoload/plug.vim
+018.659  000.666  000.666: sourcing /usr/share/nvim/runtime/ftoff.vim
+024.091  000.012  000.012: sourcing /home/btye/.config/nvim/plugged/vim-fugitive/ftdetect/fugitive.vim
+024.165  000.011  000.011: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+024.257  004.560  004.536: sourcing /usr/share/nvim/runtime/filetype.vim
+024.311  000.012  000.012: sourcing /usr/share/nvim/runtime/ftplugin.vim
+024.361  000.010  000.010: sourcing /usr/share/nvim/runtime/indent.vim
+024.385  008.138  001.683: sourcing /home/btye/.config/nvim/configs/plugins.vim
+024.406  000.007  000.007: sourcing /home/btye/.config/nvim/configs/view.vim
+024.481  015.590  000.545: sourcing /home/btye/.config/nvim/init.vim
+024.487  000.049: sourcing vimrc file(s)
+025.756  001.017  001.017: sourcing /home/btye/.config/nvim/plugged/vim-fugitive/plugin/fugitive.vim
+025.927  000.096  000.096: sourcing /home/btye/.config/nvim/plugged/lightline.vim/plugin/lightline.vim
+026.208  000.209  000.209: sourcing /home/btye/.config/nvim/plugged/vim-startuptime/plugin/startuptime.vim
+026.687  000.169  000.169: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+026.716  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/health.vim
+026.807  000.078  000.078: sourcing /usr/share/nvim/runtime/plugin/man.vim
+027.259  000.174  000.174: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+027.360  000.537  000.363: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+027.505  000.131  000.131: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+027.886  000.365  000.365: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+028.078  000.169  000.169: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+028.205  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+028.258  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+028.404  000.126  000.126: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+028.502  000.075  000.075: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+028.541  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+028.704  000.145  000.145: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+029.309  000.525  000.525: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+030.058  001.763: loading rtp plugins
+030.454  000.397: loading packages
+031.354  000.899: loading after plugins
+031.382  000.028: inits 3
+032.745  001.363: reading ShaDa
+032.882  000.137: opening buffers
+033.264  000.301  000.301: sourcing /home/btye/.config/nvim/plugged/lightline.vim/autoload/lightline.vim
+033.713  000.043  000.043: sourcing /home/btye/.config/nvim/plugged/lightline.vim/autoload/lightline/tab.vim
+034.082  000.134  000.134: sourcing /home/btye/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme.vim
+035.838  001.979  001.845: sourcing /home/btye/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/powerline.vim
+035.848  002.036  000.056: sourcing /home/btye/.config/nvim/plugged/lightline.vim/autoload/lightline/colorscheme/default.vim
+038.491  003.229: BufEnter autocommands
+038.495  000.005: editing files in windows
+038.590  000.095: VimEnter autocommands
+038.595  000.005: UIEnter autocommands
+038.837  000.185  000.185: sourcing /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+038.845  000.066: before starting main loop
+040.443  001.597: first screen update
+040.448  000.005: --- NVIM STARTED ---
