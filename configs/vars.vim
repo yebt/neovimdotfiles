@@ -38,3 +38,10 @@ let g:nvim_tree_show_icons = {
             \ 'files': 1,
             \ 'folder_arrows': 1,
             \ }
+
+
+" Bracery 
+" DEfault browser
+let g:bracey_browser_command =0
+let g:bracey_auto_start_browser=1
+let g:bracey_refresh_on_save=1

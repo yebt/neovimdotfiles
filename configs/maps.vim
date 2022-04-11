@@ -86,6 +86,11 @@ vnoremap <silent> ' c'<C-r><C-o>"'<ESC>bvi'
 vnoremap <silent> " c"<C-r><C-o>""<ESC>bvi"
 
 
+"""""""""""""""""""""""
+" Try map the comment "
+"""""""""""""""""""""""
+" inoremap <silent><C-S-7> :echo "asd"<CR>
+
 """"""""""""
 " NVIM TREE"
 """"""""""""

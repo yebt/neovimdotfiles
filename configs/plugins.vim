@@ -1,9 +1,9 @@
 call plug#begin("~/.config/nvim/plugged")
 
 " Live Servers
-"Plug 'turbio/bracey.vim'
-Plug 'jaxbot/browserlink.vim'
-" 
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'jaxbot/browserlink.vim'
+ 
 " " COMPLETETION 
 " 
 " " COC
@@ -20,7 +20,10 @@ Plug 'sheerun/vim-polyglot'
 " "Plug 'tpope/vim-sleuth'
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
-" 
+
+" Context
+Plug 'wellle/context.vim'
+
 " "  Auto close tag
 Plug 'alvan/vim-closetag'
 " 
@@ -32,8 +35,9 @@ Plug 'leafOfTree/vim-matchtag'
 " 
 " " Commenter
 " "Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-commentary'
-" 
+"Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
+
 " " Autopairs
 " "Plug 'windwp/nvim-autopairs'
 " "Plug 'jiangmiao/auto-pairs'
@@ -72,13 +76,13 @@ Plug 'kyazdani42/nvim-web-devicons'
 " 
 " " Tree
 " "Plug 'preservim/nerdtree'
-" Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua'
 " 
 " 
 " " Bufferline tab
 " "Plug 'bagrat/vim-buffet'
-" Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
-" "Plug 'pacha/vem-tabline' "3
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+"Plug 'pacha/vem-tabline' "3
 " "Plug 'bling/vim-bufferline'
 " 
 " " Status line

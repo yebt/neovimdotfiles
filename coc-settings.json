@@ -16,6 +16,6 @@
     "explorer.file.column.indent.indentLine": true,
     "explorer.enableFloatinput": true,
 
-     "suggest.noselect": false,
+    // "suggest.noselect": false,
     "suggest.floatEnable": false
 }
