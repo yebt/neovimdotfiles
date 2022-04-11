@@ -31,10 +31,10 @@ autocmd BufNewFile,BufRead *.md set conceallevel=2
 
 autocmd FileType apache setlocal commentstring=#\ %s
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 "autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2| setlocal set softtabstop=2
 autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2 
