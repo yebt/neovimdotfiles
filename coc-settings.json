@@ -17,5 +17,7 @@
     "explorer.enableFloatinput": true,
 
     // "suggest.noselect": false,
-    "suggest.floatEnable": false
+    "suggest.floatEnable": false,
+
+    "prettier.tabWidth": 4
 }

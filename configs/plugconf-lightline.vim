@@ -2,6 +2,7 @@
 "'colorscheme': 'spaceduck',
 "'colorscheme': 'elly',
 "colorscheme': 'plastic
+"            \'colorscheme': 'gruvbox',
 
 let g:lightline = {
             \'colorscheme': 'gruvbox',

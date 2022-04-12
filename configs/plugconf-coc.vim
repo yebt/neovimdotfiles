@@ -1,37 +1,38 @@
-let g:coc_global_extensions = [
-            \'coc-json', 
-            \'coc-tsserver', 
-            \'coc-json', 
-            \'coc-html', 
-            \'coc-css',
-            \'coc-tailwindcss',
-            \'coc-pyright', 
-            \'coc-phpls',
-            \'coc-phpactor',
-            \'@yaegassy/coc-intelephense',
-            \'coc-php-cs-fixer',
-            \'coc-prettier',
-            \'coc-vimlsp',
-            \'coc-angular',
-            \'coc-blade',
-            \'coc-cssmodules',
-            \'coc-emmet',
-            \'coc-explorer',
-            \'coc-flutter',
-            \'coc-html-css-support',
-            \'coc-java',
-            \'coc-markdownlint',
-            \'coc-sql',
-            \'coc-tabnine',
-            \'coc-snippets',
-            \'coc-floatinput',
-            \'coc-prettier',
-            \'coc-flutter',
-            \'coc-vue',
-            \'coc-vetur',
-            \'coc-pairs',
-            \'coc-marketplace'
-            \]
+" let g:coc_global_extensions = [
+"             \'@yaegassy/coc-intelephense',
+"             \'coc-angular',
+"             \'coc-blade',
+"             \'coc-css',
+"             \'coc-cssmodules',
+"             \'coc-emmet',
+"             \'coc-explorer',
+"             \'coc-floatinput',
+"             \'coc-flutter',
+"             \'coc-flutter',
+"             \'coc-html', 
+"             \'coc-html-css-support',
+"             \'coc-java',
+"             \'coc-json', 
+"             \'coc-json', 
+"             \'coc-markdownlint',
+"             \'coc-marketplace',
+"             \'coc-pairs',
+"             \'coc-php-cs-fixer',
+"             \'coc-phpactor',
+"             \'coc-phpls',
+"             \'coc-prettier'
+"             \'coc-prettier',
+"             \'coc-prettier',
+"             \'coc-pyright', 
+"             \'coc-snippets',
+"             \'coc-sql',
+"             \'coc-tabnine',
+"             \'coc-tailwindcss',
+"             \'coc-tsserver', 
+"             \'coc-vetur',
+"             \'coc-vimlsp',
+"             \'coc-vue',
+"             \]
 
 """""""
 " COC "
@@ -109,4 +110,7 @@ function! StatusDiagnostic() abort
     endif
     return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
 endfunction
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 

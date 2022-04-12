@@ -16,19 +16,30 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 
 " " Syntax
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
+
 " "Plug 'tpope/vim-sleuth'
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'mattn/emmet-vim'
 
 " Context
-Plug 'wellle/context.vim'
+"Plug 'wellle/context.vim'
 
 " "  Auto close tag
 Plug 'alvan/vim-closetag'
 " 
 " "Match Tag 
 Plug 'leafOfTree/vim-matchtag'
+" Match up
+Plug 'andymass/vim-matchup'
 " 
 " " Fold
 "Plug 'pseewald/vim-anyfold'
@@ -36,11 +47,12 @@ Plug 'leafOfTree/vim-matchtag'
 " " Commenter
 " "Plug 'preservim/nerdcommenter'
 "Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim' "BEtter
 
 " " Autopairs
 " "Plug 'windwp/nvim-autopairs'
 " "Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 " 
 " " Surround
 Plug 'tpope/vim-surround'
@@ -109,6 +121,8 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' } "nee flata contraste bgro
 " Plug 'ulwlu/elly.vim' 
 " Plug 'flrnprz/plastic.vim'
 " Plug 'jsit/toast.vim' "Nice
+"Plug 'cocopon/iceberg.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 call plug#end()
 
