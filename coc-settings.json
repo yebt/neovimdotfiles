@@ -1,0 +1,46 @@
+{
+    "emmet.includeLanguages": {
+        "vue-hmtll": "hmtl",
+        "javascript": "javascriptreact",
+        "vue": "html",
+        "django-html": "html",
+        "blade" : "html"
+    },
+
+    "markdownlint.config": {
+        "line_length": false
+    },
+
+    "diagnostic.errorSign": "x",
+    "diagnostic.infoSign": "!",
+    //"diagnostic.warningSign": "⚠",
+    "diagnostic.hintSign": "¿",
+
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "nvim-web-devicons",
+    "explorer.file.showHiddenFiles": true,
+    "explorer.file.column.indent.indentLine": true,
+    "explorer.enableFloatinput": true,
+
+
+    "languageserver": {
+        // "clangd": {
+        //     "command": "clangd",
+        //     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+        //     "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+        // },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                },
+                "client": {
+                    "snippetSupport": true
+                }
+            }
+        }
+    }
+}
