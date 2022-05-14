@@ -9,21 +9,24 @@ Plug 'honza/vim-snippets'
 
 
 Plug 'godlygeek/tabular'
-Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'theHamsta/nvim-treesitter-pairs'
+"Plug 'theHamsta/nvim-treesitter-commonlisp'
 
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'pangloss/vim-javascript'
 
 Plug 'mattn/emmet-vim'
 
-Plug 'posva/vim-vue'
+Plug 'qaiviq/vim-imager'
 
-Plug 'leafOfTree/vim-vue-plugin'
 
 
 Plug 'ap/vim-css-color'
@@ -33,7 +36,7 @@ Plug 'leafOfTree/vim-matchtag'
 Plug 'andymass/vim-matchup'
 
 Plug 'windwp/nvim-autopairs'
-Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
 
 
 Plug 'tpope/vim-commentary'
@@ -59,6 +62,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 
 Plug 'kyazdani42/nvim-tree.lua'
+
+Plug 'preservim/tagbar'
+
+Plug 'vim-php/phpctags', {'do': 'composer install' }
 
 Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 

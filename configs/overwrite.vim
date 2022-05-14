@@ -3,31 +3,55 @@ let g:bufferline_echo = 1
 
 let g:coc_global_extensions = [
             \'@yaegassy/coc-intelephense',
-            \'coc-blade',
+            \'coc-explorer',
+            \'coc-floatinput',
             \'coc-css',
             \'coc-cssmodules',
             \'coc-emmet',
-            \'coc-explorer',
-            \'coc-floatinput',
             \'coc-html', 
             \'coc-html-css-support',
-            \'coc-java',
             \'coc-json', 
             \'coc-markdownlint',
-            \'coc-pairs',
-            \'coc-php-cs-fixer',
-            \'coc-phpactor',
-            \'coc-phpls',
             \'coc-prettier',
-            \'coc-pyright', 
-            \'coc-sql',
-            \'coc-tabnine',
+            \'coc-pyright',
+            \'coc-snippets',
             \'coc-tailwindcss',
-            \'coc-tsserver', 
-            \'coc-vetur',
-            \'coc-vimlsp',
+            \'coc-tsserver',
             \'coc-vue',
+            \'@yaegassy/coc-volar',
+            \'@yaegassy/coc-volar-tools'
             \]
+" let g:coc_global_extensions = [
+"             \'@yaegassy/coc-intelephense',
+"             \'coc-blade',
+"             \'coc-css',
+"             \'coc-cssmodules',
+"             \'coc-emmet',
+"             \'coc-explorer',
+"             \'coc-floatinput',
+"             \'coc-html', 
+"             \'coc-html-css-support',
+"             \'coc-java',
+"             \'coc-json', 
+"             \'coc-markdownlint',
+"             \'coc-pairs',
+"             \'coc-php-cs-fixer',
+"             \'coc-phpactor',
+"             \'coc-phpls',
+"             \'coc-prettier',
+"             \'coc-pyright', 
+"             \'coc-snippets',
+"             \'coc-sql',
+"             \'coc-tabnine',
+"             \'coc-tailwindcss',
+"             \'coc-tsserver', 
+"             \'coc-vetur',
+"             \'coc-vimlsp',
+"             \'coc-vue',
+"             \'coc-vetur',
+"             \'@yaegassy/coc-volar',
+"             \'@yaegassy/coc-volar-tools'
+"             \]
 
 " let g:coc_global_extensions = [
 "             \'@yaegassy/coc-intelephense',
@@ -125,6 +149,17 @@ endfunction
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
 
 
 
@@ -141,21 +176,21 @@ let g:lightline = {
                     \'fileformat': 'MyFileformat',
                     \'cocstatus': 'coc#status'
                     \},
-                \'enable': {'tabline': 0},
-                \ 'mode_map': {
-                    \ 'n' : 'N',
-                    \ 'i' : 'I',
-                    \ 'R' : 'R',
-                    \ 'v' : 'V',
-                    \ 'V' : 'VL',
-                    \ "\<C-v>": 'VB',
-                    \ 'c' : 'C',
-                    \ 's' : 'S',
-                    \ 'S' : 'SL',
-                    \ "\<C-s>": 'SB',
-                    \ 't': 'T',
-                    \ },
-                    \}
+                    \'enable': {'tabline': 0},
+                    \ 'mode_map': {
+                        \ 'n' : 'N',
+                        \ 'i' : 'I',
+                        \ 'R' : 'R',
+                        \ 'v' : 'V',
+                        \ 'V' : 'VL',
+                        \ "\<C-v>": 'VB',
+                        \ 'c' : 'C',
+                        \ 's' : 'S',
+                        \ 'S' : 'SL',
+                        \ "\<C-s>": 'SB',
+                        \ 't': 'T',
+                        \ },
+                        \}
 
 
 
@@ -174,11 +209,11 @@ let g:startify_files_number = 4
 let g:startify_custom_header =""
 
 function! GetUniqueSessionName()
-  let path = fnamemodify(getcwd(), ':~:t')
-  let path = empty(path) ? 'no-project' : path
-  let branch = gitbranch#name()
-  let branch = empty(branch) ? '' : '-' . branch
-  return substitute(path . branch, '/', '-', 'g')
+    let path = fnamemodify(getcwd(), ':~:t')
+    let path = empty(path) ? 'no-project' : path
+    let branch = gitbranch#name()
+    let branch = empty(branch) ? '' : '-' . branch
+    return substitute(path . branch, '/', '-', 'g')
 endfunction
 
 "autocmd User        StartifyReady silent execute 'SLoad '  . GetUniqueSessionName()

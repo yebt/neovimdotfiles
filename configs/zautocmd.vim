@@ -64,3 +64,8 @@ autocmd FileType apache setlocal commentstring=#\ %s
 
 "autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2| setlocal set softtabstop=2
 autocmd Filetype NvimTree setlocal tabstop=2| setlocal shiftwidth=2 
+
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
