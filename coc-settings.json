@@ -7,6 +7,20 @@
         "blade" : "html"
     },
 
+
+    "snippets.extends": {
+        "cpp": ["c"],
+        "javascriptreact": ["javascript"],
+        "typescript": ["javascript"]
+    },
+
+    "snippets.ultisnips.enable": true,
+
+    "snippets.ultisnips.trace": false,
+
+    "snippets.snipmate.enable": true,
+
+
     "markdownlint.config": {
         "line_length": false
     },
@@ -14,6 +28,7 @@
     "diagnostic.errorSign": "x",
     "diagnostic.infoSign": "!",
     //"diagnostic.warningSign": "⚠",
+    "diagnostic.warningSign": "!",
     "diagnostic.hintSign": "¿",
 
     "explorer.icon.enableNerdfont": true,
@@ -21,6 +36,8 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.file.column.indent.indentLine": true,
     "explorer.enableFloatinput": true,
+    "explorer.quitOnOpen": true,
+    "explorer.git.enable": false,
 
 
     "languageserver": {
