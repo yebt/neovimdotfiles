@@ -40,6 +40,7 @@ Plug 'windwp/nvim-ts-autotag'
 
 
 Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdcommenter'
 
 
 Plug 'tpope/vim-fugitive'
