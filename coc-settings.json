@@ -38,6 +38,11 @@
     "explorer.enableFloatinput": true,
     "explorer.quitOnOpen": true,
     "explorer.git.enable": false,
+    "explorer.position": "right",
+    //"explorer.position": "floating",
+    //"explorer.contentWidth": 0,
+    "explorer.contentWidthType": "win-width",
+    "explorer.previewAction.onHover": "false",
 
 
     "languageserver": {
