@@ -60,6 +60,7 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lambdalisue/nerdfont.vim'
 
 
 Plug 'kyazdani42/nvim-tree.lua'

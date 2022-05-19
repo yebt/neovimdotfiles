@@ -46,7 +46,7 @@ vnoremap <silent> " c"<C-r><C-o>""<ESC>bvi"
 
 nnoremap <silent><A-b> :NvimTreeToggle<CR>
 
-nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle --sources=buffer+,file+<CR>
+nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle --sources=buffer+,file+ <CR>
 nmap <silent> <Leader>: <Plug>(coc-floatinput-command)
 "noremap <silent><C-S-p>: <Plug>(coc-floatinput-command)
 nmap <silent> <Leader>c: <Plug>(coc-floatinput-coc-command)
