@@ -41,6 +41,7 @@ autocmd BufNewFile,BufRead,BufEnter *.md imap <silent><C-i>  **<Left>
 autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-k>  ```<CR>```<Up>
 autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-k> []()<Left><Left><Left>
 autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-i> ![]()<Left><Left><Left>
+autocmd BufNewFile,BufRead,BufEnter *.md command! WrapLines :%s/.\{80}/&\r/g
 
 "let g:polyglot_disabled = ['markdown']
 "let g:polyglot_disabled = ['markdown.plugin']
