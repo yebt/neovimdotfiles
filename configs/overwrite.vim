@@ -19,7 +19,9 @@ let g:coc_global_extensions = [
             \'coc-tsserver',
             \'coc-vue',
             \'@yaegassy/coc-volar',
-            \'@yaegassy/coc-volar-tools'
+            \'@yaegassy/coc-volar-tools',
+            \'coc-blade-linter',
+            \'coc-blade-formatter',
             \]
 " let g:coc_global_extensions = [
 "             \'@yaegassy/coc-intelephense',
@@ -138,6 +140,7 @@ function! StatusDiagnostic() abort
     if empty(info) | return '' | endif
     let msgs = []
     if get(info, 'error', 0)
+        " call add(msgs, 'E' . info['error'])
         call add(msgs, 'E' . info['error'])
     endif
     if get(info, 'warning', 0)

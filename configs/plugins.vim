@@ -6,12 +6,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+Plug 'sunzhongwei/vim-laravel-snippets'
 
 
 Plug 'godlygeek/tabular'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects' "this return a error
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -19,7 +20,7 @@ Plug 'theHamsta/nvim-treesitter-pairs'
 "Plug 'theHamsta/nvim-treesitter-commonlisp'
 
 "Plug 'sheerun/vim-polyglot'
-Plug 'posva/vim-vue'
+"Plug 'posva/vim-vue' " in polyglot
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'pangloss/vim-javascript'
 
@@ -53,6 +54,10 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
+Plug 'rcarriga/nvim-notify'
 
 
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}

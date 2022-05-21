@@ -49,8 +49,9 @@ require'nvim-treesitter.configs'.setup {
         'vue'
     },
     highlight = {
-        --enable = true,
+        enable = true,
         --additional_vim_regex_highlighting= {'html'}
+        disable = {'json', 'html', 'vim'}
     },
     indent = {
         enable = true
@@ -90,6 +91,11 @@ require'nvim-treesitter.configs'.setup {
     },
     autotag = {
         enable = true,
+        filetypes = {
+            'html', 'javascript', 'typescript', 'javascriptreact', 
+            'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript',
+            'xml', 'php', 'markdown', 'glimmer','handlebars', 'hbs', 'blade'
+        }
     },
     autotag = {
         enable = true,
@@ -143,10 +149,35 @@ require('nvim-autopairs').setup{
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'main',
-    files = { 'src/parser.c', 'src/scanner.cc' },
-  },
-  filetype = 'org',
+    install_info = {
+        url = 'https://github.com/milisims/tree-sitter-org',
+        revision = 'main',
+        files = { 'src/parser.c', 'src/scanner.cc' },
+    },
+    filetype = 'org',
 }
+
+
+require('telescope').load_extension('coc')
+
+
+-- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics,
+--     {
+--         underline = true,
+--         virtual_text = {
+--             spacing = 5,
+--             severity_limit = 'Warning',
+--         },
+--         update_in_insert = true,
+--     }
+-- )
+
+-- require 'notify'.setup({
+--     timeout = 1000,
+--     render = 'minimal'
+-- })
+-- vim.notify = require("notify")
+
+-- local async = require("plenary.async")
+-- local notify = require("notify").async
