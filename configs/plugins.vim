@@ -1,38 +1,57 @@
 call plug#begin("~/.config/nvim/plugged")
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"# Conpletetions
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
-Plug 'sunzhongwei/vim-laravel-snippets'
-
-
-Plug 'godlygeek/tabular'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-" Plug 'nvim-treesitter/nvim-treesitter-textobjects' "this return a error
-Plug 'romgrk/nvim-treesitter-context'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-Plug 'theHamsta/nvim-treesitter-pairs'
-"Plug 'theHamsta/nvim-treesitter-commonlisp'
-
-"Plug 'sheerun/vim-polyglot'
-"Plug 'posva/vim-vue' " in polyglot
-Plug 'leafOfTree/vim-vue-plugin'
-Plug 'pangloss/vim-javascript'
+"# Completetions source
 
 Plug 'mattn/emmet-vim'
 
-Plug 'qaiviq/vim-imager'
 
-
+"# Syntax
 
 Plug 'ap/vim-css-color'
 
+
+"# Git
+
+
+"# Behaviour
+
 Plug 'alvan/vim-closetag'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,php,blade,vue'
+let g:closetag_filetypes = 'html,xhtml,phtml,php,blade,vue'
+
+
+
+"# Ui elements
+
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'sunzhongwei/vim-laravel-snippets'
+
+
+" Plug 'godlygeek/tabular'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+" " Plug 'nvim-treesitter/nvim-treesitter-textobjects' "this return a error
+" Plug 'romgrk/nvim-treesitter-context'
+" Plug 'p00f/nvim-ts-rainbow'
+" Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+" Plug 'theHamsta/nvim-treesitter-pairs'
+" "Plug 'theHamsta/nvim-treesitter-commonlisp'
+
+" "Plug 'sheerun/vim-polyglot'
+" "Plug 'posva/vim-vue' " in polyglot
+" Plug 'leafOfTree/vim-vue-plugin'
+" Plug 'pangloss/vim-javascript'
+
+
+
+
+
 Plug 'leafOfTree/vim-matchtag'
 Plug 'andymass/vim-matchup'
 
