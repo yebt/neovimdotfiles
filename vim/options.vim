@@ -3,7 +3,8 @@ set backspace=indent,eol,start
 "set timeoutlen=1000
 "set updatetime=500
 set timeoutlen=0
-set signcolumn=number
+" set signcolumn=number
+"set signcolumn=yes
 
 
 set mouse=a
@@ -21,8 +22,8 @@ set titlestring ="%<%F%=%l/%L - nvim"
 syntax on
 set number
 set numberwidth=1
-"set signcolumn=auto:2
-set signcolumn=number
+set signcolumn=auto:2
+"set signcolumn=number
 set cursorline
 
 
