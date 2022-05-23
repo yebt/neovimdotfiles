@@ -8,277 +8,66 @@ end
 return require("packer").startup(
     {
         function(use)
-            -- Plugins{{{
+            -- Plugins
             use "wbthomason/packer.nvim"
+            use "nvim-lua/plenary.nvim"
 
             -- LSP
-            use {
-                "williamboman/nvim-lsp-installer",
-                {
-                    "neovim/nvim-lspconfig",
-                    config = function()
-                        require("nvim-lsp-installer").setup {
-                            automatic_installation = true,
-                            ui = {
-                                icons = {
-                                    server_installed = "✓",
-                                    server_pending = "➜",
-                                    server_uninstalled = "✗"
-                                }
-                            }
-                        }
-                        -- local lspconfig = require("lspconfig")
-
-                        -- lspconfig.sumneko_lua.setup {}
-                        -- lspconfig.sumneko_lua.setup {}
-                        -- lspconfig.bashls.setup {}
-                        -- lspconfig.clangd.setup {}
-                        -- lspconfig.cssls.setup {}
-                        -- lspconfig.cssmodules_ls.setup {}
-                        -- lspconfig.diagnosticls.setup {}
-                        -- lspconfig.emmet_ls.setup {}
-                        -- lspconfig.html.setup {}
-                        -- lspconfig.intelephense.setup {}
-                        -- lspconfig.jsonls.setup {}
-                        -- lspconfig.phpactor.setup {}
-                        -- lspconfig.prosemd_lsp.setup {}
-                        -- lspconfig.psalm.setup {}
-                        -- lspconfig.pyright.setup {}
-                        -- lspconfig.sqls.setup {}
-                        -- lspconfig.sumneko_lua.setup {}
-                        -- lspconfig.tailwindcss.setup {}
-                        -- lspconfig.tsserver.setup {}
-                        -- lspconfig.vimls.setup {}
-                        -- lspconfig.vls.setup {}
-                        -- lspconfig.volar.setup {}
-                        -- lspconfig.vuels.setup {}
-                    end
-                }
-            }
-            -- use {
-            --     "williamboman/nvim-lsp-installer",
-            --     config = function()
-            --         require("nvim-lsp-installer").setup {}
-            --     end
-            -- }
-            --
-            -- use {
-            --     "neovim/nvim-lspconfig",
-            --     config = function()
-            --         -- -- use python-language-server
-            --         -- require "lspconfig".pyright.setup {}
-            --         -- -- bash-language-server
-            --         -- require "lspconfig".bashls.setup {}
-            --         -- -- clagn
-            --         -- require "lspconfig".clangd.setup {}
-            --         -- -- css
-            --         -- --Enable (broadcasting) snippet capability for completion
-            --         -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-            --         -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-            --         --
-            --         -- require "lspconfig".cssls.setup {
-            --         --     capabilities = capabilities
-            --         -- }
-            --         -- -- css modelues
-            --         -- require "lspconfig".cssmodules_ls.setup {}
-            --         -- -- emmet
-            --         -- require "lspconfig".emmet_ls.setup {
-            --         --     filetypes = {"html", "css", "php", "phtml", "blade", "javascript", "vue", "vue-html"}
-            --         -- }
-            --         -- -- html
-            --         -- --Enable (broadcasting) snippet capability for completion
-            --         -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-            --         -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-            --         --
-            --         -- require "lspconfig".html.setup {
-            --         --     capabilities = capabilities,
-            --         --     filetypes = {"html", "css", "php", "phtml", "blade", "javascript", "vue", "vue-html"}
-            --         -- }
-            --         -- -- inthelephense
-            --         -- require "lspconfig".intelephense.setup {}
-            --         -- -- json
-            --         -- --Enable (broadcasting) snippet capability for completion
-            --         -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-            --         -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-            --         --
-            --         -- require "lspconfig".jsonls.setup {
-            --         --     capabilities = capabilities
-            --         -- }
-            --         -- -- phpactor
-            --         -- require "lspconfig".phpactor.setup {}
-            --         -- -- stylelint_lsp
-            --         -- require "lspconfig".stylelint_lsp.setup {
-            --         --     settings = {
-            --         --         stylelintplus = {}
-            --         --     }
-            --         -- }
-            --         -- -- lua
-            --         --
-            --         -- -- tailwindcss
-            --         -- require "lspconfig".tailwindcss.setup {}
-            --         -- -- typescript
-            --         -- -- rememember add this to root of project
-            --         -- -- {
-            --         -- --   "compilerOptions": {
-            --         -- --     "module": "commonjs",
-            --         -- --     "target": "es6",
-            --         -- --     "checkJs": false
-            --         -- --   },
-            --         -- --   "exclude": [
-            --         -- --     "node_modules"
-            --         -- --   ]
-            --         -- -- }
-            --         -- require "lspconfig".tsserver.setup {}
-            --         -- -- vue -vls
-            --         -- require "lspconfig".vuels.setup {}
-            --         -- -- vue -volar
-            --         -- require "lspconfig".volar.setup {
-            --         --     filetypes = {"typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json"}
-            --         -- }
-            --     end
-            -- }
 
             -- Autocomplete
+            -- use {
+            --     "neoclide/coc.nvim",
+            --     branch = "release"
+            -- }
             use {
-                -- cmp source
-                "hrsh7th/cmp-nvim-lsp",
-                "hrsh7th/cmp-buffer",
-                "hrsh7th/cmp-path",
-                "hrsh7th/cmp-cmdline",
-                -- For ultisnips users.
-                "SirVer/ultisnips",
-                "quangnguyen30192/cmp-nvim-ultisnips"
-            }
-            use {
-                "hrsh7th/nvim-cmp",
+                "neoclide/coc.nvim",
+                branch = "master",
+                run = "yarn install --frozen-lockfile",
                 config = function()
-                    -- Setup nvim-cmp.
-                    local cmp = require "cmp"
+                    vim.g.coc_python_interpreter = "python3"
+                    vim.g.coc_global_extensions = {
+                        '@yaegassy/coc-intelephense',
+                        '@yaegassy/coc-phpstan',
+                        '@yaegassy/coc-volar',
+                        'coc-blade',
+                        'coc-clang-format-style-options',
+                        'coc-clangd',
+                        'coc-css',
+                        'coc-cssmodules',
+                        'coc-emmet',
+                        'coc-explorer',
+                        'coc-git',
+                        'coc-html',
+                        'coc-html',
+                        'coc-html-css-support',
+                        'coc-htmldjango',
+                        'coc-htmlhint',
+                        'coc-json', 
+                        'coc-markdownlint',
+                        'coc-php-cs-fixer',
+                        'coc-phpactor',
+                        'coc-phpls',
+                        'coc-prettier',
+                        'coc-psalm',
+                        'coc-pyright',
+                        'coc-snippets',
+                        'coc-syntax',
+                        'coc-tailwindcss',
+                        'coc-tsserver',
+                        'coc-vetur',
+                        'coc-vimlsp',
+                        -- 'coc-tabnine',
 
-                    cmp.setup(
-                        {
-                            snippet = {
-                                -- REQUIRED - you must specify a snippet engine
-                                expand = function(args)
-                                    vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-                                    -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                                    -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-                                    -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-                                end
-                            },
-                            window = {},
-                            mapping = cmp.mapping.preset.insert(
-                                {
-                                    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                                    ["<C-Space>"] = cmp.mapping.complete(),
-                                    ["<C-e>"] = cmp.mapping.abort(),
-                                    ["<CR>"] = cmp.mapping.confirm({select = true}) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                                }
-                            ),
-                            sources = cmp.config.sources(
-                                {
-                                    {name = "nvim_lsp"},
-                                    -- {name = "vsnip"} -- For vsnip users.
-                                    -- { name = 'luasnip' }, -- For luasnip users.
-                                    {name = "ultisnips"} -- For ultisnips users.
-                                    -- { name = 'snippy' }, -- For snippy users.
-                                },
-                                {
-                                    {name = "buffer"}
-                                }
-                            )
-                        }
-                    )
-
-                    -- Set configuration for specific filetype.
-                    cmp.setup.filetype(
-                        "gitcommit",
-                        {
-                            sources = cmp.config.sources(
-                                {
-                                    {name = "cmp_git"} -- You can specify the `cmp_git` source if you were installed it.
-                                },
-                                {
-                                    {name = "buffer"}
-                                }
-                            )
-                        }
-                    )
-
-                    -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-                    cmp.setup.cmdline(
-                        "/",
-                        {
-                            mapping = cmp.mapping.preset.cmdline(),
-                            sources = {
-                                {name = "buffer"}
-                            }
-                        }
-                    )
-
-                    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-                    cmp.setup.cmdline(
-                        ":",
-                        {
-                            mapping = cmp.mapping.preset.cmdline(),
-                            sources = cmp.config.sources(
-                                {
-                                    {name = "path"}
-                                },
-                                {
-                                    {name = "cmdline"}
-                                }
-                            )
-                        }
-                    )
-                    local lspconfig = require("lspconfig")
-
-                    -- Setup lspconfig.
-                    local capabilities =
-                        require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-                    -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-                    local servers = {
-                        "sumneko_lua",
-                        "sumneko_lua",
-                        "bashls",
-                        "clangd",
-                        "cssls",
-                        "cssmodules_ls",
-                        "diagnosticls",
-                        "emmet_ls",
-                        "html",
-                        "intelephense",
-                        "jsonls",
-                        "phpactor",
-                        "prosemd_lsp",
-                        "psalm",
-                        "pyright",
-                        "sqls",
-                        "sumneko_lua",
-                        "tailwindcss",
-                        "tsserver",
-                        "vimls",
-                        "vls",
-                        "volar",
-                        "vuels"
                     }
-                    for _, lsp in pairs(servers) do
-                        -- require("lspconfig")[lsp].setup {
-                        lspconfig[lsp].setup {
-                            capabilities = capabilities,
-                            flags = {
-                                -- This will be the default in neovim 0.7+
-                                debounce_text_changes = 150
-                            }
-                        }
-                    end
                 end
             }
+            use {'SirVer/ultisnips'}
+            use {'honza/vim-snippets'}
 
             -- Search
             use {"junegunn/fzf"}
             use {"junegunn/fzf.vim"}
+            use {"nvim-telescope/telescope.nvim"}
 
             -- Syntax
             use {"p00f/nvim-ts-rainbow"}
@@ -352,7 +141,7 @@ return require("packer").startup(
                 "nvim-treesitter/nvim-treesitter-context",
                 config = function()
                     require "treesitter-context".setup {
-                        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+                        enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
                         max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
                         patterns = {
                             -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
@@ -395,6 +184,7 @@ return require("packer").startup(
             }
 
             -- GIT
+            use {"tpope/vim-fugitive"}
             use {
                 "lewis6991/gitsigns.nvim",
                 requires = {"nvim-lua/plenary.nvim"},
@@ -402,7 +192,9 @@ return require("packer").startup(
                     require("gitsigns").setup()
                 end
             }
+            use {"tveskag/nvim-blame-line"}
 
+            --
             -- Icons
             use {
                 "kyazdani42/nvim-web-devicons",
@@ -428,7 +220,6 @@ return require("packer").startup(
 
             -- UI
             -- use {"startup-nvim/startup.nvim", requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}, config = function() require"startup".setup()end        }
-
             use {
                 "rafcamlet/tabline-framework.nvim",
                 requires = "kyazdani42/nvim-web-devicons",
@@ -474,272 +265,292 @@ return require("packer").startup(
                     require("tabline_framework").setup {render = render}
                 end
             }
-            -- use{
-            --     "NTBBloodbath/galaxyline.nvim",
-            --     -- your statusline
-            --     config = function()
-            --         -- require("galaxyline.themes.eviline")
-            --         local vim = vim
-            --         local gl = require('galaxyline')
-            --         local condition = require("galaxyline.condition")
-            --
-            --         local gls = gl.section
-            --         gl.short_line_list = {'NvimTree', 'packager', 'vista'}
-            --
-            --         -- Colors
-            --         local colors = {
-            --             bg = '#282a36',
-            --             fg = '#f8f8f2',
-            --             section_bg = '#38393f',
-            --             yellow = '#f1fa8c',
-            --             cyan = '#8be9fd',
-            --             green = '#50fa7b',
-            --             orange = '#ffb86c',
-            --             magenta = '#ff79c6',
-            --             blue = '#8be9fd',
-            --             red = '#ff5555'
-            --         }
-            --
-            --         -- Local helper functions
-            --         local mode_color = function()
-            --             local mode_colors = {
-            --                 n = colors.cyan,
-            --                 i = colors.green,
-            --                 c = colors.orange,
-            --                 V = colors.magenta,
-            --                 [''] = colors.magenta,
-            --                 v = colors.magenta,
-            --                 R = colors.red
-            --             }
-            --
-            --             local color = mode_colors[vim.fn.mode()]
-            --
-            --             if color == nil then color = colors.red end
-            --
-            --             return color
-            --         end
-            --
-            --         -- Left side
-            --         gls.left[1] = {
-            --             ViMode = {
-            --                 provider = function()
-            --                     local alias = {
-            --                         n = 'N',
-            --                         i = 'I',
-            --                         c = 'C',
-            --                         V = 'V',
-            --                         [''] = 'VL',
-            --                         v = 'V',
-            --                         R = 'R'
-            --                     }
-            --                     vim.api.nvim_command('hi GalaxyViMode guibg=' .. mode_color())
-            --                     local alias_mode = alias[vim.fn.mode()]
-            --                     if alias_mode == nil then alias_mode = vim.fn.mode() end
-            --                     return "  " .. alias_mode .. " "
-            --                 end,
-            --                 highlight = {colors.bg, colors.bg},
-            --                 separator = " ",
-            --                 separator_highlight = {colors.section_bg, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[2] = {
-            --             FileIcon = {
-            --                 provider = 'FileIcon',
-            --                 highlight = {
-            --                     require('galaxyline.providers.fileinfo').get_file_icon_color,
-            --                     colors.section_bg
-            --                 }
-            --             }
-            --         }
-            --         gls.left[3] = {
-            --             FileName = {
-            --                 provider = 'FileName',
-            --                 highlight = {colors.fg, colors.section_bg},
-            --                 separator = " ",
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --         gls.left[4] = {
-            --             GitIcon = {
-            --                 provider = function() return '  ' end,
-            --                 condition = condition.check_git_workspace,
-            --                 highlight = {colors.red, colors.bg}
-            --             }
-            --         }
-            --         gls.left[5] = {
-            --             GitBranch = {
-            --                 provider = function()
-            --                     local vcs = require('galaxyline.providers.vcs')
-            --                     local branch_name = vcs.get_git_branch()
-            --                     if (string.len(branch_name) > 28) then
-            --                         return string.sub(branch_name, 1, 25) .. "..."
-            --                     end
-            --                     return branch_name .. " "
-            --                 end,
-            --                 condition = condition.check_git_workspace,
-            --                 highlight = {colors.fg, colors.bg}
-            --             }
-            --         }
-            --         gls.left[6] = {
-            --             DiffAdd = {
-            --                 provider = 'DiffAdd',
-            --                 condition = condition.check_git_workspace,
-            --                 icon = ' ',
-            --                 highlight = {colors.green, colors.bg}
-            --             }
-            --         }
-            --         gls.left[7] = {
-            --             DiffModified = {
-            --                 provider = 'DiffModified',
-            --                 condition = condition.check_git_workspace,
-            --                 icon = ' ',
-            --                 highlight = {colors.orange, colors.bg}
-            --             }
-            --         }
-            --         gls.left[8] = {
-            --             DiffRemove = {
-            --                 provider = 'DiffRemove',
-            --                 condition = condition.check_git_workspace,
-            --                 icon = ' ',
-            --                 highlight = {colors.red, colors.bg}
-            --             }
-            --         }
-            --         gls.left[9] = {
-            --             LeftEnd = {
-            --                 provider = function() return ' ' end,
-            --                 highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --         gls.left[10] = {
-            --             DiagnosticError = {
-            --                 provider = 'DiagnosticError',
-            --                 icon = '  ',
-            --                 highlight = {colors.red, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[11] = {
-            --             Space = {
-            --                 provider = function() return ' ' end,
-            --                 highlight = {colors.section_bg, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[12] = {
-            --             DiagnosticWarn = {
-            --                 provider = 'DiagnosticWarn',
-            --                 icon = '  ',
-            --                 highlight = {colors.orange, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[13] = {
-            --             DiagnosticHint = {
-            --                 provider = 'DiagnosticHint',
-            --                 icon = '  ',
-            --                 highlight = {colors.fg, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[14] = {
-            --             Space = {
-            --                 provider = function() return ' ' end,
-            --                 highlight = {colors.section_bg, colors.section_bg}
-            --             }
-            --         }
-            --         gls.left[15] = {
-            --             DiagnosticInfo = {
-            --                 provider = 'DiagnosticInfo',
-            --                 icon = '  ',
-            --                 highlight = {colors.blue, colors.section_bg},
-            --                 separator = ' ',
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --         -- middle side
-            --         local gps = require("nvim-gps")
-            --         gls.mid[0] = {
-            --             nvimGPS = {
-            --                 provider = function()
-            --                     return gps.get_location()
-            --                 end,
-            --                 condition = function()
-            --                     return gps.is_available()
-            --                 end,
-            --
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --
-            --         -- Right side
-            --         gls.right[1] = {
-            --             FileFormat = {
-            --                 provider = function() return vim.bo.filetype end,
-            --                 highlight = {colors.fg, colors.section_bg},
-            --                 separator = ' ',
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --         gls.right[2] = {
-            --             LineInfo = {
-            --                 provider = 'LineColumn',
-            --                 highlight = { colors.fg, colors.section_bg },
-            --                 separator = ' | ',
-            --                 separator_highlight = { colors.bg, colors.section_bg },
-            --             },
-            --         }
-            --
-            --         gls.right[3] = {
-            --             ShowLspClient = {
-            --                 provider = 'GetLspClient',
-            --                 separator= ' ',
-            --                 condition = function ()
-            --                     local tbl = {['dashboard'] = true,['']=true}
-            --                     if tbl[vim.bo.filetype] then
-            --                         return false
-            --                     end
-            --                     return true
-            --                 end,
-            --                 icon = 'LSP:',
-            --                 highlight = {colors.cyan,colors.bg,'italic'}
-            --             }
-            --         }
-            --
-            --
-            --
-            --
-            --
-            --         -- Short status line
-            --         gls.short_line_left[1] = {
-            --             BufferType = {
-            --                 provider = 'FileTypeName',
-            --                 highlight = {colors.fg, colors.section_bg},
-            --                 separator = ' ',
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --
-            --         gls.short_line_right[1] = {
-            --             BufferIcon = {
-            --                 provider = 'BufferIcon',
-            --                 highlight = {colors.yellow, colors.section_bg},
-            --                 separator = ' ',
-            --                 separator_highlight = {colors.section_bg, colors.bg}
-            --             }
-            --         }
-            --
-            --
-            --         -- Force manual load so that nvim boots with a status line
-            --         gl.load_galaxyline()
-            --
-            --     end,
-            --     -- some optional icons
-            --     requires = { "kyazdani42/nvim-web-devicons", opt = true }
-            -- }
+            use {
+                "NTBBloodbath/galaxyline.nvim",
+                -- your statusline
+                config = function()
+                    -- require("galaxyline.themes.eviline")
+                    local vim = vim
+                    local gl = require("galaxyline")
+                    local condition = require("galaxyline.condition")
 
-            -- use {
-            --     'glepnir/indent-guides.nvim',
-            --     config = function()
-            --         exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover'};
-            --         indent_space_guides = false;
-            --     end
-            -- }
+                    local gls = gl.section
+                    gl.short_line_list = {"NvimTree", "packager", "vista"}
+
+                    -- Colors
+                    local colors = {
+                        bg = "#282a36",
+                        fg = "#f8f8f2",
+                        section_bg = "#38393f",
+                        yellow = "#f1fa8c",
+                        cyan = "#8be9fd",
+                        green = "#50fa7b",
+                        orange = "#ffb86c",
+                        magenta = "#ff79c6",
+                        blue = "#8be9fd",
+                        red = "#ff5555"
+                    }
+
+                    -- Local helper functions
+                    local mode_color = function()
+                        local mode_colors = {
+                            n = colors.cyan,
+                            i = colors.green,
+                            c = colors.orange,
+                            V = colors.magenta,
+                            [""] = colors.magenta,
+                            v = colors.magenta,
+                            R = colors.red
+                        }
+
+                        local color = mode_colors[vim.fn.mode()]
+
+                        if color == nil then
+                            color = colors.red
+                        end
+
+                        return color
+                    end
+
+                    -- Left side
+                    gls.left[1] = {
+                        ViMode = {
+                            provider = function()
+                                local alias = {
+                                    n = "N",
+                                    i = "I",
+                                    c = "C",
+                                    V = "V",
+                                    [""] = "VL",
+                                    v = "V",
+                                    R = "R"
+                                }
+                                vim.api.nvim_command("hi GalaxyViMode guibg=" .. mode_color())
+                                local alias_mode = alias[vim.fn.mode()]
+                                if alias_mode == nil then
+                                    alias_mode = vim.fn.mode()
+                                end
+                                return "  " .. alias_mode .. " "
+                            end,
+                            highlight = {colors.bg, colors.bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.section_bg}
+                        }
+                    }
+                    gls.left[2] = {
+                        FileIcon = {
+                            provider = "FileIcon",
+                            highlight = {
+                                require("galaxyline.providers.fileinfo").get_file_icon_color,
+                                colors.section_bg
+                            }
+                        }
+                    }
+                    gls.left[3] = {
+                        FileName = {
+                            provider = "FileName",
+                            highlight = {colors.fg, colors.section_bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+                    gls.left[4] = {
+                        GitIcon = {
+                            provider = function()
+                                return "  "
+                            end,
+                            condition = condition.check_git_workspace,
+                            highlight = {colors.red, colors.bg}
+                        }
+                    }
+                    gls.left[5] = {
+                        GitBranch = {
+                            provider = function()
+                                local vcs = require("galaxyline.providers.vcs")
+                                local branch_name = vcs.get_git_branch()
+                                if (string.len(branch_name) > 28) then
+                                    return string.sub(branch_name, 1, 25) .. "..."
+                                end
+                                return branch_name .. " "
+                            end,
+                            condition = condition.check_git_workspace,
+                            highlight = {colors.fg, colors.bg}
+                        }
+                    }
+                    gls.left[6] = {
+                        DiffAdd = {
+                            provider = "DiffAdd",
+                            condition = condition.check_git_workspace,
+                            icon = " ",
+                            highlight = {colors.green, colors.bg}
+                        }
+                    }
+                    gls.left[7] = {
+                        DiffModified = {
+                            provider = "DiffModified",
+                            condition = condition.check_git_workspace,
+                            icon = " ",
+                            highlight = {colors.orange, colors.bg}
+                        }
+                    }
+                    gls.left[8] = {
+                        DiffRemove = {
+                            provider = "DiffRemove",
+                            condition = condition.check_git_workspace,
+                            icon = " ",
+                            highlight = {colors.red, colors.bg}
+                        }
+                    }
+                    gls.left[9] = {
+                        LeftEnd = {
+                            provider = function()
+                                return " "
+                            end,
+                            highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+                    gls.left[10] = {
+                        DiagnosticError = {
+                            provider = "DiagnosticError",
+                            icon = "  ",
+                            highlight = {colors.red, colors.section_bg}
+                        }
+                    }
+                    gls.left[11] = {
+                        Space = {
+                            provider = function()
+                                return " "
+                            end,
+                            highlight = {colors.section_bg, colors.section_bg}
+                        }
+                    }
+                    gls.left[12] = {
+                        DiagnosticWarn = {
+                            provider = "DiagnosticWarn",
+                            icon = "  ",
+                            highlight = {colors.orange, colors.section_bg}
+                        }
+                    }
+                    gls.left[13] = {
+                        DiagnosticHint = {
+                            provider = "DiagnosticHint",
+                            icon = "  ",
+                            highlight = {colors.fg, colors.section_bg}
+                        }
+                    }
+                    gls.left[14] = {
+                        Space = {
+                            provider = function()
+                                return " "
+                            end,
+                            highlight = {colors.section_bg, colors.section_bg}
+                        }
+                    }
+                    gls.left[15] = {
+                        DiagnosticInfo = {
+                            provider = "DiagnosticInfo",
+                            icon = "  ",
+                            highlight = {colors.blue, colors.section_bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+                    -- middle side
+                    -- local gps = require("nvim-gps")
+                    -- gls.mid[0] = {
+                    --     nvimGPS = {
+                    --         provider = function()
+                    --             return gps.get_location()
+                    --         end,
+                    --         condition = function()
+                    --             return gps.is_available()
+                    --         end,
+                    --
+                    --         separator_highlight = {colors.section_bg, colors.bg}
+                    --     }
+                    -- }
+
+                    -- Right side
+                    gls.right[1] = {
+                        FileFormat = {
+                            provider = function()
+                                return vim.bo.filetype
+                            end,
+                            highlight = {colors.fg, colors.section_bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+                    gls.right[2] = {
+                        LineInfo = {
+                            provider = "LineColumn",
+                            highlight = {colors.fg, colors.section_bg},
+                            separator = " | ",
+                            separator_highlight = {colors.bg, colors.section_bg}
+                        }
+                    }
+
+                    -- gls.right[3] = {
+                    --     ShowLspClient = {
+                    --         provider = 'GetLspClient',
+                    --         separator= ' ',
+                    --         condition = function ()
+                    --             local tbl = {['dashboard'] = true,['']=true}
+                    --             if tbl[vim.bo.filetype] then
+                    --                 return false
+                    --             end
+                    --             return true
+                    --         end,
+                    --         icon = 'LSP:',
+                    --         highlight = {colors.cyan,colors.bg,'italic'}
+                    --     }
+                    -- -- }
+                    -- gls.right[4] = {
+                    --     ShowLspClient = {
+                    --         provider = function()
+                    --             local Cst = vim.fn.StatusDiagnostic()
+                    --             return Cst
+                    --         end,
+                    --         separator = " ",
+                    --         icon = "﴾",
+                    --         highlight = {colors.cyan, colors.bg, "italic"}
+                    --     }
+                    -- }
+
+                    -- Short status line
+                    gls.short_line_left[1] = {
+                        BufferType = {
+                            provider = "FileTypeName",
+                            highlight = {colors.fg, colors.section_bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+
+                    gls.short_line_right[1] = {
+                        BufferIcon = {
+                            provider = "BufferIcon",
+                            highlight = {colors.yellow, colors.section_bg},
+                            separator = " ",
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+
+                    -- Force manual load so that nvim boots with a status line
+                    gl.load_galaxyline()
+                end,
+                -- some optional icons
+                requires = {"kyazdani42/nvim-web-devicons", opt = true}
+            }
+            --
+            -- -- use {
+            -- --     'glepnir/indent-guides.nvim',
+            -- --     config = function()
+            -- --         exclude_filetypes = {'help','dashboard','dashpreview','NvimTree','vista','sagahover'};
+            -- --         indent_space_guides = false;
+            -- --     end
+            -- -- }
+            --
             use {
                 "lukas-reineke/indent-blankline.nvim",
                 config = function()
@@ -756,26 +567,26 @@ return require("packer").startup(
                     vim.cmd([[let g:indent_blankline_enabled = v:false]])
                 end
             }
-            use {
-                "gelguy/wilder.nvim",
-                config = function()
-                    local wilder = require("wilder")
-                    -- wilder.setup({modes = {":", "/", "?"}})
-                    wilder.setup({modes = {":", "?"}})
-                    wilder.set_option(
-                        "renderer",
-                        wilder.popupmenu_renderer(
-                            {
-                                highlighter = wilder.basic_highlighter(),
-                                left = {" ", wilder.popupmenu_devicons()},
-                                right = {" ", wilder.popupmenu_scrollbar()}
-                            }
-                        )
-                    )
-                end
-            }
+            -- -- use {
+            -- --     "gelguy/wilder.nvim",
+            -- --     config = function()
+            -- --         local wilder = require("wilder")
+            -- --         -- wilder.setup({modes = {":", "/", "?"}})
+            -- --         wilder.setup({modes = {":", "?"}})
+            -- --         wilder.set_option(
+            -- --             "renderer",
+            -- --             wilder.popupmenu_renderer(
+            -- --                 {
+            -- --                     highlighter = wilder.basic_highlighter(),
+            -- --                     left = {" ", wilder.popupmenu_devicons()},
+            -- --                     right = {" ", wilder.popupmenu_scrollbar()}
+            -- --                 }
+            -- --             )
+            -- --         )
+            -- --     end
+            -- -- }
 
-            -- Editing
+            -- -- Editing
             use {
                 "windwp/nvim-autopairs",
                 config = function()
@@ -784,6 +595,8 @@ return require("packer").startup(
                     }
                 end
             }
+            use {"alvan/vim-closetag"}
+            use {"tpope/vim-surround"}
 
             -- Behavour
             use {
@@ -805,16 +618,12 @@ return require("packer").startup(
                     )
                 end
             }
-            -- use {
-            --     "SmiteshP/nvim-gps",
-            --     requires = "nvim-treesitter/nvim-treesitter"
-            -- }
-            -- use {
-            --     'xiyaowong/nvim-cursorword',
-            --     config = function()
-            --
-            --     end
-            -- }
+
+            -- -- use {
+            -- --     "SmiteshP/nvim-gps",
+            -- --     requires = "nvim-treesitter/nvim-treesitter"
+            -- -- }
+            use {"xiyaowong/nvim-cursorword"}
             use {
                 "nvim-neo-tree/neo-tree.nvim",
                 branch = "v2.x",
@@ -864,17 +673,17 @@ return require("packer").startup(
             use {
                 "tomasiser/vim-code-dark"
             }
-            use {"mangeshrex/everblush.vim"}
-            use {
-                "tiagovla/tokyodark.nvim",
-                config = function()
-                    vim.g.tokyodark_transparent_background = false
-                    vim.g.tokyodark_enable_italic_comment = true
-                    vim.g.tokyodark_enable_italic = true
-                    vim.g.tokyodark_color_gamma = "1.0"
-                end
-            }
-            use "folke/tokyonight.nvim"
+            -- use {"mangeshrex/everblush.vim"}
+            -- use {
+            --     "tiagovla/tokyodark.nvim",
+            --     config = function()
+            --         vim.g.tokyodark_transparent_background = false
+            --         vim.g.tokyodark_enable_italic_comment = true
+            --         vim.g.tokyodark_enable_italic = true
+            --         vim.g.tokyodark_color_gamma = "1.0"
+            --     end
+            -- }
+            -- use "folke/tokyonight.nvim"
             use {
                 "rebelot/kanagawa.nvim",
                 config = function()
@@ -911,13 +720,13 @@ return require("packer").startup(
                     )
                 end
             }
-            use "frenzyexists/aquarium-vim"
-            use(
-                {
-                    "catppuccin/nvim",
-                    as = "catppuccin"
-                }
-            )
+            -- use "frenzyexists/aquarium-vim"
+            -- use(
+            --     {
+            --         "catppuccin/nvim",
+            --         as = "catppuccin"
+            --     }
+            -- )
             use {
                 "Mofiqul/dracula.nvim",
                 config = function()
@@ -929,18 +738,18 @@ return require("packer").startup(
                 "lourenci/github-colors"
             }
             use "tanvirtin/monokai.nvim"
-            use {
-                "bluz71/vim-nightfly-guicolors",
-                config = function()
-                    vim.g.nightflyCursorColor = 1
-                    vim.g.nightflyItalics = 1
-                end
-            }
-            -- use "haishanh/night-owl.vim"
-            use {
-                "charliesbot/night-owl.vim"
-            }
-
+            -- use {
+            --     "bluz71/vim-nightfly-guicolors",
+            --     config = function()
+            --         vim.g.nightflyCursorColor = 1
+            --         vim.g.nightflyItalics = 1
+            --     end
+            -- }
+            use "haishanh/night-owl.vim"
+            -- use {
+            --     "charliesbot/night-owl.vim"
+            -- }
+            --
             -- Automatically set up your configuration after cloning packer.nvim
             -- Put this at the end after all plugins
             if Packer_bootstrap then
