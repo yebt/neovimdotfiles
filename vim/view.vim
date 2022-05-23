@@ -4,4 +4,5 @@
 "colorscheme desert256
 "colorscheme morning
 "colorscheme zellner
-colorscheme kanagawa
+"colorscheme kanagawa
+colorscheme night-owl

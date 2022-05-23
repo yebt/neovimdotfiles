@@ -35,7 +35,7 @@ nnoremap <silent><leader>tw <CMD>set wrap!<BAR>echo "蝹"<CR>
 nnoremap <silent><leader>tn <CMD>set number!<BAR> echo "" <CR>
 nnoremap <silent><leader>tr <CMD>set relativenumber!<BAR>echo ""<CR>
 nnoremap <silent><Leader>th <CMD>noh<BAR>echo ""<CR>
-nnoremap <silent><leader>ti <CMD>IndenLinesToggle<BAR>echo ""<CR>
+nnoremap <silent><leader>ti <CMD>IndentBlanklineToggle<CR><CMD>echo ""<CR>
 nnoremap <silent><leader>tl <CMD>set list!<BAR>echo ""<CR>
 
 vnoremap <silent> ( c(<C-r><C-o>")<ESC>bvi(
@@ -46,8 +46,9 @@ vnoremap <silent> " c"<C-r><C-o>""<ESC>bvi"
 
 nnoremap <silent><A-b> :NvimTreeToggle<CR>
 
-nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle --sources=buffer+,file+ <CR>
-nmap <silent> <Leader>: <Plug>(coc-floatinput-command)
+"nnoremap <silent><M-e> <Cmd>CocCommand explorer --toggle --sources=buffer+,file+ <CR>
+nnoremap <silent><M-e> <Cmd>NeoTreeShowToggle<CR>
+"nmap <silent> <Leader>: <Plug>(coc-floatinput-command)
 "noremap <silent><C-S-p>: <Plug>(coc-floatinput-command)
-nmap <silent> <Leader>c: <Plug>(coc-floatinput-coc-command)
+"nmap <silent> <Leader>c: <Plug>(coc-floatinput-coc-command)
 "nmap <silent> <Leader>rn <Plug>(coc-floatinput-rename)
