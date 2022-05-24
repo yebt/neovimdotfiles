@@ -34,6 +34,7 @@ augroup restore_cursor
 augroup end
 
 
+autocmd BufNewFile,BufRead *.json syntax match Comment +\/\/.\+$+
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 
