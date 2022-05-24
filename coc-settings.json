@@ -1,4 +1,33 @@
 {
+    "emmet.includeLanguages": {
+        "vue-hmtll": "hmtl",
+        "javascript": "javascriptreact",
+        "vue": "html",
+        "django-html": "html",
+        "blade": "html"
+    },
+
+    "snippets.extends": {
+        "cpp": ["c"],
+        "javascriptreact": ["javascript"],
+        "typescript": ["javascript"]
+    },
+
+
+
     "diagnostic.refreshOnInsertMode": true,
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
 
 }
