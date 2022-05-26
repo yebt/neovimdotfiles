@@ -82,6 +82,9 @@
                 }
             }
         }
-    }
+    },
 
+    // "git.addGBlameToBufferVar": true,
+    // "git.showCommitInFloating": true,
+    "git.realtimeGutters": false,
 }

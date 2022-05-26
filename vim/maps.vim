@@ -75,4 +75,5 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-nnoremap <silent><nowait> <leader>a :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>cd :<C-u>CocList diagnostics<cr>
+nmap <leader>cr <Plug>(coc-rename)

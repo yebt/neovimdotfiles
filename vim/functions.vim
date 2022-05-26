@@ -15,7 +15,8 @@ endfunction
 
 
 function! Gitstatusline()
-    let head =  fugitive#head() 
+    " let head =  fugitive#head() 
+    let head = FugitiveHead()
     return head == '' ? '' : ' ' . head
 endfunction
 

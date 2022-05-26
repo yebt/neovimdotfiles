@@ -26,43 +26,42 @@ return require("packer").startup(
                 config = function()
                     vim.g.coc_python_interpreter = "python3"
                     vim.g.coc_global_extensions = {
-                        '@yaegassy/coc-intelephense',
-                        '@yaegassy/coc-phpstan',
-                        '@yaegassy/coc-volar',
-                        'coc-blade',
-                        'coc-clang-format-style-options',
-                        'coc-clangd',
-                        'coc-css',
-                        'coc-cssmodules',
-                        'coc-emmet',
-                        'coc-explorer',
-                        'coc-git',
-                        'coc-html',
-                        'coc-html',
-                        'coc-html-css-support',
-                        'coc-htmldjango',
-                        'coc-htmlhint',
-                        'coc-json', 
-                        'coc-markdownlint',
-                        'coc-php-cs-fixer',
-                        'coc-phpactor',
-                        'coc-phpls',
-                        'coc-prettier',
-                        'coc-psalm',
-                        'coc-pyright',
-                        'coc-snippets',
-                        'coc-syntax',
-                        'coc-tailwindcss',
-                        'coc-tsserver',
-                        'coc-vetur',
-                        'coc-vimlsp',
-                        -- 'coc-tabnine',
-
+                        "@yaegassy/coc-intelephense",
+                        "@yaegassy/coc-phpstan",
+                        "@yaegassy/coc-volar",
+                        "coc-blade",
+                        "coc-clang-format-style-options",
+                        "coc-clangd",
+                        "coc-css",
+                        "coc-cssmodules",
+                        "coc-emmet",
+                        "coc-explorer",
+                        "coc-git",
+                        "coc-html",
+                        "coc-html",
+                        "coc-html-css-support",
+                        "coc-htmldjango",
+                        "coc-htmlhint",
+                        "coc-json",
+                        "coc-markdownlint",
+                        "coc-php-cs-fixer",
+                        "coc-phpactor",
+                        "coc-phpls",
+                        "coc-prettier",
+                        "coc-psalm",
+                        "coc-pyright",
+                        "coc-snippets",
+                        "coc-syntax",
+                        "coc-tabnine",
+                        "coc-tailwindcss",
+                        "coc-tsserver",
+                        "coc-vetur",
+                        "coc-vimlsp"
                     }
                 end
             }
-            use {'SirVer/ultisnips'}
-            use {'honza/vim-snippets'}
+            use {"SirVer/ultisnips"}
+            use {"honza/vim-snippets"}
 
             -- Search
             use {"junegunn/fzf"}
@@ -86,6 +85,7 @@ return require("packer").startup(
                             "cmake",
                             "cpp",
                             "css",
+                            "dockerfile",
                             "help",
                             "hjson",
                             "html",
@@ -410,18 +410,19 @@ return require("packer").startup(
                         }
                     }
                     gls.left[10] = {
-                        DiagnosticError = {
-                            provider = "DiagnosticError",
-                            icon = "  ",
-                            highlight = {colors.red, colors.section_bg}
-                        }
-                    }
-                    gls.left[11] = {
                         Space = {
                             provider = function()
                                 return " "
                             end,
                             highlight = {colors.section_bg, colors.section_bg}
+                        }
+                    }
+
+                    gls.left[11] = {
+                        DiagnosticError = {
+                            provider = "DiagnosticError",
+                            icon = "  ",
+                            highlight = {colors.red, colors.section_bg}
                         }
                     }
                     gls.left[12] = {
@@ -456,19 +457,32 @@ return require("packer").startup(
                         }
                     }
                     -- middle side
-                    -- local gps = require("nvim-gps")
-                    -- gls.mid[0] = {
-                    --     nvimGPS = {
-                    --         provider = function()
-                    --             return gps.get_location()
-                    --         end,
-                    --         condition = function()
-                    --             return gps.is_available()
-                    --         end,
-                    --
-                    --         separator_highlight = {colors.section_bg, colors.bg}
-                    --     }
-                    -- }
+                    local gps = require("nvim-gps")
+                    gls.mid[0] = {
+                        Space2 = {
+                            provider = function()
+                                return "   "
+                            end
+                        }
+                    }
+                    gls.mid[1] = {
+                        nvimGPS = {
+                            provider = function()
+                                return gps.get_location()
+                            end,
+                            condition = function()
+                                return gps.is_available()
+                            end,
+                            separator_highlight = {colors.section_bg, colors.bg}
+                        }
+                    }
+                    gls.mid[3] = {
+                        Space2 = {
+                            provider = function()
+                                return "   "
+                            end
+                        }
+                    }
 
                     -- Right side
                     gls.right[1] = {
@@ -619,10 +633,16 @@ return require("packer").startup(
                 end
             }
 
-            -- -- use {
-            -- --     "SmiteshP/nvim-gps",
-            -- --     requires = "nvim-treesitter/nvim-treesitter"
-            -- -- }
+            use {
+                "SmiteshP/nvim-gps",
+                requires = "nvim-treesitter/nvim-treesitter",
+                config = function()
+                    require("nvim-gps").setup {
+                        -- separator = '  ',
+                        separator = ' > ',
+                    }
+                end
+            }
             use {"xiyaowong/nvim-cursorword"}
             use {
                 "nvim-neo-tree/neo-tree.nvim",
@@ -673,17 +693,17 @@ return require("packer").startup(
             use {
                 "tomasiser/vim-code-dark"
             }
-            -- use {"mangeshrex/everblush.vim"}
-            -- use {
-            --     "tiagovla/tokyodark.nvim",
-            --     config = function()
-            --         vim.g.tokyodark_transparent_background = false
-            --         vim.g.tokyodark_enable_italic_comment = true
-            --         vim.g.tokyodark_enable_italic = true
-            --         vim.g.tokyodark_color_gamma = "1.0"
-            --     end
-            -- }
-            -- use "folke/tokyonight.nvim"
+            use {"mangeshrex/everblush.vim"}
+            use {
+                "tiagovla/tokyodark.nvim",
+                config = function()
+                    vim.g.tokyodark_transparent_background = false
+                    vim.g.tokyodark_enable_italic_comment = true
+                    vim.g.tokyodark_enable_italic = true
+                    vim.g.tokyodark_color_gamma = "1.0"
+                end
+            }
+            use "folke/tokyonight.nvim"
             use {
                 "rebelot/kanagawa.nvim",
                 config = function()
@@ -720,13 +740,13 @@ return require("packer").startup(
                     )
                 end
             }
-            -- use "frenzyexists/aquarium-vim"
-            -- use(
-            --     {
-            --         "catppuccin/nvim",
-            --         as = "catppuccin"
-            --     }
-            -- )
+            use "frenzyexists/aquarium-vim"
+            use(
+                {
+                    "catppuccin/nvim",
+                    as = "catppuccin"
+                }
+            )
             use {
                 "Mofiqul/dracula.nvim",
                 config = function()
@@ -738,13 +758,13 @@ return require("packer").startup(
                 "lourenci/github-colors"
             }
             use "tanvirtin/monokai.nvim"
-            -- use {
-            --     "bluz71/vim-nightfly-guicolors",
-            --     config = function()
-            --         vim.g.nightflyCursorColor = 1
-            --         vim.g.nightflyItalics = 1
-            --     end
-            -- }
+            use {
+                "bluz71/vim-nightfly-guicolors",
+                config = function()
+                    vim.g.nightflyCursorColor = 1
+                    vim.g.nightflyItalics = 1
+                end
+            }
             use "haishanh/night-owl.vim"
             -- use {
             --     "charliesbot/night-owl.vim"

@@ -4,23 +4,23 @@ augroup packer_user_config
 augroup end
 
 
-" augroup reload_plugins
-"     autocmd!
-"     autocmd BufWritePost ~/.config/nvim/configs/options.vim :so %
-"     autocmd BufWritePost ~/.config/nvim/configs/plugins.vim  :so %
-"     autocmd BufWritePost ~/.config/nvim/configs/plugins.vim
-"                 \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-"                 \|   PlugInstall --sync | q
-"                 \| endif
-" 
-"     autocmd VimEnter *
-"                 \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-"                 \|   PlugInstall --sync | q
-"                 \| endif
-" 
-" augroup end
-
-
+"  " augroup reload_plugins
+"  "     autocmd!
+"  "     autocmd BufWritePost ~/.config/nvim/configs/options.vim :so %
+"  "     autocmd BufWritePost ~/.config/nvim/configs/plugins.vim  :so %
+"  "     autocmd BufWritePost ~/.config/nvim/configs/plugins.vim
+"  "                 \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+"  "                 \|   PlugInstall --sync | q
+"  "                 \| endif
+"  " 
+"  "     autocmd VimEnter *
+"  "                 \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+"  "                 \|   PlugInstall --sync | q
+"  "                 \| endif
+"  " 
+"  " augroup end
+"  
+"  
 augroup phpconfigs
     autocmd!
     autocmd BufNewFile,BufRead *.php inoremap <expr><silent>< line('.')==1? "\<?php<CR><CR>"  : "<"
@@ -35,9 +35,9 @@ augroup end
 
 
 autocmd BufNewFile,BufRead *.json syntax match Comment +\/\/.\+$+
-autocmd FileType json syntax match Comment +\/\/.\+$+
-
-
+" autocmd FileType json syntax match Comment +\/\/.\+$+
+"  
+"  
 autocmd BufNewFile,BufRead,BufEnter *.md 
             \set conceallevel=2 |
             \set tabstop=2 |
@@ -47,30 +47,30 @@ autocmd BufNewFile,BufRead,BufEnter *.md
             \set spell |
             \set spelllang=es,en_us
 
-
-autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-b>  ****<Left><Left>
-autocmd BufNewFile,BufRead,BufEnter *.md imap <silent><C-i>  **<Left>
-autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-k>  ```<CR>```<Up>
-autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-k> []()<Left><Left><Left>
-autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-i> ![]()<Left><Left><Left>
-autocmd BufNewFile,BufRead,BufEnter *.md command! WrapLines :%s/.\{80}/&\r/g
-
-
-"let g:polyglot_disabled = ['markdown']
-"let g:polyglot_disabled = ['markdown.plugin']
-"let g:vim_markdown_conceal = 0
-
-
-autocmd BufNewFile,BufRead *.py set completeopt-=menu |
-            \set completeopt+=menuone |  
-            \set completeopt-=longest |
-            \set completeopt-=preview |
-            \set completeopt+=noinsert |
-            \set completeopt-=noselect |
-            \imap <silent><C-Space> <C-x><C-u>
-
-
-autocmd FileType apache setlocal commentstring=#\ %s
+"  
+"  autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-b>  ****<Left><Left>
+"  autocmd BufNewFile,BufRead,BufEnter *.md imap <silent><C-i>  **<Left>
+"  autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-k>  ```<CR>```<Up>
+"  autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-k> []()<Left><Left><Left>
+"  autocmd BufNewFile,BufRead,BufEnter *.md inoremap <silent><C-S-i> ![]()<Left><Left><Left>
+"  autocmd BufNewFile,BufRead,BufEnter *.md command! WrapLines :%s/.\{80}/&\r/g
+"  
+"  
+"  "let g:polyglot_disabled = ['markdown']
+"  "let g:polyglot_disabled = ['markdown.plugin']
+"  "let g:vim_markdown_conceal = 0
+"  
+"  
+"  autocmd BufNewFile,BufRead *.py set completeopt-=menu |
+"              \set completeopt+=menuone |  
+"              \set completeopt-=longest |
+"              \set completeopt-=preview |
+"              \set completeopt+=noinsert |
+"              \set completeopt-=noselect |
+"              \imap <silent><C-Space> <C-x><C-u>
+"  
+"  
+autocmd FileType apache setlocal comentstring=#\ %s
 
 
 " au VimEnter * RainbowParenthesesToggle
