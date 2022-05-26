@@ -34,6 +34,7 @@ return require("packer").startup(
                         "coc-clangd",
                         "coc-css",
                         "coc-cssmodules",
+                        "coc-docker",
                         "coc-emmet",
                         "coc-explorer",
                         "coc-git",
@@ -56,7 +57,7 @@ return require("packer").startup(
                         "coc-tailwindcss",
                         "coc-tsserver",
                         "coc-vetur",
-                        "coc-vimlsp"
+                        "coc-vimlsp",
                     }
                 end
             }
